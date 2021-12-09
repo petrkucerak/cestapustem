@@ -55,13 +55,26 @@ export async function getStaticProps({ params }) {
     "link",
     "slug",
   ]);
+  const day = post.day;
+  const date = post.date;
   const quote = post.quote;
+  const source = post.source;
+  const reflexion = post.reflexion;
+  const preayer = post.preayer;
+  const link = post.link;
+  
 
   return {
     props: {
       post: {
         ...post,
+        day,
+        date,
         quote,
+        source,
+        reflexion,
+        preayer,
+        link
       },
     },
   };
