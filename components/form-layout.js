@@ -22,17 +22,41 @@ class Song {
 }
 
 /**
- * Save data from simply from into the json file.
+ * Definition of the post class.
+ */
+class Text {
+  constructor(day, date, quote, source, reflexion, author, description, preayer, link) {
+    this.day = day; // the name of day celebration
+    this.date = date; // the simply date
+    this.quote = quote; // quote from Bible
+    this.source = source; // quote source
+    this.reflexion = reflexion;
+    this.author = author;
+    this.description = description;
+    this.preayer = preayer;
+    this.link = link; // link for song (options)
+  }
+}
+
+/**
+ * Save data from simply form into the json file.
  */
 function saveData(slug) {
-  const name = document.getElementById("fname").value;
+  const day = document.getElementById("fday").value;
+  const date = document.getElementById("fdate").value;
+  const quote = document.getElementById("fquote").value;
+  const source = document.getElementById("fsource").value;
+  const reflexion = document.getElementById("freflexion").value;
   const author = document.getElementById("fauthor").value;
-  const note = document.getElementById("fnote").value;
-  const text = document.getElementById("ftext").value;
+  const description = document.getElementById("fdescription").value;
+  const preayer = document.getElementById("fpreayer").value;
+  const link = document.getElementById("flink").value;
 
-  if (name !== "" && slug !== "" && author !== "" && text !== "") {
-    const song = new Song(name, slug, author, note, text);
-    downloadObjectAsJson(song, slug);
+  if (day !== "" && date !== "" && quote !== "" && source !== ""
+    && reflexion !== "" && author !== "" && description !== "" && preayer !== "") {
+    const text = new Text(day, date, quote, source, reflexion, author, description, preayer, link);
+    console.log(date);
+    downloadObjectAsJson(text, date);
   } else {
     Swal.fire({
       title: "Chyba!",
@@ -60,82 +84,107 @@ function downloadObjectAsJson(exportObj, exportName) {
   downloadAnchorNode.remove();
 }
 
-const generateSlug = (name, artist) => {
-  if (name && artist) {
-    return `${unidecode(name.toLowerCase().replaceAll(" ", "-"))}-${unidecode(
-      artist.toLowerCase().replaceAll(" ", "-")
-    )}`;
-  } else if (name) {
-    return `${unidecode(name.toLowerCase().replaceAll(" ", "-"))}`;
-  } else if (artist) {
-    return `${unidecode(artist.toLowerCase().replaceAll(" ", "-"))}`;
-  } else {
-    return "";
-  }
-};
-
 export default function FormLayout() {
-  const [songName, setSongName] = useState("");
-  const [artistName, setArtistName] = useState("");
 
   return (
     <div>
       <Header />
       <h2 className="text-3xl mb-3 leading-snug">Základní informace</h2>
       <div className="mb-4">
-        <label>Název písně</label>
+        <label>Název dne</label>
         <input
           for="grid-first-name"
           type="text"
-          id="fname"
-          value={songName}
-          onChange={(e) => setSongName(e.target.value)}
+          id="fday"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         ></input>
       </div>
       <div className="mb-4">
-        <label>Autor, skladatel, skupina</label>
+        <label>Datum</label>
+        <input
+          for="grid-first-name"
+          type="date"
+          id="fdate"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        ></input>
+      </div>
+
+      <h2 className="text-3xl mb-3 leading-snug">Texty</h2>
+
+      <div className="mb-4">
+        <label>
+          Úryvek z Bible
+        </label>
+        <textarea
+          rows="10"
+          id="fquote"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+        ></textarea>
+      </div>
+      <div className="mb-4">
+        <label>Adresa v Bibli</label>
+        <input
+          for="grid-first-name"
+          type="text"
+          id="fsource"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        ></input>
+      </div>
+
+      <div className="mb-4">
+        <label>
+          Zamyšlení
+        </label>
+        <textarea
+          rows="10"
+          id="freflexion"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+        ></textarea>
+      </div>
+      <div className="mb-4">
+        <label>Jméno autora</label>
         <input
           for="grid-first-name"
           type="text"
           id="fauthor"
-          value={artistName}
-          onChange={(e) => setArtistName(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         ></input>
       </div>
-      <div className="mb-4">
-        <TextField
-          label="URL písně"
-          prefix="https://zpevnicek.studentstc.cz/song/"
-          value={generateSlug(songName, artistName)}
-          ariaLabel="Okénko pro zobrazení URL adresy písně"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        />
-      </div>
-      <div className="mb-4">
-        <label>Poznámka</label>
-        <input
-          for="grid-first-name"
-          type="text"
-          id="fnote"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
-      <h2 className="text-3xl mb-3 leading-snug">Text písně s akordy</h2>
       <div className="mb-4">
         <label>
-          Text písně musí vždy obsahovat akordy, které jsou v hranatých
-          závorkách
+          Pár slov o autorovi
         </label>
         <textarea
-          rows="10"
-          id="ftext"
+          rows="5"
+          id="fdescription"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
         ></textarea>
       </div>
+
+      <div className="mb-4">
+        <label>
+          Modlitba
+        </label>
+        <textarea
+          rows="5"
+          id="fpreayer"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+        ></textarea>
+      </div>
+      <h2 className="text-3xl mb-3 leading-snug">Jiné</h2>
+      <div className="mb-4">
+        <label>
+          Odkaz na písničku
+        </label>
+        <input
+          for="grid-first-name"
+          type="link"
+          id="flink"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        ></input>
+      </div>
       <button
-        onClick={() => saveData(generateSlug(songName, artistName))}
+        onClick={() => saveData()}
         className="bg-[#0078D4] hover:bg-[#004377] duration-200	text-white font-bold py-2 px-4 rounded"
       >
         Stáhnout JSON
