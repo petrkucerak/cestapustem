@@ -10,7 +10,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`STC Zpěvníček pro všechny vaše hudební požadavky.`}
+        content={`Projdi půstem s myšlenou na každý den.`}
       />
     </Head>
   )
