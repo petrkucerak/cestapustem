@@ -8,7 +8,7 @@ export default function Form() {
         <>
             <Layout>
                 <Head>
-                    <title>Formulář pro export písní</title>
+                    <title>Formulář pro export textů</title>
                 </Head>
                 <Container>
                     <FormLayout />
