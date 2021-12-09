@@ -6,11 +6,6 @@ export default function MoreStories({ posts }) {
   const [usedCaps, setUsedCaps] = useState([]);
   return (
     <section>
-      <div className="flex text-center justify-between">
-        <h2 className="mb-8 text-3xl md:text-4xl font-bold tracking-tighter leading-tight">
-          Seznam písniček:
-        </h2>
-      </div>
       <div className="flex flex-col justify-center items-center">
         <ul className="">
           {posts.map((post) => {
@@ -23,9 +18,9 @@ export default function MoreStories({ posts }) {
 
             return (
               <div className={doCapital && "mt-4"}>
-                {doCapital && (
+                {/* {doCapital && (
                   <span className="text-4xl">{post.day[0]}</span>
-                )}
+                )} */}
 
                 <PostPreview
                   key={post.date}
