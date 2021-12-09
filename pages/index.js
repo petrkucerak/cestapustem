@@ -10,7 +10,7 @@ export default function Index({ allPosts }) {
     <>
       <Layout>
         <Head>
-          <title>STC Zpěvníček</title>
+          <title>Cesta půstem</title>
         </Head>
         <Container>
           <Intro />

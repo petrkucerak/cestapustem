@@ -1,6 +1,6 @@
 export default function PostBody({ content, note, author }) {
-    content = content.split("[").join('<em class="chord">');
-    content = content.split("]").join("</em>");
+    // content = content.split("[").join('<em class="chord">');
+    // content = content.split("]").join("</em>");
     return (
         <div className="max-w-2xl mx-auto">
             <div className="dark:bg-gray-700 bg-gray-200 text-3xl px-4 py-6">

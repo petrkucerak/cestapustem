@@ -18,6 +18,7 @@ class Text {
     this.description = description;
     this.preayer = preayer;
     this.link = link; // link for song (options)
+    this.slug = date;
   }
 }
 

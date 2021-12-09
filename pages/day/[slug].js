@@ -44,19 +44,24 @@ export default function Post({ post, preview }) {
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
-    "name",
-    "note",
-    "slug",
+    "day",
+    "date",
+    "quote",
+    "source",
+    "reflexion",
     "author",
-    "text",
+    "description",
+    "preayer",
+    "link",
+    "slug",
   ]);
-  const content = post.text;
+  const quote = post.quote;
 
   return {
     props: {
       post: {
         ...post,
-        content,
+        quote,
       },
     },
   };
