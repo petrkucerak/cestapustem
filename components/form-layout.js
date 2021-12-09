@@ -1,25 +1,8 @@
 import Header from "./header";
-import { useState } from "react";
 import replaceAllInserter from "string.prototype.replaceall";
-import { TextField } from "@fluentui/react";
 import Swal from "sweetalert2";
 
-import unidecode from "unidecode";
-
 replaceAllInserter.shim();
-
-/**
- * Defintiion of the song class.
- */
-class Song {
-  constructor(name, slug, author, note, text) {
-    this.name = name;
-    this.slug = slug;
-    this.author = author;
-    this.note = note;
-    this.text = text;
-  }
-}
 
 /**
  * Definition of the post class.
@@ -41,7 +24,7 @@ class Text {
 /**
  * Save data from simply form into the json file.
  */
-function saveData(slug) {
+function saveData() {
   const day = document.getElementById("fday").value;
   const date = document.getElementById("fdate").value;
   const quote = document.getElementById("fquote").value;
