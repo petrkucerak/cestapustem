@@ -17,7 +17,7 @@ export default function Footer() {
                 rel="noreferrer noopener"
                 href="https://github.com/petrkucerak/cestapustem/"
               >
-                repo na GitHub
+                repo na GitHubu
               </a>
             </span>
             <br />
