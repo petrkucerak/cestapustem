@@ -1,23 +1,27 @@
-export default function PostBody({ content, note, author }) {
-    // content = content.split("[").join('<em class="chord">');
-    // content = content.split("]").join("</em>");
-    return (
-        <div className="max-w-2xl mx-auto">
-            <div className="dark:bg-gray-700 bg-gray-200 text-3xl px-4 py-6">
-                {author && (
-                    <div className="mb-3">
-                        <span title="Autor">👤:</span> {author}
-                    </div>
-                )}
-                {note && (
-                    <div className="mt-2">
-                        <span title="Poznámka">📝:</span> {note}
-                    </div>
-                )}
-            </div>
-            <div className="text-xl mt-12 song-text" dangerouslySetInnerHTML={{
-                __html: content
-            }}></div>
-        </div>
-    );
+export default function PostBody({
+  quote,
+  source,
+  reflexion,
+  preayer,
+  author,
+  link,
+}) {
+  return (
+    <div className="">
+      <div className="">
+        <p>{quote}</p>
+        <span>{source}</span>
+      </div>
+      <div className="">
+        <p>{reflexion}</p>
+        <span>{author}</span>
+      </div>
+      <div className="">
+        <p>{preayer}</p>
+      </div>
+      <div className="">
+        <a href={link}>{link}</a>
+      </div>
+    </div>
+  );
 }

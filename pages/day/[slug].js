@@ -24,15 +24,16 @@ export default function Post({ post, preview }) {
           <>
             <article className="mb-32">
               <Head>
-                <title>
-                  {post.name} | STC Zpěvníček
-                </title>
+                <title>{post.day} - Cesta půstem</title>
               </Head>
-              <PostHeader name={post.name} author={post.author} />
+              <PostHeader day={post.day} date={post.date} />
               <PostBody
+                quote={post.quote}
+                source={post.source}
+                reflexion={post.reflexion}
+                preayer={post.preayer}
                 author={post.author}
-                note={post.note}
-                content={post.text}
+                link={post.link}
               />
             </article>
           </>
@@ -62,7 +63,6 @@ export async function getStaticProps({ params }) {
   const reflexion = post.reflexion;
   const preayer = post.preayer;
   const link = post.link;
-  
 
   return {
     props: {
@@ -74,7 +74,7 @@ export async function getStaticProps({ params }) {
         source,
         reflexion,
         preayer,
-        link
+        link,
       },
     },
   };
