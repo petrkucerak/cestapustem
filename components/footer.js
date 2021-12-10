@@ -25,11 +25,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Cloudflare Web Analytics */}
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'
-        ></script>
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'></script>
         {/* End Cloudflare Web Analytics */}
       </Container>
     </footer>
