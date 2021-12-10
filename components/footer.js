@@ -1,28 +1,25 @@
 import Container from "./container";
+import { Image } from "@fluentui/react";
 
 export default function Footer() {
   return (
-    <footer className="">
+    <footer className="bg-gray-100">
       <Container>
-        <div className="">
-          <h3 className="">
-            Cesta půstem
-          </h3>
-          <div className="">
-            <span>
-              ...
-              <a
-                className="hover:underline"
-                target="_blank"
-                rel="noreferrer noopener"
-                href="https://github.com/petrkucerak/cestapustem/"
-              >
-                repo na GitHubu
-              </a>
-            </span>
-            <br />
-            <span className=""></span>
-          </div>
+        <div className="text-grey text-base px-8 py-4 content-center">
+          <span>
+            Chceš o aplikaci vědět víc, mrkni do{" "}
+            <a
+              className="underline"
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://github.com/petrkucerak/cestapustem/"
+            >
+              repozitáře
+            </a>{" "}
+            projektu.
+          </span>
+          <br />
+          <span className=""></span>
         </div>
         {/* Cloudflare Web Analytics */}
         <script
