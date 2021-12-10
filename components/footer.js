@@ -24,6 +24,9 @@ export default function Footer() {
             <span className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2"></span>
           </div>
         </div>
+        {/* Cloudflare Web Analytics */}
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'></script>
+        {/* End Cloudflare Web Analytics */}
       </Container>
     </footer>
   );
