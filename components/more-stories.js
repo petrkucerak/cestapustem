@@ -8,21 +8,14 @@ export default function MoreStories({ posts }) {
     <section>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Kalendař všech dnů</h2>
       <div className="">
-        <ul className="">
+        <div className="grid grid-cols-7 gap-4 px-8">
           {posts.map((post) => {
-            let doCapital = true;
-            if (posts.indexOf(post) > 0) {
-              doCapital = !(
-                post.day[0] === posts[posts.indexOf(post) - 1].day[0]
-              );
-            }
+            let date_t = new Date(post.date);
+            let col = " text-center rounded col-span-1 col-start-";
+            col += (date_t.getDay() + 1).toString();
 
             return (
-              <div className={doCapital && "mt-4"}>
-                {/* {doCapital && (
-                  <span className="">{post.day[0]}</span>
-                )} */}
-
+              <div className={col}>
                 <PostPreview
                   key={post.date}
                   slug={post.slug}
@@ -38,7 +31,7 @@ export default function MoreStories({ posts }) {
               </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     </section>
   );
