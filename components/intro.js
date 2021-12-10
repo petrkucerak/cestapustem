@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <div className="">
+    <section className="">
       <h1 className="text-4xl font-bold mx-8 my-5">Cesta půstem</h1>
       <div className="text-lg mx-8">
         <p>
@@ -22,6 +22,6 @@ export default function Intro() {
           zítra
         </button>
       </div>
-    </div>
+    </section>
   );
 }
