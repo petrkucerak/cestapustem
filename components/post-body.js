@@ -7,19 +7,19 @@ export default function PostBody({
   link,
 }) {
   return (
-    <div className="">
-      <div className="">
+    <div className=" ">
+      <div className=" ">
         <p>{quote}</p>
         <span>{source}</span>
       </div>
-      <div className="">
+      <div className=" ">
         <p>{reflexion}</p>
         <span>{author}</span>
       </div>
-      <div className="">
+      <div className=" ">
         <p>{preayer}</p>
       </div>
-      <div className="">
+      <div className=" ">
         <a href={link}>{link}</a>
       </div>
     </div>
