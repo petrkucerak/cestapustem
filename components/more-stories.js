@@ -6,8 +6,8 @@ export default function MoreStories({ posts }) {
   const [usedCaps, setUsedCaps] = useState([]);
   return (
     <section>
-      <div className=" ">
-        <ul className=" ">
+      <div className="flex flex-col justify-center items-center">
+        <ul className="">
           {posts.map((post) => {
             let doCapital = true;
             if (posts.indexOf(post) > 0) {
@@ -19,7 +19,7 @@ export default function MoreStories({ posts }) {
             return (
               <div className={doCapital && "mt-4"}>
                 {/* {doCapital && (
-                  <span className=" ">{post.day[0]}</span>
+                  <span className="text-4xl">{post.day[0]}</span>
                 )} */}
 
                 <PostPreview

@@ -22,7 +22,7 @@ export default function Post({ post, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className=" ">
+            <article className="mb-32">
               <Head>
                 <title>{post.day} - Cesta půstem</title>
               </Head>
