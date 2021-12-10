@@ -16,19 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #24292e;
+    background: #363636ff;
     color: #fff;
   }
-}
-
-.chord {
-  position: relative;
-  top: -12px;
-  color: #b6ae68;
-  font-weight: bold;
-  font-style: normal;
-}
-.song-text {
-  line-height: 3rem;
-  white-space: pre-line;
 }
