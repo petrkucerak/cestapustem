@@ -8,7 +8,17 @@ replaceAllInserter.shim();
  * Definition of the post class.
  */
 class Text {
-  constructor(day, date, quote, source, reflexion, author, description, preayer, link) {
+  constructor(
+    day,
+    date,
+    quote,
+    source,
+    reflexion,
+    author,
+    description,
+    preayer,
+    link
+  ) {
     this.day = day; // the name of day celebration
     this.date = date; // the simply date
     this.quote = quote; // quote from Bible
@@ -36,9 +46,27 @@ function saveData() {
   const preayer = document.getElementById("fpreayer").value;
   const link = document.getElementById("flink").value;
 
-  if (day !== "" && date !== "" && quote !== "" && source !== ""
-    && reflexion !== "" && author !== "" && description !== "" && preayer !== "") {
-    const text = new Text(day, date, quote, source, reflexion, author, description, preayer, link);
+  if (
+    day !== "" &&
+    date !== "" &&
+    quote !== "" &&
+    source !== "" &&
+    reflexion !== "" &&
+    author !== "" &&
+    description !== "" &&
+    preayer !== ""
+  ) {
+    const text = new Text(
+      day,
+      date,
+      quote,
+      source,
+      reflexion,
+      author,
+      description,
+      preayer,
+      link
+    );
     console.log(date);
     downloadObjectAsJson(text, date);
   } else {
@@ -69,110 +97,101 @@ function downloadObjectAsJson(exportObj, exportName) {
 }
 
 export default function FormLayout() {
-
   return (
-    <div>
+    <div className="">
       <Header />
-      <h2 className="text-3xl mb-3 leading-snug">Základní informace</h2>
-      <div className="mb-4">
-        <label>Název dne</label>
-        <input
-          for="grid-first-name"
-          type="text"
-          id="fday"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
-      <div className="mb-4">
-        <label>Datum</label>
-        <input
-          for="grid-first-name"
-          type="date"
-          id="fdate"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
+      <div className="mx-8 max-w-screen-lg text-lg">
+        <h2 className="font-bold text-2xl mt-8">Základní informace</h2>
+        <div className="">
+          <label>Název dne</label>
+          <input
+            for="grid-first-name"
+            type="text"
+            id="fday"
+            className="shadow appearance-none  border border-slate-800 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
+        <div className="">
+          <label>Datum</label>
+          <input
+            for="grid-first-name"
+            type="date"
+            id="fdate"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
 
-      <h2 className="text-3xl mb-3 leading-snug">Texty</h2>
+        <h2 className="font-bold text-2xl mt-8">Texty</h2>
 
-      <div className="mb-4">
-        <label>
-          Úryvek z Bible
-        </label>
-        <textarea
-          rows="10"
-          id="fquote"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label>Adresa v Bibli</label>
-        <input
-          for="grid-first-name"
-          type="text"
-          id="fsource"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
+        <div className="">
+          <label>Úryvek z Bible</label>
+          <textarea
+            rows="10"
+            id="fquote"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
+        </div>
+        <div className="">
+          <label>Adresa v Bibli</label>
+          <input
+            for="grid-first-name"
+            type="text"
+            id="fsource"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
 
-      <div className="mb-4">
-        <label>
-          Zamyšlení
-        </label>
-        <textarea
-          rows="10"
-          id="freflexion"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label>Jméno autora</label>
-        <input
-          for="grid-first-name"
-          type="text"
-          id="fauthor"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
-      <div className="mb-4">
-        <label>
-          Pár slov o autorovi
-        </label>
-        <textarea
-          rows="5"
-          id="fdescription"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
-        ></textarea>
-      </div>
+        <div className="">
+          <label>Zamyšlení</label>
+          <textarea
+            rows="10"
+            id="freflexion"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
+        </div>
+        <div className="">
+          <label>Jméno autora</label>
+          <input
+            for="grid-first-name"
+            type="text"
+            id="fauthor"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
+        <div className="">
+          <label>Pár slov o autorovi</label>
+          <textarea
+            rows="5"
+            id="fdescription"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
+        </div>
 
-      <div className="mb-4">
-        <label>
-          Modlitba
-        </label>
-        <textarea
-          rows="5"
-          id="fpreayer"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
-        ></textarea>
+        <div className="">
+          <label>Modlitba</label>
+          <textarea
+            rows="5"
+            id="fpreayer"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
+        </div>
+        <h2 className="font-bold text-2xl mt-8">Jiné</h2>
+        <div className="">
+          <label>Odkaz na písničku</label>
+          <input
+            for="grid-first-name"
+            type="link"
+            id="flink"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
+        <button
+          onClick={() => saveData()}
+          className="bg-blue my-8 duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded"
+        >
+          Stáhnout JSON
+        </button>
       </div>
-      <h2 className="text-3xl mb-3 leading-snug">Jiné</h2>
-      <div className="mb-4">
-        <label>
-          Odkaz na písničku
-        </label>
-        <input
-          for="grid-first-name"
-          type="link"
-          id="flink"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        ></input>
-      </div>
-      <button
-        onClick={() => saveData()}
-        className="bg-[#0078D4] hover:bg-[#004377] duration-200	text-white font-bold py-2 px-4 rounded"
-      >
-        Stáhnout JSON
-      </button>
     </div>
   );
 }
