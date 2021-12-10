@@ -1,3 +1,5 @@
+import PostSong from "../components/post-song";
+
 export default function PostBody({
   quote,
   source,
@@ -22,9 +24,7 @@ export default function PostBody({
         <h2 className="font-bold text-2xl  mt-8 mb-3">Modlitba</h2>
         <p className="tracking-wide">{preayer}</p>
       </div>
-      <div className="my-5">
-        <a href={link}>{link}</a>
-      </div>
+      <PostSong link={link}></PostSong>
     </div>
   );
 }
