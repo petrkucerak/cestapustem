@@ -6,7 +6,7 @@ export default function PostHeader({ day, date }) {
   return (
     <>
       <PostTitle>{day}</PostTitle>
-      <div className="">{date_t.toLocaleDateString("cs")}
+      <div className="text-yellow text-xl px-8 mb-3">{date_t.toLocaleDateString("cs")}
       </div>
     </>
   )
