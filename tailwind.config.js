@@ -8,10 +8,11 @@ module.exports = {
         'dark': '#363636ff',
         'grey': '#4d4d4dff',
         'grey-dark': '#404040ff',
+        'grey-light': '#999999',
         'yellow': '#f9d43fff',
         'yellow-dark': '#f2cd41ff',
         'blue': '#50A2A7',
-        'orange':'#81D2C7',
+        'orange':'#E9724C',
       },
       fontSize: {
         'xs': '.75rem',
