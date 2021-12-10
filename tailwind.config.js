@@ -10,6 +10,8 @@ module.exports = {
         'grey-dark': '#404040ff',
         'yellow': '#f9d43fff',
         'yellow-dark': '#f2cd41ff',
+        'blue': '#50A2A7',
+        'orange':'#81D2C7',
       },
       fontSize: {
         'xs': '.75rem',
