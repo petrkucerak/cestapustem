@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
+      <div className="">
         <main>{children}</main>
       </div>
       <Footer />

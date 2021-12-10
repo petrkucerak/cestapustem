@@ -73,8 +73,8 @@ export default function FormLayout() {
   return (
     <div>
       <Header />
-      <h2 className="text-3xl mb-3 leading-snug">Základní informace</h2>
-      <div className="mb-4">
+      <h2 className="">Základní informace</h2>
+      <div className="">
         <label>Název dne</label>
         <input
           for="grid-first-name"
@@ -83,7 +83,7 @@ export default function FormLayout() {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         ></input>
       </div>
-      <div className="mb-4">
+      <div className="">
         <label>Datum</label>
         <input
           for="grid-first-name"
@@ -93,9 +93,9 @@ export default function FormLayout() {
         ></input>
       </div>
 
-      <h2 className="text-3xl mb-3 leading-snug">Texty</h2>
+      <h2 className="">Texty</h2>
 
-      <div className="mb-4">
+      <div className="">
         <label>
           Úryvek z Bible
         </label>
@@ -105,7 +105,7 @@ export default function FormLayout() {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
         ></textarea>
       </div>
-      <div className="mb-4">
+      <div className="">
         <label>Adresa v Bibli</label>
         <input
           for="grid-first-name"
@@ -115,7 +115,7 @@ export default function FormLayout() {
         ></input>
       </div>
 
-      <div className="mb-4">
+      <div className="">
         <label>
           Zamyšlení
         </label>
@@ -125,7 +125,7 @@ export default function FormLayout() {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
         ></textarea>
       </div>
-      <div className="mb-4">
+      <div className="">
         <label>Jméno autora</label>
         <input
           for="grid-first-name"
@@ -134,7 +134,7 @@ export default function FormLayout() {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         ></input>
       </div>
-      <div className="mb-4">
+      <div className="">
         <label>
           Pár slov o autorovi
         </label>
@@ -145,7 +145,7 @@ export default function FormLayout() {
         ></textarea>
       </div>
 
-      <div className="mb-4">
+      <div className="">
         <label>
           Modlitba
         </label>
@@ -155,8 +155,8 @@ export default function FormLayout() {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
         ></textarea>
       </div>
-      <h2 className="text-3xl mb-3 leading-snug">Jiné</h2>
-      <div className="mb-4">
+      <h2 className="">Jiné</h2>
+      <div className="">
         <label>
           Odkaz na písničku
         </label>
