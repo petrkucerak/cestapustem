@@ -6,6 +6,7 @@ export default function MoreStories({ posts }) {
   const [usedCaps, setUsedCaps] = useState([]);
   return (
     <section>
+      <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Kalendař všech dnů</h2>
       <div className="">
         <ul className="">
           {posts.map((post) => {
@@ -25,7 +26,6 @@ export default function MoreStories({ posts }) {
                 <PostPreview
                   key={post.date}
                   slug={post.slug}
-
                   day={post.day}
                   date={post.date}
                   quote={post.quote}

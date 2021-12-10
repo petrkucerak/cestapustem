@@ -1,3 +1,4 @@
+import Link from "next/dist/client/link";
 export default function Intro() {
   return (
     <section className="">
@@ -12,15 +13,21 @@ export default function Intro() {
       </div>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Číst text</h2>
       <div className="mx-8 flex space-x-5">
-        <button className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
-          včera
-        </button>
-        <button className="uppercase bg-blue duration-200 hover:bg-orange	text-white font-bold py-2 px-4 rounded">
-          dnes
-        </button>
-        <button className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
-          zítra
-        </button>
+        <Link href="/day/2022-01-07">
+          <a className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
+            včera
+          </a>
+        </Link>
+        <Link href="/day/2022-01-07">
+          <a className="uppercase bg-blue duration-200 hover:bg-orange	text-white font-bold py-2 px-4 rounded">
+            dnes
+          </a>
+        </Link>
+        <Link href="/day/2022-01-07">
+          <a className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
+            zítra
+          </a>
+        </Link>
       </div>
     </section>
   );
