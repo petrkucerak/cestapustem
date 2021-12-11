@@ -1,4 +1,5 @@
 import PostSong from "../components/post-song";
+import PostImage from "../components/post-image";
 
 export default function PostBody({
   quote,
@@ -7,9 +8,11 @@ export default function PostBody({
   preayer,
   author,
   link,
+  slug,
 }) {
   return (
     <div className="max-w-screen-lg mx-8 text-lg leading-7">
+      <PostImage slug={slug}></PostImage>
       <div className="my-5">
         <h2 className="font-bold text-2xl  mt-8">Úryvek z Bible</h2>
         <span className="text-base tracking-wider">({source})</span>

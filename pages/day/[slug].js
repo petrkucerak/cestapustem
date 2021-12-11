@@ -34,6 +34,7 @@ export default function Post({ post, preview }) {
                 preayer={post.preayer}
                 author={post.author}
                 link={post.link}
+                slug={post.slug}
               />
             </article>
           </>
