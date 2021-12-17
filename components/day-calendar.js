@@ -1,8 +1,8 @@
-import PostPreview from "../components/post-preview";
+import PostPreview from "./post-preview";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function MoreStories({ posts }) {
+export default function DayCalendar({ posts }) {
   const [usedCaps, setUsedCaps] = useState([]);
   return (
     <section>
