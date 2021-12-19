@@ -43,14 +43,8 @@ export default function DayCalendar({ posts }) {
           </option>
           {posts.map((post) => {
             let date_t = new Date(post.date);
-
-            let doCapital = true;
-            if (posts.indexOf(post) > 0) {
-              let monthFirst = new Date(posts[posts.indexOf(post) - 1].date);
-              doCapital = !(monthFirst.getMonth() === date_t.getMonth());
-            }
             return (
-              <option value={post.slug}>
+              <option key={post.slug} value={post.slug}>
                 {days[date_t.getDay()]} {date_t.getDate().toString()}
                 {". "}
                 {months[date_t.getMonth()]}
