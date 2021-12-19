@@ -1,5 +1,5 @@
 import Container from '../components/container'
-import MoreStories from '../components/more-stories'
+import DayCalendar from '../components/day-calendar'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
@@ -14,7 +14,7 @@ export default function Index({ allPosts }) {
         </Head>
         <Container>
           <Intro />
-          {allPosts.length > 0 && <MoreStories posts={allPosts} />}
+          {allPosts.length > 0 && <DayCalendar posts={allPosts} />}
         </Container>
       </Layout>
     </>
