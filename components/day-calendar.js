@@ -1,5 +1,3 @@
-import PostPreview from "./post-preview";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function DayCalendar({ posts }) {
@@ -28,20 +26,6 @@ export default function DayCalendar({ posts }) {
     "listopadu",
     "prosinece",
   ];
-  const monthsConst = [
-    "leden",
-    "únor",
-    "březen",
-    "duben",
-    "květen",
-    "červen",
-    "červenec",
-    "srpen",
-    "září",
-    "říjen",
-    "listopad",
-    "prosinec",
-  ];
 
   return (
     <section>
@@ -50,13 +34,13 @@ export default function DayCalendar({ posts }) {
         <select
           name="day"
           onChange={(e) => {
-            // window.location.href = "/day/" + e.target.value;
             router.push("/day/" + e.target.value);
-            console.log(e.target.value);
           }}
           className="text-black w-full border-2 border-black rounded h-10"
         >
-          <option value="/" className="text-grey-light">vyber den</option>
+          <option value="/" className="text-grey-light">
+            vyber den
+          </option>
           {posts.map((post) => {
             let date_t = new Date(post.date);
 
