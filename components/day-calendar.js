@@ -51,11 +51,9 @@ export default function DayCalendar({ posts }) {
             }
             return (
               <option value={post.slug}>
-                {days[date_t.getDay()] +
-                  " " +
-                  date_t.getDate().toString() +
-                  ". " +
-                  months[date_t.getMonth()]}
+                {days[date_t.getDay()]} {date_t.getDate().toString()}
+                {". "}
+                {months[date_t.getMonth()]}
               </option>
             );
           })}
