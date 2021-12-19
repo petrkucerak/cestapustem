@@ -9,7 +9,7 @@ export default function Intro() {
     return `/day/${date.getFullYear()}-${date
       .getMonth()
       .toString()
-      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}/`;
   }
 
   const today = new Date();

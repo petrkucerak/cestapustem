@@ -2,23 +2,23 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="199mm"
    height="199mm"
    viewBox="0 0 199 199"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="C:\Users\Petr\Documents\cestapustem\public\icon.png"
-   inkscape:export-xdpi="255.27638"
-   inkscape:export-ydpi="255.27638">
+   inkscape:export-filename="C:\Users\pkucera\Documents\Repos\cestapustem\public\icon.png"
+   inkscape:export-xdpi="65.349998"
+   inkscape:export-ydpi="65.349998"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <clipPath
@@ -63,16 +63,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="226.91888"
-     inkscape:cy="219.30881"
+     inkscape:cx="-55"
+     inkscape:cy="342.14286"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1013"
+     inkscape:window-height="1001"
      inkscape:window-x="-9"
-     inkscape:window-y="901"
-     inkscape:window-maximized="1" />
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -90,12 +91,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-5.1141172,-47.306988)">
-    <circle
-       style="opacity:1;fill:#363636;fill-opacity:1;stroke:#363636;stroke-width:1.43207443;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-       id="path4529"
-       cx="104.61412"
-       cy="146.80699"
-       r="98.783966" />
     <path
        style="fill:none;stroke:#4d4d4d;stroke-width:8.45145035;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 104.72505,77.929163 0.5499,141.141677"
@@ -133,7 +128,10 @@
        style="fill:#f9d43f;fill-opacity:1;stroke:#f9d43f;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 135.88299,90.08005 -61.048369,-6.517072 -11.431708,8.166608 10.196241,10.958934 60.216536,6.27832 z"
        id="path4537-7-4"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\pkucera\Documents\Repos\cestapustem\public\icon.png"
+       inkscape:export-xdpi="255.27638"
+       inkscape:export-ydpi="255.27638" />
     <path
        style="fill:#f2cd41;fill-opacity:1;stroke:#f2cd41;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 135.13331,156.46434 -61.394032,-0.38616 -10.55874,9.26771 11.23996,9.88558 60.542512,0.23169 z"
