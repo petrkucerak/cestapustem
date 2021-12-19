@@ -1,8 +1,10 @@
 import PostPreview from "./post-preview";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function DayCalendar({ posts }) {
+  const router = useRouter();
+
   const days = [
     "neděle",
     "pondělí",
@@ -40,6 +42,7 @@ export default function DayCalendar({ posts }) {
     "listopad",
     "prosinec",
   ];
+
   return (
     <section>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Konkrétní den</h2>
@@ -47,11 +50,13 @@ export default function DayCalendar({ posts }) {
         <select
           name="day"
           onChange={(e) => {
-            window.location.href = "/day/" + e.target.value;
+            // window.location.href = "/day/" + e.target.value;
+            router.push("/day/" + e.target.value);
             console.log(e.target.value);
           }}
-          className="text-black w-3/5"
+          className="text-black w-full border-2 border-black rounded h-10"
         >
+          <option value="/" className="text-grey-light">vyber den</option>
           {posts.map((post) => {
             let date_t = new Date(post.date);
 
