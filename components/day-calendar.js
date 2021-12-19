@@ -29,7 +29,7 @@ export default function DayCalendar({ posts }) {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Konkrétní den</h2>
+      <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Přejít na konkrétní den</h2>
       <div className="px-8">
         <select
           name="day"
