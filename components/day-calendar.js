@@ -34,7 +34,7 @@ export default function DayCalendar({ posts }) {
         <select
           name="day"
           onChange={(e) => {
-            router.push("/day/" + e.target.value);
+            router.push("/day/" + e.target.value + "/");
           }}
           className="text-black w-full border-2 border-black rounded h-10"
         >
