@@ -10,6 +10,7 @@
     "@fluentui/react": "^8.20.2",
     "classnames": "2.2.6",
     "date-fns": "2.16.1",
+    "eslint": "^8.5.0",
     "gray-matter": "4.0.2",
     "next": "latest",
     "next-pwa": "^5.4.4",
