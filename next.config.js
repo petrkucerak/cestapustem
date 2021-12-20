@@ -25,6 +25,6 @@ module.exports = withPWA({
     dest: "public",
     cacheOnFrontEndNav: true,
     disable: process.env.NODE_ENV === "development",
-    sw: "/pwabuilder-sw.js"
+    // sw: "/pwabuilder-sw.js",
   },
 });
