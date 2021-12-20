@@ -1,4 +1,4 @@
-import { Image } from "@fluentui/react";
+import { Image } from "next/image";
 export default function PostImage({ slug }) {
   return (
     <div className="my-5">
