@@ -20,7 +20,7 @@ export default function Intro() {
   return (
     <section className="">
       <div className="w-full flex justify-center m-0">
-        <Image src="/icon.svg" height={200} width={200}></Image>
+        <Image src="/icon.svg" height={200} width={200}/>
       </div>
       <h1 className="text-4xl font-bold mx-8 mb-5">Cesta půstem</h1>
       <div className="text-lg mx-8">

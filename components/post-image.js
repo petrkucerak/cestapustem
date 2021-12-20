@@ -5,7 +5,7 @@ export default function PostImage({ slug }) {
       <Image
         src={"/images/" + slug + ".png"}
         alt="Citat v obrazku se slovem na dnesni den!"
-      ></Image>
+      />
     </div>
   );
 }
