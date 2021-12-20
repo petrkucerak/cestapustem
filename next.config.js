@@ -5,7 +5,7 @@ module.exports = withPWA({
   async headers() {
     return [
       {
-        source: "/song/:slug*",
+        source: "/day/:slug*",
         headers: [
           /*
               s-maxage=2419200, // Set the max age of the cached content to a month (28 days)
