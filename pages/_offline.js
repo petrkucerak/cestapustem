@@ -12,7 +12,7 @@ export default function Offline() {
         </Head>
         <Container>
           <Intro />
-          <div className="text-2xl">
+          <div className="text-xl my-4">
             Vypadá to, že nejsi připojen k internetu, (a možná) se ti texty
             tohoto dne ještě nezapsaly do paměti zařízení. Zkus to prosím znovu,
             později.
