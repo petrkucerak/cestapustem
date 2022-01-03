@@ -1,0 +1,1 @@
+# Jak přidat texty
