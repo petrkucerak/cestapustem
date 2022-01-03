@@ -16,3 +16,7 @@ Aplikace je postavená na Next.js a o to, aby vypadal dobře se stará Tailwind.
 yarn
 yarn dev
 ```
+
+## Jak prřidat texty
+
+... již brzy
