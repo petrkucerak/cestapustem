@@ -35,7 +35,7 @@ export default function MonthDates({ month, posts }) {
   return (
 
     <div className="mx-8">
-      <h3>{months[month]}</h3>
+      <h3 className="text-base uppercase font-bold mt-4 mb-2">{months[month]}</h3>
       <div className="flex flex-wrap justify-start flex-row">
         {posts.map((post) => {
           let date_t = new Date(post.date);
