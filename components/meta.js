@@ -17,6 +17,9 @@ export default function Meta() {
       <meta name="theme-color" content="#50A2A7" />
 
       <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="152x152" href="/favicon/touch-icon-ipad.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/touch-icon-iphone-retina.png" />
+      <link rel="apple-touch-icon" sizes="167x167" href="/favicon/touch-icon-ipad-retina.png" />
 
       <link
         rel="icon"
