@@ -1,5 +1,5 @@
 {
-  "name": "blog-starter",
+  "name": "cesta-pustem",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -29,5 +29,7 @@
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Petr Kucera (petr@khome.cz)",
+  "description": "The simply PWA app for migration paper brozure to the digital."
 }
