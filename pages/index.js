@@ -15,8 +15,8 @@ export default function Index({ allPosts }) {
         </Head>
         <Container>
           <Intro />
-          {allPosts.length > 0 && <DayCalendar posts={allPosts} />}
           <MoreInfromation />
+          {allPosts.length > 0 && <DayCalendar posts={allPosts} />}
         </Container>
       </Layout>
     </>
