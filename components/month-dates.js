@@ -32,8 +32,6 @@ export default function MonthDates({ month, posts }) {
       .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}/`;
   }
 
-  const firstDate = new Date(posts[0].date);
-
   return (
 
     <div className="mx-8">
