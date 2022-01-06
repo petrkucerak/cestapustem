@@ -1,6 +1,9 @@
 import Link from "next/dist/client/link";
 import { Image } from "@fluentui/react";
 
+import React from "react";
+React.useLayoutEffect = React.useEffect;
+
 export default function Intro() {
   /**
    * Return date in the slug format as /day/YYYY-MM-DD
@@ -18,7 +21,7 @@ export default function Intro() {
   let tmp = new Date();
   const yestarday = new Date(tmp.setDate(tmp.getDate() - 1));
   const tomorrow = new Date(tmp.setDate(tmp.getDate() + 2));
-  
+
   return (
     <section className="">
       <div className="w-full flex justify-center m-0">

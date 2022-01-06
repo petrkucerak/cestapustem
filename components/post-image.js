@@ -1,5 +1,8 @@
 import { Image } from "@fluentui/react";
 
+import React from "react";
+React.useLayoutEffect = React.useEffect;
+
 export default function PostImage({ slug }) {
   return (
     <div className="my-5">
