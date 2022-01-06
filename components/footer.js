@@ -28,6 +28,6 @@ export default function Footer() {
         ></script>
         {/* End Cloudflare Web Analytics */}
       </Container>
-    </footer>
+    </footer >
   );
 }
