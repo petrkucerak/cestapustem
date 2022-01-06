@@ -1,8 +1,6 @@
-import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
 
 export default function DayCalendar({ posts }) {
-  const router = useRouter();
 
   const days = [
     "neděle",
@@ -14,18 +12,18 @@ export default function DayCalendar({ posts }) {
     "sobota",
   ];
   const months = [
-    "ledna",
-    "února",
-    "březena",
-    "dubena",
-    "květena",
-    "červena",
-    "červenece",
-    "srpena",
+    "leden",
+    "únor",
+    "březen",
+    "duben",
+    "květen",
+    "červen",
+    "červenec",
+    "srpen",
     "září",
-    "října",
-    "listopadu",
-    "prosinece",
+    "říjen",
+    "listopad",
+    "prosinec",
   ];
 
   function generateSlugFromDate(date) {
