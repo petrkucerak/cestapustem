@@ -41,14 +41,24 @@ export default function DayCalendar({ posts }) {
       <div className="mx-8 flex flex-wrap justify-start flex-row">
         {posts.map((post) => {
           let date_t = new Date(post.date);
-          let str = `${date_t.getDay() + 1}.`;
-          console.log(str);
+          let str = `${date_t.getDate() + 1}.`;
+          let doCapital = true;
+          if (posts.indexOf(post) > 0) {
+            let dateA = new Date(post.date);
+            let dateF = new Date(posts[posts.indexOf(post) - 1].date);
+            doCapital = !(
+              dateA.getMonth() === dateF.getMonth()
+            );
+          }
           return (
-            <Link key={post.slug} href={generateSlugFromDate(date_t)}>
-              <a className="uppercase text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded mr-4 mb-4">
-                {str}
-              </a>
-            </Link>
+            <div key={post.slug} className="mr-4 mb-4">
+              {doCapital && <span className="">{months[date_t.getMonth()]}</span>}
+              <Link href={generateSlugFromDate(date_t)}>
+                <a className="uppercase text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
+                  {str}
+                </a>
+              </Link>
+            </div>
           )
         })}
       </div>
