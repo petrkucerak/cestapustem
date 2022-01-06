@@ -15,7 +15,7 @@ export default function HowRead({allPosts}) {
         </Head>
         <Container>
           <Header></Header>
-          <PostTitle children="Přehled autorů textů"></PostTitle>
+          <PostTitle>Přehled autorů textů</PostTitle>
           <section className="max-w-screen-lg mx-8 text-lg leading-7 ">
             <p className="my-2">
               Kulturu války pavučiny ne tož špičky smrtelníky EU musel mi. Jejím
