@@ -14,7 +14,7 @@ export default function Meta() {
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-tap-highlight" content="no" />
-      <meta name="theme-color" content="#f9d43f" />
+      <meta name="theme-color" content="#50A2A7" />
 
       <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
 
@@ -52,7 +52,7 @@ export default function Meta() {
 
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" content="#f9d43f" />
+      <meta name="theme-color" content="#50A2A7" />
 
       <meta
         name="description"

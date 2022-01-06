@@ -1,5 +1,4 @@
 import Container from "./container";
-import { Image } from "@fluentui/react";
 
 export default function Footer() {
   return (

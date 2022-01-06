@@ -7,7 +7,7 @@ export default function AuthorDetail({ posts }) {
       <div className="px-8 mb-5">
         {posts.map((post) => {
           return (
-            <div clasName="">
+            <div key={post.author} className="">
               <h3 id={post.author} className="text-xl font-bold mt-4 mb-1">
                 {post.author}
               </h3>

@@ -24,7 +24,10 @@ export default function PostBody({
         <p className="mb-3">{reflexion}</p>
         <span className="tracking-wider">
           (Autor:{" "}
-          <Link href={"/authors/#" + author +"/"}>
+          <Link
+            href={"/authors/#" + author + "/"}
+            className="text-blue hover:text-grey underline ease-in-out transition duration-150"
+          >
             <a>{author}</a>
           </Link>
           )

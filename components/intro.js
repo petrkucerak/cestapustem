@@ -1,4 +1,6 @@
 import Link from "next/dist/client/link";
+import { Image } from "@fluentui/react";
+
 export default function Intro() {
   /**
    * Return date in the slug format as /day/YYYY-MM-DD
@@ -17,7 +19,10 @@ export default function Intro() {
   const tomorrow = new Date(today.setDate(today.getDate() + 1));
   return (
     <section className="">
-      <h1 className="text-4xl font-bold mx-8 my-5">Cesta půstem</h1>
+      <div className="w-full flex justify-center m-0">
+        <Image src="/icon.svg" height={200} width={200} alt="App icon"></Image>
+      </div>
+      <h1 className="text-4xl font-bold mx-8 mb-5">Cesta půstem</h1>
       <div className="text-lg mx-8">
         <p>
           Zdá mě dá kopali patří k ochlazení polarizovaného doprovázet sekyra.
@@ -29,17 +34,17 @@ export default function Intro() {
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Číst text</h2>
       <div className="mx-8 flex space-x-5">
         <Link href={generateSlugFromDate(yestarday)}>
-          <a className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
             včera
           </a>
         </Link>
         <Link href={generateSlugFromDate(today)}>
-          <a className="uppercase bg-blue duration-200 hover:bg-orange	text-white font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-yellow text-grey duration-200 hover:text-white hover:bg-grey-dark font-bold py-2 px-4 rounded">
             dnes
           </a>
         </Link>
         <Link href={generateSlugFromDate(tomorrow)}>
-          <a className="uppercase bg-grey-light duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
             zítra
           </a>
         </Link>

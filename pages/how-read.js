@@ -13,7 +13,7 @@ export default function HowRead() {
         </Head>
         <Container>
           <Header></Header>
-          <PostTitle children="Jak číst brožuru"></PostTitle>
+          <PostTitle>Jak číst brožuru</PostTitle>
           <section className="max-w-screen-lg mx-8 text-lg leading-7 ">
             <p className="my-2">
               Park divize pozdější hladině i druhá že určitě příjezdu chyba,

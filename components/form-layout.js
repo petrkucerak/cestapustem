@@ -105,7 +105,6 @@ export default function FormLayout() {
         <div className="">
           <label>Název dne</label>
           <input
-            for="grid-first-name"
             type="text"
             id="fday"
             className="shadow appearance-none  border border-slate-800 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -114,7 +113,6 @@ export default function FormLayout() {
         <div className="">
           <label>Datum</label>
           <input
-            for="grid-first-name"
             type="date"
             id="fdate"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -134,7 +132,6 @@ export default function FormLayout() {
         <div className="">
           <label>Adresa v Bibli</label>
           <input
-            for="grid-first-name"
             type="text"
             id="fsource"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -152,7 +149,6 @@ export default function FormLayout() {
         <div className="">
           <label>Jméno autora</label>
           <input
-            for="grid-first-name"
             type="text"
             id="fauthor"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -179,7 +175,6 @@ export default function FormLayout() {
         <div className="">
           <label>Odkaz na písničku</label>
           <input
-            for="grid-first-name"
             type="link"
             id="flink"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
