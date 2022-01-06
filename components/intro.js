@@ -8,15 +8,17 @@ export default function Intro() {
    * @returns
    */
   function generateSlugFromDate(date) {
-    return `/day/${date.getFullYear()}-${date
-      .getMonth()
+    let month = date.getMonth() + 1;
+    return `/day/${date.getFullYear()}-${month
       .toString()
       .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}/`;
   }
 
   const today = new Date();
-  const yestarday = new Date(today.setDate(today.getDate() - 1));
-  const tomorrow = new Date(today.setDate(today.getDate() + 1));
+  let tmp = new Date();
+  const yestarday = new Date(tmp.setDate(tmp.getDate() - 1));
+  const tomorrow = new Date(tmp.setDate(tmp.getDate() + 2));
+  
   return (
     <section className="">
       <div className="w-full flex justify-center m-0">
