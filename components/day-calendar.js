@@ -30,29 +30,25 @@ export default function DayCalendar({ posts }) {
   return (
     <section>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Přejít na konkrétní den</h2>
-      <div className="px-8">
-        <select
-          name="day"
-          onChange={(e) => {
-            router.push("/day/" + e.target.value + "/");
-          }}
-          className="text-black w-full border-2 border-black rounded h-10"
-        >
-          <option value="/" className="text-grey-light">
-            vyber den
-          </option>
+      <table className="mx-8">
+        <tr>
+          <th>PO</th>
+          <th>UT</th>
+          <th>ST</th>
+          <th>CT</th>
+          <th>PA</th>
+          <th>SO</th>
+          <th>NE</th>
+        </tr>
+        <tr>
           {posts.map((post) => {
             let date_t = new Date(post.date);
             return (
-              <option key={post.slug} value={post.slug}>
-                {days[date_t.getDay()]} {date_t.getDate().toString()}
-                {". "}
-                {months[date_t.getMonth()]}
-              </option>
-            );
+              <td key={post.slug}>{date_t.getDate()}</td>
+            )
           })}
-        </select>
-      </div>
+        </tr>
+      </table>
     </section>
   );
 }
