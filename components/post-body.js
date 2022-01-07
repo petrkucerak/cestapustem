@@ -1,4 +1,3 @@
-import PostSong from "../components/post-song";
 import PostImage from "../components/post-image";
 import { Link } from "@fluentui/react";
 
@@ -8,7 +7,7 @@ export default function PostBody({
   reflexion,
   preayer,
   author,
-  link,
+  vivit,
   slug,
 }) {
   return (
@@ -37,7 +36,10 @@ export default function PostBody({
         <h2 className="font-bold text-2xl  mt-8 mb-3">Modlitba</h2>
         <p className="tracking-wide">{preayer}</p>
       </div>
-      <PostSong link={link}></PostSong>
+      <div className="my-5">
+        <h2 className="font-bold text-2xl  mt-8 mb-3">Christus Vivit</h2>
+        <p className="tracking-wide">{vivit}</p>
+      </div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function Post({ post, preview }) {
                 reflexion={post.reflexion}
                 preayer={post.preayer}
                 author={post.author}
-                link={post.link}
+                vivit={post.vivit}
                 slug={post.slug}
               />
             </article>
@@ -54,7 +54,7 @@ export async function getStaticProps({ params }) {
     "author",
     "description",
     "preayer",
-    "link",
+    "vivit",
     "slug",
   ]);
   const day = post.day;
@@ -63,7 +63,7 @@ export async function getStaticProps({ params }) {
   const source = post.source;
   const reflexion = post.reflexion;
   const preayer = post.preayer;
-  const link = post.link;
+  const vivit = post.vivit;
 
   return {
     props: {
@@ -75,7 +75,7 @@ export async function getStaticProps({ params }) {
         source,
         reflexion,
         preayer,
-        link,
+        vivit,
       },
     },
   };
