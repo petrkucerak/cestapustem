@@ -27,7 +27,7 @@ class Text {
     this.author = author;
     this.description = description;
     this.preayer = preayer;
-    this.vivit = vivit;
+    this.vivit = vivit; // Christus Vivit
     this.slug = date;
   }
 }
