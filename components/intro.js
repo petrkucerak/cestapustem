@@ -37,19 +37,19 @@ export default function Intro() {
         </p>
       </div>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Číst text</h2>
-      <div className="mx-8 flex space-x-5">
+      <div className="mx-8 flex flex-wrap justify-start flex-row">
         <Link href={generateSlugFromDate(yestarday)}>
-          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 mr-4 my-2 rounded">
             včera
           </a>
         </Link>
         <Link href={generateSlugFromDate(today)}>
-          <a className="uppercase bg-yellow text-grey duration-200 hover:text-white hover:bg-grey-dark font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-yellow text-grey duration-200 hover:text-white hover:bg-grey-dark font-bold py-2 px-4 mr-4 my-2 rounded">
             dnes
           </a>
         </Link>
         <Link href={generateSlugFromDate(tomorrow)}>
-          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
+          <a className="uppercase bg-blue text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 mr-4 my-2 rounded">
             zítra
           </a>
         </Link>
