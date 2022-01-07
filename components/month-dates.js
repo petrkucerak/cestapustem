@@ -42,7 +42,7 @@ export default function MonthDates({ month, posts }) {
           let str = `${date_t.getDate() + 1}.`;
           return (
             <Link key={post.slug} href={generateSlugFromDate(date_t)}>
-              <a className="mr-4 mb-4 uppercase text-white duration-200 hover:bg-grey-dark font-bold py-2 px-4 rounded">
+              <a className="mr-4 mb-4 uppercase dark:text-white duration-200 hover:bg-grey-dark hover:text-white font-bold py-2 px-4 rounded">
                 {str}
               </a>
             </Link>
