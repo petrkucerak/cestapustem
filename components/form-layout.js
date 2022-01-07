@@ -17,7 +17,7 @@ class Text {
     author,
     description,
     preayer,
-    link
+    vivit
   ) {
     this.day = day; // the name of day celebration
     this.date = date; // the simply date
@@ -27,7 +27,7 @@ class Text {
     this.author = author;
     this.description = description;
     this.preayer = preayer;
-    this.link = link; // link for song (options)
+    this.vivit = vivit;
     this.slug = date;
   }
 }
@@ -44,7 +44,7 @@ function saveData() {
   const author = document.getElementById("fauthor").value;
   const description = document.getElementById("fdescription").value;
   const preayer = document.getElementById("fpreayer").value;
-  const link = document.getElementById("flink").value;
+  const vivit = document.getElementById("fvivit").value;
 
   if (
     day !== "" &&
@@ -54,7 +54,8 @@ function saveData() {
     reflexion !== "" &&
     author !== "" &&
     description !== "" &&
-    preayer !== ""
+    preayer !== "" &&
+    vivit !== ""
   ) {
     const text = new Text(
       day,
@@ -65,7 +66,7 @@ function saveData() {
       author,
       description,
       preayer,
-      link
+      vivit
     );
     console.log(date);
     downloadObjectAsJson(text, date);
@@ -171,14 +172,13 @@ export default function FormLayout() {
             className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
           ></textarea>
         </div>
-        <h2 className="font-bold text-2xl mt-8">Jiné</h2>
         <div className="">
-          <label>Odkaz na písničku</label>
-          <input
-            type="link"
-            id="flink"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          ></input>
+          <label>Christus Vivit</label>
+          <textarea
+            rows="5"
+            id="fvivit"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
         </div>
         <button
           onClick={() => saveData()}
