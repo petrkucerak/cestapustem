@@ -23,7 +23,7 @@ module.exports = withPWA({
   },
   pwa: {
     dest: "public",
-    cacheOnFrontEndNav: true, // make all page linked form index cached
+    // cacheOnFrontEndNav: true, // make all page linked form index cached
     disable: process.env.NODE_ENV === "development",
   },
 });
