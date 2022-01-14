@@ -1,4 +1,4 @@
-# Cestapustem
+# Cesta půstem
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/petrkucerak/cestapustem)
 
@@ -29,7 +29,7 @@ yarn dev
 3. stáhni si data ve formátu json
 4. pokud chceš přiložit k textu obrázek, použij stejné jméno jako je využito u vygenerovaného json souboru
 5. json soubory nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/_days
-6. obrazek nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/public/images
+6. obrázek nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/public/images
 
 ## Notifikace
 
@@ -37,8 +37,8 @@ Push notifikace jsou spouštěny pomocí služby https://app.onesignal.com/apps.
 
 Momentálně jsou nastaveny 2 templaty:
 
-1. upozornění pokud uživatel nenavštíví stránku více jak 13h - notifikace slouží k připomínání denních čtení
-2. upozornění pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
+1. upozornění, pokud uživatel nenavštíví stránku více jak 13h - notifikace slouží k připomínání denních čtení
+2. upozornění, pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
 
 _Push notifikace podporují všechny platformy kromě mobilního safari._
 
@@ -50,13 +50,13 @@ Provozovatelem webové aplikace je držitel domény [cestapustem.cz](https://www
 
 ### Cookies
 
-Cookie je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči. Umožňuje webu zaznamenat informace o vaší návštěvě.
+Cookies je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči. Umožňuje webu zaznamenat informace o vaší návštěvě.
 
 Aplikace používá pouze technické soubory cookies, bez kterých by nemohla správně fungovat.
 
 ### Analytics
 
-K zkvalitnění produktu shormažďujeme anonymizované údaje pomocí služeb:
+K zkvalitnění produktu shromažďujeme anonymizované údaje pomocí služeb:
 
 1. **Microsoft Clarity**
     - nástroj sleduje chování uživatelů na webové aplikace
@@ -77,7 +77,7 @@ K zkvalitnění produktu shormažďujeme anonymizované údaje pomocí služeb:
 
 ### Notifikace
 
-K správě Push Notifikací využíváme službu OneSignal. Nástroj analyzuje manipuluci s notifikačními bannery. Zpracovatelem je společnost OneSignal.
+K správě Push Notifikací využíváme službu OneSignal. Nástroj analyzuje manipulaci s notifikačními bannery. Zpracovatelem je společnost OneSignal.
 
 Více informací najdete na stránkách:
 - https://onesignal.com/privacy
@@ -85,7 +85,7 @@ Více informací najdete na stránkách:
 - https://onesignal.com/
 
 
-### Infrastrutura
+### Infrastruktura
 
 Shromažďujeme anonymizované údaje a identifikovatelné údaje obsahující IP adresu pomocí služeb CloudFlare. Tento nástroj sleduje přístupy uživatelů na naše webové stránkách především za účelem zabezpečení služby a prevence podvodů.
 
@@ -98,4 +98,4 @@ Další informace o CloudFlare naleznete na adresách:
 
 ### Zpracování osobních údajů
 
-Z výše poskytnutých informací jasně vyplývá, že provozovatel webové aplikace nezpracovává žádné osobní údaje, tudíž z provozování neplynou ždáné další právní povinnosti ve vztahu k manipulaci s osobními údaji.
+Z výše poskytnutých informací jasně vyplývá, že provozovatel webové aplikace není správcem žádných osobních údajů.
