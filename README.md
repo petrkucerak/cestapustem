@@ -75,6 +75,16 @@ K zkvalitnění produktu shormažďujeme anonymizované údaje pomocí služeb:
 
 **_Soukromí je velice důležité a proto používáme služby, které jsou plně anonymní!_**
 
+### Notifikace
+
+K správě Push Notifikací využíváme službu OneSignal. Nástroj analyzuje manipuluci s notifikačními bannery. Zpracovatelem je společnost OneSignal.
+
+Více informací najdete na stránkách:
+- https://onesignal.com/privacy
+- https://onesignal.com/privacy_policy
+- https://onesignal.com/
+
+
 ### Infrastrutura
 
 Shromažďujeme anonymizované údaje a identifikovatelné údaje obsahující IP adresu pomocí služeb CloudFlare. Tento nástroj sleduje přístupy uživatelů na naše webové stránkách především za účelem zabezpečení služby a prevence podvodů.
