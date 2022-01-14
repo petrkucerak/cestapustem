@@ -2,6 +2,7 @@ import '../styles/index.css'
 import { useEffect } from 'react';
 
 export default function MyApp({ Component, pageProps }) {
+  // notifications
   useEffect(() => {
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
