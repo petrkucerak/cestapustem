@@ -18,7 +18,17 @@ export default function Footer() {
             projektu.
           </span>
           <br />
-          <span className=""></span>
+          <span className="">
+            Zajímají tě zásady soukromí, mrkni do{" "}
+            <a
+              className="underline"
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://github.com/petrkucerak/cestapustem#privacy"
+            >
+              readme
+            </a>.
+          </span>
         </div>
         {/* Cloudflare Web Analytics */}
         <script
