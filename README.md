@@ -41,3 +41,51 @@ Momentálně jsou nastaveny 2 templaty:
 2. upozornění pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
 
 _Push notifikace podporují všechny platformy kromě mobilního safari._
+
+## Privacy
+
+### Provozovatel
+
+Provozovatelem webové aplikace je držitel domény [cestapustem.cz](https://www.nic.cz/whois/domain/cestapustem.cz/)
+
+### Cookies
+
+Cookie je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči. Umožňuje webu zaznamenat informace o vaší návštěvě.
+
+Aplikace používá pouze technické soubory cookies, bez kterých by nemohla správně fungovat.
+
+### Analytics
+
+K zkvalitnění produktu shormažďujeme anonymizované údaje pomocí služeb:
+
+1. **Microsoft Clarity**
+    - nástroj sleduje chování uživatelů na webové aplikace
+    - zpracovatelem údajů je společnost Microsoft
+    - více informací najdete na adresách
+      - https://privacy.microsoft.com/cs-cz/privacystatement
+      - https://clarity.microsoft.com/terms
+      - https://clarity.microsoft.com/projects
+2. **CloudFlare Web Analytics**
+    - nástroj monitoruje návštěvnost webové aplikace
+    - zpracovatelem údajů je společnost CloudFlare, Inc.
+    - více informací na jdete na adresách
+      - https://www.cloudflare.com/web-analytics/
+      - https://www.cloudflare.com/privacypolicy/
+
+
+**_Soukromí je velice důležité a proto používáme služby, které jsou plně anonymní!_**
+
+### Infrastrutura
+
+Shromažďujeme anonymizované údaje a identifikovatelné údaje obsahující IP adresu pomocí služeb CloudFlare. Tento nástroj sleduje přístupy uživatelů na naše webové stránkách především za účelem zabezpečení služby a prevence podvodů.
+
+Zpracovatelem je společnost CloudFlare, Inc. Toto zpracování je oprávněným zájmem Provozovatele, neboť se jedná o zabezpečení infrastruktury.
+
+Další informace o CloudFlare naleznete na adresách:
+- https://www.cloudflare.com/privacypolicy/
+- https://www.cloudflare.com/website-terms/
+- https://www.cloudflare.com/cookie-policy/
+
+### Zpracování osobních údajů
+
+Z výše poskytnutých informací jasně vyplývá, že provozovatel webové aplikace nezpracovává žádné osobní údaje, tudíž z provozování neplynou ždáné další právní povinnosti ve vztahu k manipulaci s osobními údaji.
