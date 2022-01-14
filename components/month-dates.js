@@ -39,7 +39,7 @@ export default function MonthDates({ month, posts }) {
       <div className="flex flex-wrap justify-start flex-row">
         {posts.map((post) => {
           let date_t = new Date(post.date);
-          let str = `${date_t.getDate() + 1}.`;
+          let str = `${date_t.getDate()}.`;
           return (
             <Link key={post.slug} href={generateSlugFromDate(date_t)}>
               <a className="mr-4 mb-4 uppercase dark:text-white duration-200 hover:bg-grey-dark hover:text-white font-bold py-2 px-4 rounded">
