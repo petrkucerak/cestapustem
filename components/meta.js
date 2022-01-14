@@ -72,6 +72,12 @@ export default function Meta() {
         name="description"
         content={`Projdi půstem s myšlenou na každý den.`}
       />
+
+      {/* Push notification suppoart */}
+      <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+        async=""></script>
+
+      
     </Head>
   );
 }
