@@ -2,6 +2,14 @@ import '../styles/index.css'
 import { useEffect } from 'react';
 
 export default function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register(
+        `/OneSignalSDKWorker.js`
+      ).then(reg => console.log(reg));
+    }
+  }, []);
+
   // notifications
   useEffect(() => {
     window.OneSignal = window.OneSignal || [];
