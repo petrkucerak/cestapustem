@@ -50,7 +50,7 @@ Provozovatelem webové aplikace je držitel domény [cestapustem.cz](https://www
 
 ### Cookies
 
-Cookies je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči. Umožňuje webu zaznamenat informace o vaší návštěvě.
+Cookies je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči.
 
 Aplikace používá pouze technické soubory cookies, bez kterých by nemohla správně fungovat.
 
