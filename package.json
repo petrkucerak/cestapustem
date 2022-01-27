@@ -21,14 +21,14 @@
     "remark-html": "13.0.2",
     "string.prototype.replaceall": "^1.0.5",
     "sweetalert2": "^11.0.18",
-    "unidecode": "^0.1.8"
+    "unidecode": "^0.1.8",
+    "postcss": "^8.2.4",
+    "autoprefixer": "^10.2.1",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
     "eslint": "^7.29.0",
-    "eslint-config-next": "^11.0.1",
-    "postcss": "^8.2.4",
-    "tailwindcss": "^2.0.2"
+    "eslint-config-next": "^11.0.1"
   },
   "license": "MIT",
   "author": "Petr Kucera (petr@khome.cz)",
