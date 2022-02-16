@@ -19,7 +19,7 @@ export default function PostBody({
         <p className="mt-3">{quote}</p>
       </div>
       <div className="my-5">
-        <h2 className="font-bold text-2xl mt-8 mb-3">Zamyšlení</h2>
+        <h2 className="font-bold text-2xl mt-8 mb-3 whitespace-pre-wrap	">Zamyšlení</h2>
         <p className="mb-3">{reflexion}</p>
         <span className="tracking-wider">
           (Autor:{" "}
