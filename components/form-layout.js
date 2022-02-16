@@ -17,7 +17,8 @@ class Text {
     author,
     description,
     preayer,
-    vivit
+    vivit,
+    vivitsource
   ) {
     this.day = day; // the name of day celebration
     this.date = date; // the simply date
@@ -28,6 +29,7 @@ class Text {
     this.description = description;
     this.preayer = preayer;
     this.vivit = vivit; // Christus Vivit
+    this.vivitsource = vivitsource;
     this.slug = date;
   }
 }
@@ -45,6 +47,7 @@ function saveData() {
   const description = document.getElementById("fdescription").value;
   const preayer = document.getElementById("fpreayer").value;
   const vivit = document.getElementById("fvivit").value;
+  const vivitsource = document.getElementById("fvivitsource").value;
 
   if (
     day !== "" &&
@@ -55,7 +58,8 @@ function saveData() {
     author !== "" &&
     description !== "" &&
     preayer !== "" &&
-    vivit !== ""
+    vivit !== "" &&
+    vivitsource !== ""
   ) {
     const text = new Text(
       day,
@@ -66,7 +70,8 @@ function saveData() {
       author,
       description,
       preayer,
-      vivit
+      vivit,
+      vivitsource
     );
     console.log(date);
     downloadObjectAsJson(text, date);
@@ -122,6 +127,7 @@ export default function FormLayout() {
 
         <h2 className="font-bold text-2xl mt-8">Texty</h2>
 
+        <h3 className="font-bold uppercase tracking-wider">Bible</h3>
         <div className="">
           <label>Úryvek z Bible</label>
           <textarea
@@ -139,8 +145,9 @@ export default function FormLayout() {
           ></input>
         </div>
 
+        <h3 className="font-bold uppercase tracking-wider mt-8">Zamyšlení</h3>
         <div className="">
-          <label>Zamyšlení</label>
+          <label>Text zamyšlení</label>
           <textarea
             rows="10"
             id="freflexion"
@@ -164,22 +171,34 @@ export default function FormLayout() {
           ></textarea>
         </div>
 
+        <h3 className="font-bold uppercase tracking-wider mt-8">Christus Vivit</h3>
         <div className="">
-          <label>Modlitba</label>
-          <textarea
-            rows="5"
-            id="fpreayer"
-            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
-          ></textarea>
-        </div>
-        <div className="">
-          <label>Christus Vivit</label>
+          <label>Úryvek Christus Vivit</label>
           <textarea
             rows="5"
             id="fvivit"
             className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
           ></textarea>
         </div>
+        <div className="">
+          <label>Zdroj</label>
+          <input
+            type="text"
+            id="fvivitsource"
+            className="shadow appearance-none  border border-slate-800 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          ></input>
+        </div>
+
+        <h3 className="font-bold uppercase tracking-wider mt-8">Modlitba</h3>
+        <div className="">
+          <label>Závěrečná modlitba</label>
+          <textarea
+            rows="5"
+            id="fpreayer"
+            className="shadow appearance-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y border rounded-md"
+          ></textarea>
+        </div>
+
         <button
           onClick={() => saveData()}
           className="bg-blue my-8 duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 rounded"
