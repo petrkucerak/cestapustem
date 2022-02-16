@@ -34,6 +34,7 @@ export default function Post({ post, preview }) {
                 preayer={post.preayer}
                 author={post.author}
                 vivit={post.vivit}
+                vivitsource={post.vivitsource}
                 slug={post.slug}
               />
             </article>
