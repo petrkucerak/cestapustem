@@ -16,11 +16,11 @@ export default function PostBody({
       <div className="my-5">
         <h2 className="font-bold text-2xl  mt-8">Úryvek z Bible</h2>
         <span className="text-base tracking-wider">({source})</span>
-        <p className="mt-3">{quote}</p>
+        <p className="mt-3 whitespace-pre-wrap">{quote}</p>
       </div>
       <div className="my-5">
-        <h2 className="font-bold text-2xl mt-8 mb-3 whitespace-pre-wrap	">Zamyšlení</h2>
-        <p className="mb-3">{reflexion}</p>
+        <h2 className="font-bold text-2xl mt-8 mb-3 ">Zamyšlení</h2>
+        <p className="mb-3 whitespace-pre-wrap">{reflexion}</p>
         <span className="tracking-wider">
           (Autor:{" "}
           <Link
@@ -34,11 +34,11 @@ export default function PostBody({
       </div>
       <div className="my-5">
         <h2 className="font-bold text-2xl  mt-8 mb-3">Modlitba</h2>
-        <p className="tracking-wide">{preayer}</p>
+        <p className="tracking-wide whitespace-pre-wrap">{preayer}</p>
       </div>
       <div className="my-5">
         <h2 className="font-bold text-2xl  mt-8 mb-3">Christus Vivit</h2>
-        <p className="tracking-wide">{vivit}</p>
+        <p className="tracking-wide whitespace-pre-wrap">{vivit}</p>
       </div>
     </div>
   );
