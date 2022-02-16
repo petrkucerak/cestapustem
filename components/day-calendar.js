@@ -22,7 +22,7 @@ export default function DayCalendar({ posts }) {
     <section>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Přejít na konkrétní den</h2>
       {data.map((part) => {
-        let date_m = new Date(part[0].date);
+        let date_m = new Date(data[0].date);
         let mon = date_m.getMonth();
         return (
           <div key={date_m}>
