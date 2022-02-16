@@ -2,10 +2,6 @@ import Header from "./header";
 import replaceAllInserter from "string.prototype.replaceall";
 import Swal from "sweetalert2";
 
-function newLineParsering(intput){
-  return null
-}
-
 replaceAllInserter.shim();
 
 /**
