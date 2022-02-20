@@ -25,7 +25,7 @@ export default function PostBody({
         <span className="tracking-wider">
           (Autor:{" "}
           <Link
-            href={"/authors/#" + author + "/"}
+            href={"/authors#" + author}
             className="text-blue hover:text-grey underline ease-in-out transition duration-150"
           >
             {author}
