@@ -5,9 +5,9 @@ export default function MoreInfromation() {
     <section className="px-8 mb-5">
       <h2 className="text-2xl font-bold mt-4 mb-2">Více informací</h2>
       <div className="flex flex-wrap justify-start flex-row">
-        <Link href="/how-read/">
+        <Link href="/about/">
           <a className="uppercase bg-orange duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 my-2 mr-4 rounded">
-            Jak číst brožuru
+            O aplikaci
           </a>
         </Link>
         <Link href="/authors/">
