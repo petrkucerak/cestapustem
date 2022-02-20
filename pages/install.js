@@ -28,32 +28,23 @@ export default function HowRead() {
                   Android
                 </a>
               </Link>
-              <Link href="#PC">
+              {/* <Link href="#PC">
                 <a className="uppercase bg-blue duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 my-2 mr-4 rounded">
                   Pc
                 </a>
-              </Link>
+              </Link> */}
             </div>
             <h2 className="text-2xl font-semibold mt-12" id="IOs">Iphone</h2>
             <Image
               src="/images/ios.gif"
               className="my-2"
               alt="jak naisntalovat na Iphone"
-
             ></Image>
             <h2 className="text-2xl font-semibold mt-12" id="android">Android</h2>
             <Image
-              src="/images/ios.gif"
+              src="/images/android.gif"
               className="my-2"
-              alt="jak naisntalovat na Iphone"
-
-            ></Image>
-            <h2 className="text-2xl font-semibold mt-12" id="PC">Počítač</h2>
-            <Image
-              src="/images/ios.gif"
-              className="my-2"
-              alt="jak naisntalovat na Iphone"
-
+              alt="jak naisntalovat na Android"
             ></Image>
           </section>
         </Container>
