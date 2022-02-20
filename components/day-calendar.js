@@ -2,13 +2,14 @@ import MonthDates from "../components/month-dates";
 
 export default function DayCalendar({ posts }) {
 
-  let month_tmp = 0;
+  let date_tmp = new Date(posts[0].date);
+  let month_tmp = date_tmp.getMonth();
   let data = new Array;
   data.push(new Array);
   let ind = 0;
 
   for (let i = 0; i < posts.length; i++) {
-    let date_tmp = new Date(posts[i].date);
+    date_tmp = new Date(posts[i].date);
     // create a new node
     if (month_tmp != date_tmp.getMonth()) {
       month_tmp = date_tmp.getMonth();
