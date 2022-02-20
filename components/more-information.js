@@ -4,7 +4,7 @@ export default function MoreInfromation() {
   return (
     <section className="px-8 mb-5">
       <h2 className="text-2xl font-bold mt-4 mb-2">Více informací</h2>
-      <div className="flex flex-wrap justify-start flex-row">
+      <div className="flex flex-wrap justify-start flex-row text-sm">
         <Link href="/about/">
           <a className="uppercase bg-orange duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 my-2 mr-4 rounded">
             O aplikaci
