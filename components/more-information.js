@@ -17,7 +17,7 @@ export default function MoreInfromation() {
         </Link>
         <Link href="/install/">
           <a className="uppercase bg-blue duration-200 hover:bg-grey-dark	text-white font-bold py-2 px-4 my-2 mr-4 rounded">
-            instalace na mobil
+            jak nainstalovat
           </a>
         </Link>
         <Link href="/introduction#Jan">
