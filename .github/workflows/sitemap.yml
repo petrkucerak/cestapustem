@@ -1,11 +1,22 @@
 name: 🧭 Sitemap generator
-on: push
+on:
+  pull_request:
+  push:
+    branches:
+      - "main"
 jobs:
-  build:
+  sitemap-generator:
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v2
+    
     - name: Install modules
       run: yarn
+      
     - name: Run sitemap generator
       run: yarn sitemap
+      
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Generate sitemap"
