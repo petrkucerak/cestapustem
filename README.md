@@ -8,7 +8,7 @@ Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hra
 
 ## Architektura projektu
 
-Aplikace je postavená na Next.js a o to, aby vypadal dobře se stará Tailwind. Obsah stránek s textem je kompilovaný z jsonu, který generuje speciální formulář, který najdete na stránce: https://cestapustem.cz/form.
+Aplikace je postavená na Next.js a o to, aby vypadala dobře se stará Tailwind. Obsah stránek s textem je kompilovaný z jsonu, který generuje speciální formulář, který najdete na stránce: https://cestapustem.cz/form.
 
 Na pozadí běží service worker, který umožňuje:
 
