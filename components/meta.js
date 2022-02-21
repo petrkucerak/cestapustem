@@ -1,16 +1,20 @@
 import Head from "next/head";
 
 export default function Meta() {
+  const description = "Cesta půstem je webová aplikace k tištěné verzi knihy Půst, která se každoročně vydává v Královéhradecké diecézi. Letos do knihy přispívali hlavně mladí z naší diecéze. Každý den si můžeš přečíst evangelium, zamyšlení, krátký úryvek z exhortace papeže Františka Christus vivit a krátkou modlitbu.";
+  const title = "Cesta půstem";
+  const keywords = "Cesta půstem, půst, brožura, putování, DCM Hradec Králové, DCŽM Vesmír, postní brožura, popeleční středa";
   return (
     <Head>
-      <meta name="application-name" content="Cesta půstem" />
+      <meta name="application-name" content={title} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="apple-mobile-web-app-title" content="PWA App" />
       <meta
         name="description"
-        content="Projdi půstem s myšlenou na každý den."
+        content={description}
       />
+      <meta name="keywords" content={keywords} />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-tap-highlight" content="no" />
@@ -48,36 +52,31 @@ export default function Meta() {
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content="https://cestapustem.cz/" />
-      <meta name="twitter:title" content="Cesta půstem" />
+      <meta name="twitter:title" content={title} />
       <meta
         name="twitter:description"
-        content="Projdi půstem s myšlenou na každý den."
+        content={description}
       />
       <meta name="twitter:site" content="@petrkucerak" />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Cesta půstem" />
+      <meta property="og:title" content={title} />
       <meta
         property="og:description"
-        content="Projdi půstem s myšlenou na každý den."
+        content={description}
       />
-      <meta property="og:site_name" content="Cesta půstem" />
+      <meta property="og:site_name" content={title} />
       <meta property="og:url" content="https://cestapustem.cz/" />
 
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#50A2A7" />
 
-      <meta
-        name="description"
-        content={`Projdi půstem s myšlenou na každý den.`}
-      />
-
       {/* Push notification suppoart */}
       <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-        async=""></script>
+        async></script>
 
-      
+
     </Head>
   );
 }
