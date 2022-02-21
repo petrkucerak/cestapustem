@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 
 export default function Meta() {
   const description = "Cesta půstem je webová aplikace k tištěné verzi knihy Půst, která se každoročně vydává v Královéhradecké diecézi. Letos do knihy přispívali hlavně mladí z naší diecéze. Každý den si můžeš přečíst evangelium, zamyšlení, krátký úryvek z exhortace papeže Františka Christus vivit a krátkou modlitbu.";
@@ -72,11 +71,6 @@ export default function Meta() {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#50A2A7" />
-
-      {/* Push notification suppoart */}
-      <Script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-        async />
-
 
     </Head>
   );

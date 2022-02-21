@@ -38,6 +38,9 @@ export default function Footer() {
           data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'
         />
         {/* End Cloudflare Web Analytics */}
+        {/* Push notification suppoart */}
+        <Script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+          async />
       </Container>
     </footer>
   );
