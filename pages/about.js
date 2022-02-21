@@ -24,6 +24,17 @@ export default function HowRead() {
               exhortace papeže Františka Christus vivit a krátkou modlitbu. Za
               tým autorů a tvůrců přejeme příjemné prožití postní doby.
             </p>
+            <p>
+              Aplikace je open-source. Pokud ji chceš pomoct vylepšit, podívej se
+              do <a
+                className="underline"
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://github.com/petrkucerak/cestapustem/"
+              >
+                repozitáře projektu,
+              </a> vytvoř issues a pošlu nějaký pull request.
+            </p>
           </section>
         </Container>
       </Layout>

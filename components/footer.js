@@ -4,30 +4,18 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100">
       <Container>
-        <div className="text-grey text-base px-8 py-4 content-center">
+        <div className="text-grey text-base px-8 py-4 content-center text-center">
           <span>
-            Chceš o aplikaci vědět víc, mrkni do{" "}
+            Chceš vědět o pojektu víc, mrkni do{" "}
             <a
               className="underline"
               target="_blank"
               rel="noreferrer noopener"
               href="https://github.com/petrkucerak/cestapustem/"
             >
-              repozitáře
-            </a>{" "}
-            projektu.
-          </span>
-          <br />
-          <span className="">
-            Zajímají tě zásady soukromí, mrkni do{" "}
-            <a
-              className="underline"
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://github.com/petrkucerak/cestapustem#privacy"
-            >
-              readme
-            </a>.
+              repa
+            </a>
+            .
           </span>
         </div>
         {/* Cloudflare Web Analytics */}
