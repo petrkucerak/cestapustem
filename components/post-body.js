@@ -16,8 +16,8 @@ export default function PostBody({
       <PostImage slug={slug}></PostImage>
       <div className="my-5">
         <h2 className="font-bold text-2xl mt-8">Úryvek z Bible</h2>
-        <span className="text-base tracking-wider">({source})</span>
-        <p className="mt-3 whitespace-pre-wrap">{quote}</p>
+        <span className="text-base tracking-wider ">({source})</span>
+        <p className="mt-3 whitespace-pre-wrap leading-relaxed">{quote}</p>
       </div>
       <div className="my-5">
         <h2 className="font-bold text-2xl mt-8 mb-3 ">Zamyšlení</h2>
@@ -40,7 +40,7 @@ export default function PostBody({
       </div>
       <div className="my-5">
         <h2 className="font-bold text-2xl  mt-8 mb-3">Modlitba</h2>
-        <p className="tracking-wide whitespace-pre-wrap">{preayer}</p>
+        <p className="tracking-wide whitespace-pre-wrap leading-relaxed">{preayer}</p>
       </div>
     </div>
   );
