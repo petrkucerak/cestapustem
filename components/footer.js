@@ -1,4 +1,5 @@
 import Container from "./container";
+import Script from "next/script";
 
 export default function Footer() {
   return (
@@ -31,11 +32,11 @@ export default function Footer() {
           </span>
         </div>
         {/* Cloudflare Web Analytics */}
-        <script
+        <Script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'
-        ></script>
+        />
         {/* End Cloudflare Web Analytics */}
       </Container>
     </footer>
