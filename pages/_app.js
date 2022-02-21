@@ -6,7 +6,7 @@ export default function MyApp({ Component, pageProps }) {
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register(
         `/OneSignalSDKWorker.js`
-      )//.then(reg => console.log(reg));
+      ).then(/*reg => console.log(reg)*/);
     }
   }, []);
 
