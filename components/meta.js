@@ -72,11 +72,6 @@ export default function Meta() {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#50A2A7" />
 
-      {/* Push notification suppoart */}
-      <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-        async></script>
-
-
     </Head>
   );
 }
