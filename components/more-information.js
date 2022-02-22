@@ -27,7 +27,7 @@ export default function MoreInfromation() {
         </Link>
         <Link href="/introduction#Prokop">
           <a className="uppercase bg-yellow duration-200 hover:bg-grey-dark	hover:text-white text-grey font-bold py-2 px-4 my-2 mr-4 rounded">
-            slovo o. Prokopa Brože
+            slovo p. Prokopa Brože
           </a>
         </Link>
       </div>
