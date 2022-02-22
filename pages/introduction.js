@@ -50,11 +50,13 @@ export default function HowRead() {
               Slovo otce Prokopa Brože
             </h2>
             <p className="my-2">
-              V brožuře jsou uvedeny úryvky z posynodáln apoštolské exhortace
+              V brožuře jsou uvedeny úryvky z posynodální apoštolské exhortace
               Christus vivit – Kristus žije, kterou vydal papež František na
               základě biskupské synody, která se konala v roce 2018 na téma
-              <em> Mladí, víra a rozlišování povolání.</em> Vážení přátelé,
-              bratři a sestry, v posledních letech stále více chápu dobu postní
+              <em> Mladí, víra a rozlišování povolání.</em>
+            </p>
+            <p className="my-2">
+              Vážení přátelé, bratři a sestry, v posledních letech stále více chápu dobu postní
               jako čas, který nám je dán, aby hojil a léčil. Papež František v
               textu Dopisy o utrpení popisuje situaci Tovaryšstva Ježíšova v
               době, kdy byl řád bulou Klementa XIV.<em>Dominus ac Redemptor</em>{" "}
