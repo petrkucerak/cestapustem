@@ -24,7 +24,7 @@ export default function HowRead() {
               exhortace papeže Františka Christus vivit a krátkou modlitbu. Za
               tým autorů a tvůrců přejeme příjemné prožití postní doby.
             </p>
-            <p>
+            <p className="my-2">
               Aplikace je open-source. Pokud ji chceš pomoct vylepšit, podívej se
               do <a
                 className="underline"
@@ -33,7 +33,7 @@ export default function HowRead() {
                 href="https://github.com/petrkucerak/cestapustem/"
               >
                 repozitáře projektu,
-              </a> vytvoř issues a pošlu nějaký pull request.
+              </a> vytvoř issues a pošli pull request.
             </p>
           </section>
         </Container>

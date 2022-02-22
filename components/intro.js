@@ -27,7 +27,8 @@ export default function Intro() {
       <div className="w-full flex justify-center m-0">
         <Image src="/icon.svg" height={200} width={200} alt="App icon"></Image>
       </div>
-      <h1 className="text-4xl font-bold mx-8 mb-5">Cesta půstem</h1>
+      <h1 className="text-4xl font-bold mx-8 mb-1">Cesta půstem</h1>
+      <p className="text-lg mx-8">Duchovní průvodce postní dobou z&nbsp;dílny Královéhradecké diecéze.</p>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Číst text</h2>
       <div className="mx-8 flex flex-wrap justify-start flex-row">
         <Link href={generateSlugFromDate(yestarday)}>
