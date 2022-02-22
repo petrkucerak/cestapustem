@@ -36,13 +36,13 @@ export default function MonthDates({ month, posts }) {
 
     <div className="mx-8">
       <h3 className="text-base uppercase font-bold mt-4 mb-2">{months[month]}</h3>
-      <div className="flex flex-wrap justify-start flex-row">
+      <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           let date_t = new Date(post.date);
           let str = `${date_t.getDate()}.`;
           return (
             <Link key={post.slug} href={generateSlugFromDate(date_t)}>
-              <a className="mr-4 mb-4 uppercase dark:text-white duration-200 hover:bg-grey-dark hover:text-white font-bold py-2 px-4 rounded">
+              <a className="uppercase dark:text-white duration-200 hover:bg-grey-dark hover:text-white font-bold py-2 px-4 rounded text-center">
                 {str}
               </a>
             </Link>
