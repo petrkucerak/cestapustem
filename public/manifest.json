@@ -2,7 +2,7 @@
   "name": "Cesta půstem",
   "short_name": "cestapůstem",
   "theme_color": "#50A2A7",
-  "description": "Projdi půstem s myšlenou na každý den.",
+  "description": "Cesta půstem je webová aplikace k tištěné verzi knihy Půst, která se každoročně vydává v Královéhradecké diecézi. Letos do knihy přispívali hlavně mladí z naší diecéze. Každý den si můžeš přečíst evangelium, zamyšlení, krátký úryvek z exhortace papeže Františka Christus vivit a krátkou modlitbu.",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
