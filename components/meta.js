@@ -71,6 +71,8 @@ export default function Meta() {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" content="#50A2A7" />
+      
+      <meta name="robots" content="all" />
 
     </Head>
   );
