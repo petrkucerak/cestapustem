@@ -2,7 +2,6 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 const fs = require("fs");
 
 module.exports.text2speech = () => {
-    console.log('hi');
     allJsons();
 
     function allJsons() {
