@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sitemap": "next build && next-sitemap"
+    "sitemap": "next build && next-sitemap",
+    "text2speech": "node -e 'require(\"./text2speech\").text2speech()'"
   },
   "dependencies": {
     "@fluentui/react": "^8.20.2",
