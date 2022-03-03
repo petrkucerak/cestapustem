@@ -42,6 +42,12 @@ Momentálně jsou nastaveny 2 templaty:
 
 _Push notifikace podporují všechny platformy kromě mobilního safari._
 
+## Audionahrávky
+
+V aplikaci jsou generovány audionahrávky k textům pomocí služby Azure Speech Serivces.
+
+Více o tétot části si můžete přečíst zde: https://petrkucerak.notion.site/Jak-vytvo-it-podcast-z-blogu-pomoc-AI-9f0f7ce6ac7a47b69b78966d4faabee6.
+
 ## Privacy
 
 ### Provozovatel
