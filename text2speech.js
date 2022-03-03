@@ -40,7 +40,7 @@ module.exports.text2speech = () => {
         speechConfig.speechSynthesisVoiceName = "cs-CZ-AntoninNeural";
 
         // Set the output format
-        speechConfig.speechSynthesisOutputFormat = 22;
+        speechConfig.speechSynthesisOutputFormat = 21;
 
         const audioConfig = sdk.AudioConfig.fromAudioFileOutput(`public/audio/${filename}.mp3`);
 
