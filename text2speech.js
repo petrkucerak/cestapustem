@@ -2,9 +2,16 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 const fs = require("fs");
 
 module.exports.text2speech = () => {
-    allJsons();
 
-    function allJsons() {
+    // process variables
+    const argv = process.argv;
+    if(argv[1] === "" || argv[2] === ""){
+        console.error("ERROR: Set up SPEECH_KEY and LOCATION_REGION!");
+        return;
+    }
+    allJsons(argv[1], argv[2]);
+
+    function allJsons(SPEECH_KEY, LOCATION_REGION) {
         fs.readdir("_days/", (err, filenames) => {
             if (err) {
                 onerror(err);
@@ -35,7 +42,7 @@ module.exports.text2speech = () => {
         // Set the output format
         speechConfig.speechSynthesisOutputFormat = 21;
 
-        const audioConfig = sdk.AudioConfig.fromAudioFileOutput(filename);
+        const audioConfig = sdk.AudioConfig.fromAudioFileOutput(`public/audio/${filename}.mp3`);
 
         const synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
         synthesizer.speakTextAsync(
