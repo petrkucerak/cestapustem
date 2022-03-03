@@ -1,5 +1,6 @@
 import PostImage from "../components/post-image";
 import { Link } from "@fluentui/react";
+import ReactAudioPlayer from "react-audio-player";
 
 export default function PostBody({
   quote,
@@ -14,6 +15,11 @@ export default function PostBody({
   return (
     <div className="max-w-screen-lg mx-8 text-lg leading-7">
       <PostImage slug={slug}></PostImage>
+      <ReactAudioPlayer
+        src={`/audio/${slug}.mp3`}
+        controls
+        className="w-full"
+      />
       <div className="my-5">
         <h2 className="font-bold text-2xl mt-8">Úryvek z Bible</h2>
         <span className="text-base tracking-wider ">({source})</span>
