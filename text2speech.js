@@ -5,7 +5,7 @@ module.exports.text2speech = () => {
 
     // process variables
     const argv = process.argv;
-    if(argv[1] === "" || argv[2] === ""){
+    if (argv[1] === "" || argv[2] === "") {
         console.error("ERROR: Set up SPEECH_KEY and LOCATION_REGION!");
         return;
     }
@@ -27,6 +27,7 @@ module.exports.text2speech = () => {
                     let text = `Vítej u dnešního zamyšlení na Tvé cestě Půstem!\nDnes je ${contentJSON.day} a autorem zamyšlení je ${contentJSON.author}.\n\nÚryvek z Bible\n${contentJSON.quote}\n\nZamyšlení\n${contentJSON.reflexion}\n\nDnešní sekce z Christus Vivit\n${contentJSON.vivit}\n\nZávěrečná modlitba\n${contentJSON.preayer}`;
                     // console.log(contentJSON.slug + text);
                     SynthesizeSpeech(text, contentJSON.slug, SPEECH_KEY, LOCATION_REGION);
+                    setTimeout(() => { console.log(contentJSON.slug); }, 4000);
                 });
             });
         });
