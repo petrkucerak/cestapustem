@@ -1,0 +1,17 @@
+name: 🔊 Text2Speech
+on: workflow_dispatch
+jobs:
+  synthetize:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install modules
+      run: yarn
+    
+    - name: Run text2speech script
+      run: yarn text2speech ${{ secrets.SPEECH_KEY }} ${{ secrets.LOCATION_REGION }}
+    
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Synthetized text to mp3 files
