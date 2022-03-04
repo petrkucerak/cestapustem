@@ -19,6 +19,7 @@ export default function PostBody({
         src={`/audio/${slug}.mp3`}
         controls
         className="w-full"
+        id="audio"
       />
       <div className="my-5">
         <h2 className="font-bold text-2xl mt-8">Úryvek z Bible</h2>
