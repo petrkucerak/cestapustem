@@ -46,7 +46,7 @@ _Push notifikace podporují všechny platformy kromě mobilního safari._
 
 V aplikaci jsou generovány audionahrávky k textům pomocí služby Azure Speech Serivces.
 
-Více o tétot části si můžete přečíst zde: https://petrkucerak.notion.site/Jak-vytvo-it-podcast-z-blogu-pomoc-AI-9f0f7ce6ac7a47b69b78966d4faabee6.
+Více o této části si můžete přečíst zde: https://blog.petrkucerak.cz/post/Jak-z-blogu-vytvorit-podcast-pomoci-AI.
 
 ## Privacy
 
