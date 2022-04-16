@@ -16,8 +16,12 @@ export default function Navigation() {
   let tmp = new Date();
   const yestarday = new Date(tmp.setDate(tmp.getDate() - 1));
   const tomorrow = new Date(tmp.setDate(tmp.getDate() + 2));
+  const limit = new Date("2022-04-17");
+  let status = "";
+  if(today.getTime()>=limit.getTime()) status = "hidden";
+
   return (
-    <div>
+    <div className={status}>
       <h2 className="text-2xl font-bold mx-8 mt-4 mb-2">Číst text</h2>
       <div className="mx-8 flex flex-wrap justify-start flex-row">
         <Link href={generateSlugFromDate(yestarday)}>
