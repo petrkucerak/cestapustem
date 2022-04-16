@@ -6,7 +6,7 @@ export default function Feedback() {
       <h2 className="text-2xl font-bold mt-4 mb-2">Zpětná vazba</h2>
       <p className="text-lg">
         Cesta půstem vás provázela celou postní dobou. Prosím, udělejte si na
-        nic chvilku času a vyplňte nám krátký dotazník, který nám ji pomůže
+        ni chvilku času a vyplňte nám krátký dotazník, který nám ji pomůže
         zlepšit.{" "}
       </p>
       <Link href="https://forms.gle/sRGxs89o6F8HfJym7">
