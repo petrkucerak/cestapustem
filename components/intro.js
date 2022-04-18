@@ -20,7 +20,7 @@ export default function Intro() {
         Františka Christus vivit a krátkou modlitbu.
       </p>
       <Feedback />
-      <Navigation/>
+      // <Navigation/>
     </section>
   );
 }
