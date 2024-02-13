@@ -1,12 +1,21 @@
-const withPWA = require("next-pwa");
-const runtimeCaching = require('next-pwa/cache');
+const runtimeCaching = require("next-pwa/cache");
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
 
 module.exports = withPWA({
-  trailingSlash: true,
+  // next.js config
+  disable: process.env.NODE_ENV === "development",
+  register: true,
+  skipWaiting: true,
+  cacheOnFrontEndNav: true,
+  publicExcludes: ["!favicon/*/**", "!audio/**"],
+  buildExcludes: ["!audio/**"],
   async headers() {
     return [
       {
-        source: "/day/:slug*",
+        source: "/den/:slug*",
         headers: [
           /*
               s-maxage=2419200, // Set the max age of the cached content to a month (28 days)
@@ -22,11 +31,5 @@ module.exports = withPWA({
       },
     ];
   },
-  pwa: {
-    dest: "public",
-    // cacheOnFrontEndNav: true, // make all page linked form index cached
-    disable: process.env.NODE_ENV === "development",
-    register: false,
-    runtimeCaching,
-  },
+  runtimeCaching,
 });

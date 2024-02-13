@@ -23,17 +23,22 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # vercel
 .vercel
 
-# PWA files
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Auto Generated Tailwind style file
+dist.css
+
+# Auto Generated PWA files
 **/public/sw.js
 **/public/workbox-*.js
 **/public/worker-*.js
@@ -41,3 +46,5 @@ yarn-error.log*
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 **/public/fallback-*.js
+
+.tmp

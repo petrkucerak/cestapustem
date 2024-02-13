@@ -1,35 +1,64 @@
-import Container from "./container";
-import Script from "next/script";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100">
-      <Container>
-        <div className="text-grey text-base px-8 py-4 content-center text-center">
-          <span>
-            Chceš vědět o pojektu víc, mrkni do{" "}
-            <a
-              className="underline"
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://github.com/petrkucerak/cestapustem/"
-            >
-              repa
-            </a>
-            .
-          </span>
-        </div>
-        {/* Cloudflare Web Analytics */}
-        <Script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "a2709112029e46e18ebc63cbb57563fd"}'
-        />
-        {/* End Cloudflare Web Analytics */}
-        {/* Push notification suppoart */}
-        <Script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-          async />
-      </Container>
+    <footer className=" py-6 border-t-violet-light border-t mx-4 flex flex-row justify-between">
+      <Link href={"/"}>
+        <img
+          src="/icon.svg"
+          className="w-8 inline"
+          alt="Fialový rozcestník"
+          title="Ikona aplikace"
+        />{" "}
+        <span className="font-semibold text-violet-light">Adventní cesta</span>
+      </Link>
+      <div>
+        <span>
+          <Link
+            href="mailto:info@adventnicesta.cz"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mr-2"
+          >
+            <img
+              src="/icons/alert.svg"
+              className="inline w-6 dark:text-white"
+              alt="Ikona upozornění"
+              title="Nahlásti chybu"
+            />
+          </Link>
+        </span>
+        <span>
+          <Link
+            href="mailto:info@adventnicesta.cz"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mr-2"
+          >
+            <img
+              src="/icons/mail.svg"
+              className="inline w-6 dark:text-white"
+              alt="Ikona mailu"
+              title="Odeslat mail"
+            />
+          </Link>
+        </span>
+        <span>
+          <Link
+            href="https://github.com/petrkucerak/adventnicesta"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mr-2"
+          >
+            <img
+              src="/icons/github.svg"
+              className="inline w-6 dark:text-white"
+              alt="Ikona GitHubu"
+              title="Repozitář projektu"
+            />
+          </Link>
+        </span>
+      </div>
     </footer>
   );
 }

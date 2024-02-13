@@ -1,28 +1,34 @@
-import Container from "../components/container";
-import Layout from "../components/layout";
 import Head from "next/head";
-import { Image } from "@fluentui/react";
+import Layout from "../components/layout";
+import Button from "../components/utils/button";
 
-import React from "react";
-React.useLayoutEffect = React.useEffect;
-
-export default function Offline() {
+export default function Error404() {
   return (
     <>
+      <Head>
+        <title>Tato stránka není nacachovaná - Adventní cesta</title>
+      </Head>
       <Layout>
-        <Head>
-          <title>Cesta půstem</title>
-        </Head>
-        <Container>
-          <div className="w-full flex justify-center m-0">
-            <Image src="/icon.svg" height={200} width={200} alt="App icon"></Image>
-          </div>
-          <div className="text-xl my-4 mx-8">
-            Vypadá to, že nejsi připojený na internet a tato stránka se ti
-            automaticky nestáhla do paměti. Řešení je jednoduché, připoj se na
-            internet nebo se vrať zpět a přejdi na jinou stranu.
-          </div>
-        </Container>
+        <div className="mx-6 flex flex-col">
+          <img
+            src="/icon.svg"
+            className="h-48"
+            alt="Fialový rozcestník"
+            title="Logo adventní cesty"
+          />
+          <h1 className="text-4xl font-bold text-center">Adventní cesta</h1>
+        </div>
+        <h2 className="mx-6 text-2xl uppercase font-bold mt-8 text-center">
+          Jaaaj... Tato stránka není nacachovaná
+        </h2>
+        <p className="mx-6 text-xl mt-8">
+          Stránka se nemůže načíst, protože se nestihla stáhnout, když bylo
+          zařízení připojené na internet. Pro načtení, je se třeba znovu
+          připojit.
+        </p>
+        <div className="flex flex-row justify-center mt-4 mb-10">
+          <Button href="/" content="HLAVNÍ STRANA" />
+        </div>
       </Layout>
     </>
   );

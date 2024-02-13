@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Audio player*/
+.rhap_container {
+  background-color: #ffffff00 !important;
+}
