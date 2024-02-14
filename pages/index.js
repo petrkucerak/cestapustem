@@ -17,8 +17,8 @@ export default function Home({ allPosts }) {
           <img
             src="/icon.svg"
             className="h-48"
-            alt="Fialový rozcestník"
-            title="Logo adventní cesty"
+            alt="Žlutý rozcestník"
+            title="Logo cesty půstem"
           />
           <h1 className="text-4xl font-bold text-center">Cesta půstem</h1>
         </div>

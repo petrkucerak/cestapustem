@@ -7,7 +7,7 @@ export default function Autori({ allPosts }) {
   return (
     <>
       <Head>
-        <title>Autoři Adventní cesta</title>
+        <title>Autoři Cesty půstem</title>
       </Head>
       <Layout>
         <ArticleHeader />
@@ -24,7 +24,9 @@ export default function Autori({ allPosts }) {
               );
             })}
           </ul>
-          <h2 className="text-2xl font-bold mt-8 mb-2">Na přípravě se dále podíleli</h2>
+          <h2 className="text-2xl font-bold mt-8 mb-2">
+            Na přípravě se dále podíleli
+          </h2>
           <p className="mb-8">
             Anna Maclová, Prokop Brož, Zuzana Macečková, Anna Hrčková a Jiří
             Bittner

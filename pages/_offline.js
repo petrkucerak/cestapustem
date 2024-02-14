@@ -6,17 +6,17 @@ export default function Error404() {
   return (
     <>
       <Head>
-        <title>Tato stránka není nacachovaná - Adventní cesta</title>
+        <title>Tato stránka není nacachovaná - Cesta půstem</title>
       </Head>
       <Layout>
         <div className="mx-6 flex flex-col">
           <img
             src="/icon.svg"
             className="h-48"
-            alt="Fialový rozcestník"
-            title="Logo adventní cesty"
+            alt="Žlutý rozcestník"
+            title="Logo cesty půstem"
           />
-          <h1 className="text-4xl font-bold text-center">Adventní cesta</h1>
+          <h1 className="text-4xl font-bold text-center">Cesta půstem</h1>
         </div>
         <h2 className="mx-6 text-2xl uppercase font-bold mt-8 text-center">
           Jaaaj... Tato stránka není nacachovaná
