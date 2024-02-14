@@ -7,15 +7,15 @@ export default function Footer() {
         <img
           src="/icon.svg"
           className="w-8 inline"
-          alt="Fialový rozcestník"
+          alt="Zelený rozcestník"
           title="Ikona aplikace"
         />{" "}
-        <span className="font-semibold text-primary-light">Adventní cesta</span>
+        <span className="font-semibold text-primary-light">Cesta půstem</span>
       </Link>
       <div>
         <span>
           <Link
-            href="mailto:info@adventnicesta.cz"
+            href="mailto:info@cestapustem.cz"
             target="_blank"
             rel="noreferrer noopener"
             className="mr-2"
@@ -30,7 +30,7 @@ export default function Footer() {
         </span>
         <span>
           <Link
-            href="mailto:info@adventnicesta.cz"
+            href="mailto:info@cestapustem.cz"
             target="_blank"
             rel="noreferrer noopener"
             className="mr-2"
@@ -45,7 +45,7 @@ export default function Footer() {
         </span>
         <span>
           <Link
-            href="https://github.com/petrkucerak/adventnicesta"
+            href="https://github.com/petrkucerak/cestapustem"
             target="_blank"
             rel="noreferrer noopener"
             className="mr-2"
