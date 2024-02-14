@@ -62,9 +62,12 @@ def remove_breaks_if_no_dot(text):
 
     return processed_text
 
-
+# Get author details
+data_row = content.split("===========")
 # Rozdělení obsahu souboru na jednotlivé dny
-days = content.split('xxx')
+days = data_row[0].split('xxx')
+
+author_details = data_row[1].split("\n\n")
 
 # Slovník pro ukládání JSON souborů
 json_files = {}
@@ -87,7 +90,7 @@ for day in days:
         }
 
         # Uložení popisu autora do slovníku pro každý den
-        author_description = parts[7] if len(parts) > 7 else ""
+        author_description = ''.join([element for element in author_details if parts[5] in element])
         day_data["authorDescription"] = author_description
 
         # Uložení JSON dat do slovníku
@@ -99,7 +102,3 @@ for date, data in json_files.items():
     with open(file_name, 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=2)
 
-# # Výpis názvů několika vytvořených souborů jako příklad
-# example_files = list(json_files.keys())[:3]
-# example_files_paths = [f"/test/{date}.json" for date in example_files]
-# example_files_paths
