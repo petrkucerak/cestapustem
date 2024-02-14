@@ -13,7 +13,7 @@ import FontSizeControler from "../../components/utils/fontsize-controler";
 export default function Post({ post, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <Error statusCode={404} />;
-  const title = `${post.dayName} - Adventní cesta`;
+  const title = `${post.dayName} - Cesta půstem`;
 
   const titleClass = "titleClass";
   const textClass = "textClass";
@@ -33,19 +33,7 @@ export default function Post({ post, preview }) {
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>Podcast</h2>
           <p className={`${textClass} text-lg mb-4 italic`}>
             Dnešní zamyšlení si můžeš přehrát i&nbsp;ve formě podcastu
-            generovaného AI přímo tady nebo na{" "}
-            <Link
-              href={
-                "https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=7ad72e34e408463e"
-              }
-              content="Nahrávky na Spotify"
-              target={"_blank"}
-              rel={"noreferrer noopener external"}
-              className="underline"
-            >
-              Spotify
-            </Link>
-            .
+            generovaného AI.
           </p>
           <AudioPlayer src={`/audio/${post.slug}.mp3`} autoPlay={false} />
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>
