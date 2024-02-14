@@ -1,74 +1,34 @@
 {
-  "name": "Adventní cesta",
-  "short_name": "Adventní cesta",
-  "theme_color": "#543fb6",
+  "name": "Cesta půstem",
+  "short_name": "cestapůstem",
+  "theme_color": "#50A2A7",
   "background_color": "#ffffff",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "Tvůj průvodce na cestě Adventem",
+  "description": "Tvůj průvodce na cestě Půstem",
   "dir": "auto",
   "scope": "/",
   "lang": "cs",
-  "categories": ["books", "education", "health", "utilities"],
+  "categories": [
+    "books",
+    "education",
+    "health",
+    "utilities"
+  ],
   "shortcuts": [
     {
-      "name": "Adventní cesta",
-      "url": "https://adventnicesta.cz/",
+      "name": "Cesta půstem",
+      "url": "https://cestapustem.cz/",
       "icons": [
         {
-          "src": "https://adventnicesta.cz/icon.png"
+          "src": "https://cestapustem.cz/icon.png"
         }
       ],
-      "description": "Tvůj průvodce na cestě Adventem"
+      "description": "Tvůj průvodce na cestě Půstem"
     }
   ],
   "icons": [
-    {
-      "src": "/favicon/android-chrome-36x36.png",
-      "sizes": "36x36",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-48x48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
     {
       "src": "/favicon/windows11/SmallTile.scale-100.png",
       "sizes": "71x71"
@@ -390,27 +350,27 @@
       "sizes": "256x256"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-512-512.png",
+      "src": "/favicon/android/android-launchericon-512-512.png",
       "sizes": "512x512"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-192-192.png",
+      "src": "/favicon/android/android-launchericon-192-192.png",
       "sizes": "192x192"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-144-144.png",
+      "src": "/favicon/android/android-launchericon-144-144.png",
       "sizes": "144x144"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-96-96.png",
+      "src": "/favicon/android/android-launchericon-96-96.png",
       "sizes": "96x96"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-72-72.png",
+      "src": "/favicon/android/android-launchericon-72-72.png",
       "sizes": "72x72"
     },
     {
-      "src": "/favicon/android/favicon/android-launchericon-48-48.png",
+      "src": "/favicon/android/android-launchericon-48-48.png",
       "sizes": "48x48"
     },
     {

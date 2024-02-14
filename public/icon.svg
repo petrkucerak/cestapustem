@@ -7,9 +7,9 @@
    viewBox="0 0 199 199"
    version="1.1"
    id="svg8"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="icon.svg"
-   inkscape:export-filename="icons\icon.png"
+   inkscape:export-filename="C:\Users\pkucera\Documents\Repos\cestapustem\public\icon.png"
    inkscape:export-xdpi="65.349998"
    inkscape:export-ydpi="65.349998"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -54,39 +54,6 @@
          x="55.046829"
          y="77.929161" />
     </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath4698-2">
-      <rect
-         style="opacity:1;fill:#f25441;fill-opacity:1;stroke:none;stroke-width:9.69265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect4700-3"
-         width="49.678223"
-         height="105.86697"
-         x="55.046829"
-         y="77.929161" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath4694-7">
-      <rect
-         style="opacity:1;fill:#f25441;fill-opacity:1;stroke:none;stroke-width:9.69265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect4696-1"
-         width="49.678223"
-         height="105.86697"
-         x="55.046829"
-         y="77.929161" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath4690-1">
-      <rect
-         style="opacity:1;fill:#f25441;fill-opacity:1;stroke:none;stroke-width:9.69265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect4692-3"
-         width="49.678223"
-         height="105.86697"
-         x="55.046829"
-         y="77.929161" />
-    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -96,19 +63,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="335.71429"
-     inkscape:cy="480"
+     inkscape:cx="-55"
+     inkscape:cy="342.14286"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1410"
-     inkscape:window-height="1017"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:pagecheckerboard="0"
-     inkscape:showpageshadow="0"
-     inkscape:deskcolor="#d1d1d1" />
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -126,68 +91,64 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-5.1141172,-47.306988)">
-    <g
-       id="g1319"
-       transform="translate(0.3974687,-1.6930135)">
-      <path
-         style="fill:none;stroke:#4d4d4d;stroke-width:8.45145;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 104.72505,77.929163 0.5499,141.141677"
-         id="path4533"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 100.76311,142.25928 -0.0167,6.48129 9.08717,-5.7463 z"
-         id="path4599-1"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
-      <path
-         style="fill:#543fb6;fill-opacity:1;stroke:#543fb6;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 73.299992,121.87564 61.394028,-0.38616 10.55874,9.26771 -11.23996,9.88558 -60.542508,0.23169 z"
-         id="path4537"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 100.92074,177.16303 -0.0167,6.48129 9.08716,-5.7463 z"
-         id="path4599-1-3"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
-      <path
-         style="fill:#543fb6;fill-opacity:1;stroke:#543fb6;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 135.13331,156.46434 -61.394033,-0.38616 -10.55874,9.26771 11.23996,9.88558 60.542513,0.23169 z"
-         id="path4537-7"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 100.64739,107.5059 -0.0167,6.48129 9.08717,-5.7463 z"
-         id="path4599"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
-      <path
-         style="fill:#543fb6;fill-opacity:1;stroke:#543fb6;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 135.88299,90.08005 -61.048369,-6.517072 -11.431708,8.166608 10.196241,10.958934 60.216536,6.27832 z"
-         id="path4537-7-4"
-         inkscape:connector-curvature="0"
-         inkscape:export-filename="C:\Users\pkucera\Documents\Repos\cestapustem\public\icon.png"
-         inkscape:export-xdpi="255.27638"
-         inkscape:export-ydpi="255.27638" />
-      <path
-         style="fill:#49379f;fill-opacity:1;stroke:#49379f;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 135.13331,156.46434 -61.394032,-0.38616 -10.55874,9.26771 11.23996,9.88558 60.542512,0.23169 z"
-         id="path4537-7-1"
-         inkscape:connector-curvature="0"
-         clip-path="url(#clipPath4698)" />
-      <path
-         style="fill:#49379f;fill-opacity:1;stroke:#49379f;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 73.299995,121.87564 61.394025,-0.38616 10.55874,9.26771 -11.23996,9.88558 -60.542506,0.23169 z"
-         id="path4537-6"
-         inkscape:connector-curvature="0"
-         clip-path="url(#clipPath4694)" />
-      <path
-         style="fill:#49379f;fill-opacity:1;stroke:#49379f;stroke-width:5.89152;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 135.88299,90.08005 -61.04837,-6.517075 -11.431712,8.166605 10.196242,10.95894 60.21654,6.27832 z"
-         id="path4537-7-4-5"
-         inkscape:connector-curvature="0"
-         clip-path="url(#clipPath4690)" />
-    </g>
+    <path
+       style="fill:none;stroke:#4d4d4d;stroke-width:8.45145035;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 104.72505,77.929163 0.5499,141.141677"
+       id="path4533"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 100.76311,142.25928 -0.0167,6.48129 9.08717,-5.7463 z"
+       id="path4599-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#f9d43f;fill-opacity:1;stroke:#f9d43f;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 73.299992,121.87564 61.394028,-0.38616 10.55874,9.26771 -11.23996,9.88558 -60.542508,0.23169 z"
+       id="path4537"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 100.92074,177.16303 -0.0167,6.48129 9.08716,-5.7463 z"
+       id="path4599-1-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#f9d43f;fill-opacity:1;stroke:#f9d43f;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 135.13331,156.46434 -61.394033,-0.38616 -10.55874,9.26771 11.23996,9.88558 60.542513,0.23169 z"
+       id="path4537-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 100.64739,107.5059 -0.0167,6.48129 9.08717,-5.7463 z"
+       id="path4599"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#f9d43f;fill-opacity:1;stroke:#f9d43f;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 135.88299,90.08005 -61.048369,-6.517072 -11.431708,8.166608 10.196241,10.958934 60.216536,6.27832 z"
+       id="path4537-7-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\pkucera\Documents\Repos\cestapustem\public\icon.png"
+       inkscape:export-xdpi="255.27638"
+       inkscape:export-ydpi="255.27638" />
+    <path
+       style="fill:#f2cd41;fill-opacity:1;stroke:#f2cd41;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 135.13331,156.46434 -61.394032,-0.38616 -10.55874,9.26771 11.23996,9.88558 60.542512,0.23169 z"
+       id="path4537-7-1"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath4698)" />
+    <path
+       style="fill:#f2cd41;fill-opacity:1;stroke:#f2cd41;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 73.299995,121.87564 61.394025,-0.38616 10.55874,9.26771 -11.23996,9.88558 -60.542506,0.23169 z"
+       id="path4537-6"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath4694)" />
+    <path
+       style="fill:#f2cd41;fill-opacity:1;stroke:#f2cd41;stroke-width:5.89151907;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 135.88299,90.08005 -61.04837,-6.517075 -11.431712,8.166605 10.196242,10.95894 60.21654,6.27832 z"
+       id="path4537-7-4-5"
+       inkscape:connector-curvature="0"
+       clip-path="url(#clipPath4690)" />
   </g>
 </svg>
