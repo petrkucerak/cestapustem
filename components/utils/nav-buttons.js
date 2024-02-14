@@ -22,7 +22,7 @@ export default function NavButtons({ posts }) {
     tomorrow.getMonth() + 1
   )}-${formateDayNum(tomorrow.getDate())}`;
 
-  console.log(yesterdayDate, nowDate, tomorrowDate);
+  // console.log(yesterdayDate, nowDate, tomorrowDate);
   let yesterdayStatus, nowStatus, tomorrowStatus;
   yesterdayStatus = nowStatus = tomorrowStatus = "hidden";
 

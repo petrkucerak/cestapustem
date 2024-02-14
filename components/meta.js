@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-const appName = `Adventní cesta`;
-const appDescription = `Tvůj průvodce na cestě Adventem`;
+const appName = `Cesta půstem`;
+const appDescription = `Tvůj průvodce na cestě Půstem`;
 const mainColor = `#50A2A7`;
-const appUrl = `https://adventnicesta.cz/`;
-const coverImage = `https://adventnicesta.cz/icon.png`;
+const appUrl = `https://cestapustem.cz/`;
+const coverImage = `https://cestapustem.cz/icon.png`;
 const appAuthor = `Petr Kučera`;
 
 export default function Meta() {

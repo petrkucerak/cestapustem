@@ -10,7 +10,7 @@ export default function Home({ allPosts }) {
   return (
     <>
       <Head>
-        <title>Adventní cesta</title>
+        <title>Cesta půstem</title>
       </Head>
       <Layout>
         <div className="mx-6 flex flex-col">

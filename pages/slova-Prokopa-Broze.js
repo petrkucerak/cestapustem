@@ -6,7 +6,7 @@ export default function SlovaProkopaBrože() {
   return (
     <>
       <Head>
-        <title>Slova Prokopa Brože - Adventní cesta</title>
+        <title>Slova Prokopa Brože - Cesat půstem</title>
       </Head>
       <Layout>
         <ArticleHeader />
