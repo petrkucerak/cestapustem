@@ -5,7 +5,7 @@ const { PassThrough } = require("stream");
 const { argv } = require("node:process");
 
 // config start day
-let id = 7;
+let id = 45;
 
 // handle arguments
 if (argv[2] === "" || argv[3] === "") {
@@ -93,7 +93,7 @@ function createSSML(content) {
     } a autorem zamyšlení je ${content.author}.
       <break strength="weak" />
     </prosody>
-    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.wav?raw=true" />
     <break strength="medium" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
@@ -107,7 +107,7 @@ function createSSML(content) {
         .replaceAll("«", "")
         .replaceAll(";", "")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/02_cesta_pustem-break1.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/02_cesta_pustem-break1.wav?raw=true"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Zamyšlení
@@ -120,7 +120,7 @@ function createSSML(content) {
         .replaceAll("«", "")
         .replaceAll(";", "")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/03_cesta_pustem-break2.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/03_cesta_pustem-break2.wav?raw=true"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
@@ -133,7 +133,7 @@ function createSSML(content) {
         .replaceAll("«", "")
         .replaceAll(";", "")} Amen.
     </prosody>
-    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.wav?raw=true" />
   </voice>
 </speak>`;
 }
