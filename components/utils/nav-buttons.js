@@ -8,19 +8,21 @@ function formateDayNum(num) {
 export default function NavButtons({ posts }) {
   // const now = new Date("2022-11-28"); // testing date
   const now = new Date();
-  const nowDate = `${now.getFullYear()}-${now.getMonth() + 1}-${formateDayNum(
-    now.getDate()
-  )}`;
-  const yesterday = new Date(now.setDate(now.getDate() - 1));
-  const yesterdayDate = `${yesterday.getFullYear()}-${
-    yesterday.getMonth() + 1
-  }-${formateDayNum(yesterday.getDate())}`;
-  const tomorrow = new Date(now.setDate(now.getDate() + 2));
-  const tomorrowDate = `${tomorrow.getFullYear()}-${
-    tomorrow.getMonth() + 1
-  }-${formateDayNum(tomorrow.getDate())}`;
+  const nowDate = `${now.getFullYear()}-${formateDayNum(
+    now.getMonth() + 1
+  )}-${formateDayNum(now.getDate())}`;
 
-  // console.log(yesterdayDate, nowDate, tomorrowDate);
+  const yesterday = new Date(now.setDate(now.getDate() - 1));
+  const yesterdayDate = `${yesterday.getFullYear()}-${formateDayNum(
+    yesterday.getMonth() + 1
+  )}-${formateDayNum(yesterday.getDate())}`;
+
+  const tomorrow = new Date(now.setDate(now.getDate() + 2));
+  const tomorrowDate = `${tomorrow.getFullYear()}-${formateDayNum(
+    tomorrow.getMonth() + 1
+  )}-${formateDayNum(tomorrow.getDate())}`;
+
+  console.log(yesterdayDate, nowDate, tomorrowDate);
   let yesterdayStatus, nowStatus, tomorrowStatus;
   yesterdayStatus = nowStatus = tomorrowStatus = "hidden";
 
