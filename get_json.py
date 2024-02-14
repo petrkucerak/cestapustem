@@ -17,6 +17,14 @@ def month_to_number(month_name):
 # Funkce pro převod data z formátu "dd. měsíc" na "yyyy-mm-dd"
 
 
+def pridat_nbsp(text):
+    # Regex pattern pro nalezení jednopísmenných předložek s mezerou před nimi
+    pattern = r"(?<=\s)([vskouziai])\s"
+
+    # Nahrazení mezery před jednopísmennými předložkami symbolem &nbsp;
+    return re.sub(pattern, r"\1&nbsp;", text)
+
+
 def format_date_cz(date_str, year):
     day, month_name = re.match(r'(\d{1,2})\. (\S+)', date_str).groups()
     month = month_to_number(month_name)
@@ -34,6 +42,27 @@ with open(file_path, 'r', encoding='utf-8') as file:
 # content[:500]
 
 
+def remove_breaks_if_no_dot(text):
+    # Split the text into lines
+    lines = text.split('\n')
+
+    # Process each line
+    processed_lines = []
+    for line in lines:
+        # If the line does not end with a dot, remove the trailing newline
+        if not line.endswith('.') or not line.endswith(','):
+            # Remove the newline and add to processed lines without line break
+            processed_lines.append(" " + line)
+        else:
+            # Line ends with a dot, keep it and add a space for separation
+            processed_lines.append(" " + line + " ")
+
+    # Join the processed lines back into a single string
+    processed_text = ''.join(processed_lines)
+
+    return processed_text
+
+
 # Rozdělení obsahu souboru na jednotlivé dny
 days = content.split('xxx')
 
@@ -49,9 +78,9 @@ for day in days:
         day_data = {
             "dayName": parts[1],
             "date": date_formatted,
-            "quote": parts[3],
+            "quote": pridat_nbsp(remove_breaks_if_no_dot(parts[3])).replace("  ", " ").replace("\n\n", "\n"),
             "source": parts[2],
-            "reflexion": parts[4],
+            "reflexion": pridat_nbsp(remove_breaks_if_no_dot(parts[4])).replace("  ", " ").replace("\n\n", "\n"),
             "author": parts[5],
             "preayer": parts[6],
             "slug": date_formatted
