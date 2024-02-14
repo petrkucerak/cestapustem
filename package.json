@@ -9,13 +9,13 @@
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap",
-    "text2speech": "node -e 'require(\"./text2speech\").text2speech()'"
+    "text2speech": "node text2speech.js"
   },
   "dependencies": {
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "gray-matter": "^4.0.3",
-    "microsoft-cognitiveservices-speech-sdk": "^1.24.1",
+    "microsoft-cognitiveservices-speech-sdk": "^1.35.0",
     "next": "13.5.1",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^3.1.32",
