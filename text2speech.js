@@ -4,6 +4,9 @@ const { Buffer } = require("buffer");
 const { PassThrough } = require("stream");
 const { argv } = require("node:process");
 
+// config start day
+let id = 7;
+
 // handle arguments
 if (argv[2] === "" || argv[3] === "") {
   console.error("ERROR: Set up SPEECH_KEY and LOCATION_REGION!");
@@ -15,8 +18,6 @@ const input = {
   day: argv[4],
 };
 console.log(input);
-
-let id = 7;
 
 async function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
   const speechConfig = sdk.SpeechConfig.fromSubscription(
