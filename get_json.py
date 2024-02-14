@@ -91,6 +91,9 @@ for day in days:
 
         # Uložení popisu autora do slovníku pro každý den
         author_description = ''.join([element for element in author_details if parts[5] in element])
+        # Handle special name
+        if("Zuzana Petra Macečková" == parts[5]): author_description = "sr. Zuzana Mgr. et Mgr. Petra Macečková, SCSC, vedoucí sekretariátu biskupa, Hradec Králové"
+        
         day_data["authorDescription"] = author_description
 
         # Uložení JSON dat do slovníku
