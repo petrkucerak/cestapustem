@@ -5,7 +5,7 @@ const { PassThrough } = require("stream");
 const { argv } = require("node:process");
 
 // config start day
-let id = 45;
+let id = 0;
 
 // handle arguments
 if (argv[2] === "" || argv[3] === "") {
@@ -42,7 +42,9 @@ async function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
         e.result.audioData.byteLength
     );
     id += 1;
-    if (id < 47) main(id);
+    if (id < 47)
+      // count of files
+      main(id);
   };
 
   // The synthesis started event signals that the synthesis is started.
@@ -105,7 +107,7 @@ function createSSML(content) {
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
         .replaceAll("«", "")
-        .replaceAll(";", "")}
+        .replaceAll(";", " ")}
     </prosody>
     <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/02_cesta_pustem-break1.wav?raw=true"/>
   </voice>
@@ -118,7 +120,7 @@ function createSSML(content) {
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
         .replaceAll("«", "")
-        .replaceAll(";", "")}
+        .replaceAll(";", " ")}
     </prosody>
     <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/03_cesta_pustem-break2.wav?raw=true"/>
   </voice>
@@ -131,7 +133,7 @@ function createSSML(content) {
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
         .replaceAll("«", "")
-        .replaceAll(";", "")} Amen.
+        .replaceAll(";", " ")} Amen.
     </prosody>
     <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.wav?raw=true" />
   </voice>
