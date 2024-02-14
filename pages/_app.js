@@ -1,32 +1,7 @@
-import '../styles/index.css'
-import { useEffect } from 'react';
+import "../styles/dist.css";
 
-export default function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register(
-        `/OneSignalSDKWorker.js`
-      ).then(/*reg => console.log(reg)*/);
-    }
-  }, []);
-
-  // notifications
-  useEffect(() => {
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function () {
-      OneSignal.init({
-        appId: "c0faad38-a3b1-4bd5-8faf-c7f6b109f32d",
-        notifyButton: {
-          enable: true,
-        },
-
-        allowLocalhostAsSecureOrigin: true,
-      });
-    });
-
-    return () => {
-      window.OneSignal = undefined;
-    };
-  }, []); // <-- run this effect once on mount
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;

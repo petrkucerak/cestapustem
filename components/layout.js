@@ -1,14 +1,14 @@
-import Footer from '../components/footer'
-import Meta from '../components/meta'
+import Meta from "./meta";
+import Footer from "./footer";
 
 export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div className="flex flex-col min-h-screen justify-between">
+      <div className="min-h-screen flex flex-col justify-between max-w-[800px] bg-white dark:bg-black">
         <main>{children}</main>
         <Footer />
       </div>
     </>
-  )
+  );
 }

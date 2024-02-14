@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export default function Header() {
+export default function ArticleHeader() {
   return (
-    <h2 className="mt-4 mx-8">
-      <Link href="/">
-        <a className="text-3xl font-bold underline hover:text-grey ease-in-out transition duration-150">
+    <header className="w-full">
+      <nav className="mx-6 mt-6 mb-4">
+        <Link href="/" className="text-3xl font-semibold underline">
           Cesta půstem
-        </a>
-      </Link>
-    </h2>
+        </Link>
+      </nav>
+    </header>
   );
 }

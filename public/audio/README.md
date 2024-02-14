@@ -1,1 +1,0 @@
-# Misto pro audio verzi textu

@@ -1,41 +1,31 @@
 {
-  "name": "cesta-pustem",
-  "version": "1.0.0",
+  "name": "cestapustem",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "concurrently \"next dev \" \"tailwindcss -i styles/globals.css -o styles/dist.css -w\"",
+    "turbodev": "concurrently \"next dev --turbo\" \"tailwindcss -i styles/globals.css -o styles/dist.css -w\"",
+    "build": "tailwindcss -m -i styles/globals.css -o styles/dist.css && next build",
     "start": "next start",
     "lint": "next lint",
-    "sitemap": "next build && next-sitemap",
+    "sitemap": "next-sitemap",
     "text2speech": "node -e 'require(\"./text2speech\").text2speech()'"
   },
   "dependencies": {
-    "@fluentui/react": "^8.20.2",
-    "autoprefixer": "^10.2.1",
-    "classnames": "2.2.6",
-    "date-fns": "2.16.1",
-    "gray-matter": "4.0.2",
-    "microsoft-cognitiveservices-speech-sdk": "^1.20.0",
-    "next": "latest",
-    "next-pwa": "^5.4.4",
-    "postcss": "^8.2.4",
-    "react": "^17.0.2",
-    "react-audio-player": "^0.17.0",
-    "react-calendar": "^3.5.0",
-    "react-dom": "^17.0.2",
-    "remark": "13.0.0",
-    "remark-html": "13.0.2",
-    "string.prototype.replaceall": "^1.0.5",
-    "sweetalert2": "^11.0.18",
-    "tailwindcss": "^2.0.2",
-    "unidecode": "^0.1.8"
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "gray-matter": "^4.0.3",
+    "microsoft-cognitiveservices-speech-sdk": "^1.24.1",
+    "next": "13.5.1",
+    "next-pwa": "^5.6.0",
+    "next-sitemap": "^3.1.32",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-h5-audio-player": "^3.8.6"
   },
   "devDependencies": {
-    "eslint": "^7.29.0",
-    "eslint-config-next": "^11.0.1",
-    "next-sitemap": "^2.4.4"
-  },
-  "license": "MIT",
-  "author": "Petr Kucera (petr@khome.cz)",
-  "description": "The simply PWA app for migration paper brozure to the digital."
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "tailwindcss": "^3.2.4"
+  }
 }
