@@ -20,7 +20,8 @@ export default function Home({ allPosts }) {
             alt="Žlutý rozcestník"
             title="Logo cesty půstem"
           />
-          <h1 className="text-4xl font-bold text-center">Cesta půstem</h1>
+          <h1 className="text-4xl font-bold text-center mb-1">Cesta půstem</h1>
+          <p className="text-xl text-center">Tvůj průvodce na cestě Půstem.</p>
         </div>
         <NavButtons posts={allPosts} />
         <Calendar posts={allPosts} />

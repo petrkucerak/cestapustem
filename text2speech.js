@@ -4,6 +4,9 @@ const { Buffer } = require("buffer");
 const { PassThrough } = require("stream");
 const { argv } = require("node:process");
 
+// config start day
+let id = 0;
+
 // handle arguments
 if (argv[2] === "" || argv[3] === "") {
   console.error("ERROR: Set up SPEECH_KEY and LOCATION_REGION!");
@@ -15,8 +18,6 @@ const input = {
   day: argv[4],
 };
 console.log(input);
-
-let id = 0;
 
 async function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
   const speechConfig = sdk.SpeechConfig.fromSubscription(
@@ -41,7 +42,9 @@ async function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
         e.result.audioData.byteLength
     );
     id += 1;
-    if (id < 47) main(id);
+    if (id < 47)
+      // count of files
+      main(id);
   };
 
   // The synthesis started event signals that the synthesis is started.
@@ -92,7 +95,7 @@ function createSSML(content) {
     } a autorem zamyšlení je ${content.author}.
       <break strength="weak" />
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.wav?raw=true" />
     <break strength="medium" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
@@ -103,9 +106,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")}
+        .replaceAll("«", "")
+        .replaceAll(";", " ")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/02_cesta_pustem-break1.wav?raw=true"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Zamyšlení
@@ -115,9 +119,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")}
+        .replaceAll("«", "")
+        .replaceAll(";", " ")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/03_cesta_pustem-break2.wav?raw=true"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
@@ -127,9 +132,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")} Amen.
+        .replaceAll("«", "")
+        .replaceAll(";", " ")} Amen.
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.wav?raw=true" />
   </voice>
 </speak>`;
 }
@@ -150,4 +156,4 @@ async function main(id) {
   console.log(`End syntetization ${json.slug}.mp3`);
 }
 
-main(0);
+main(id);
