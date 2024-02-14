@@ -29,7 +29,7 @@ function Day({ post }) {
     <Link
       id={post.slug}
       href={`/den/${post.slug}`}
-      className="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light"
+      className="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-primary-light"
     >
       {`${date.getDate()}. `}
     </Link>

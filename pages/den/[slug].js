@@ -28,7 +28,7 @@ export default function Post({ post, preview }) {
           <h1 className="text-4xl font-bold mb-4">{post.dayName}</h1>
           <RenderDate
             dateString={post.date}
-            className="font-bold text-xl text-violet-light"
+            className="font-bold text-xl text-primary-light"
           />
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>Podcast</h2>
           <p className={`${textClass} text-lg mb-4 italic`}>

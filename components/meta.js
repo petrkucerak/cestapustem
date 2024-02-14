@@ -2,7 +2,7 @@ import Head from "next/head";
 
 const appName = `Adventní cesta`;
 const appDescription = `Tvůj průvodce na cestě Adventem`;
-const mainColor = `#543fb6`;
+const mainColor = `#50A2A7`;
 const appUrl = `https://adventnicesta.cz/`;
 const coverImage = `https://adventnicesta.cz/icon.png`;
 const appAuthor = `Petr Kučera`;
@@ -10,34 +10,6 @@ const appAuthor = `Petr Kučera`;
 export default function Meta() {
   return (
     <Head>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon/favicon-16x16.png"
-      />
-      <link rel="manifest" href="/manifest.json" />
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color={mainColor}
-      />
-      <meta name="msapplication-TileColor" content="#ffc40d" />
-      <meta
-        name="msapplication-TileImage"
-        content="/favicon/mstile-144x144.png"
-      />
       <meta name="theme-color" content={mainColor} />
       <meta
         name="viewport"
@@ -52,38 +24,6 @@ export default function Meta() {
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="msapplication-tap-highlight" content="no" />
-      <link
-        rel="apple-touch-icon"
-        sizes="152x152"
-        href="/favicon/touch-icon-ipad.png"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicon/touch-icon-iphone-retina.png"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="167x167"
-        href="/favicon/touch-icon-ipad-retina.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon/favicon-16x16.png"
-      />
-      <link
-        rel="mask-icon"
-        href="/favicon/safari-pinned-tab.svg"
-        color="#5bbad5"
-      />
       <meta name="twitter:card" content={appDescription} />
       <meta name="twitter:url" content={appUrl} />
       <meta name="twitter:title" content={appName} />

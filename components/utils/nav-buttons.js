@@ -34,13 +34,13 @@ export default function NavButtons({ posts }) {
   return (
     <div className="mx-6 flex flex-row justify-around mt-6">
       <Link href={`/den/${yesterdayDate}`} className={yesterdayStatus}>
-        <Button className={"bg-violet-light"}>včera</Button>
+        <Button className={"bg-primary-light"}>včera</Button>
       </Link>
       <Link href={`/den/${nowDate}`} className={nowStatus}>
-        <Button className={"bg-violet-dark"}>dnes</Button>
+        <Button className={"bg-primary-dark"}>dnes</Button>
       </Link>
       <Link href={`/den/${tomorrowDate}`} className={tomorrowStatus}>
-        <Button className={"bg-violet-light"}>zítra</Button>
+        <Button className={"bg-primary-light"}>zítra</Button>
       </Link>
     </div>
   );
