@@ -16,7 +16,7 @@ const input = {
 };
 console.log(input);
 
-let id = 0;
+let id = 7;
 
 async function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
   const speechConfig = sdk.SpeechConfig.fromSubscription(
@@ -92,7 +92,7 @@ function createSSML(content) {
     } a autorem zamyšlení je ${content.author}.
       <break strength="weak" />
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.mp3?raw=true" />
     <break strength="medium" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
@@ -103,9 +103,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")}
+        .replaceAll("«", "")
+        .replaceAll(";", "")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/02_cesta_pustem-break1.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Zamyšlení
@@ -115,9 +116,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")}
+        .replaceAll("«", "")
+        .replaceAll(";", "")}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/03_cesta_pustem-break2.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
@@ -127,9 +129,10 @@ function createSSML(content) {
         .replaceAll("“", "")
         .replaceAll("–", `<break strength="weak" />`)
         .replaceAll("»", "")
-        .replaceAll("«", "")} Amen.
+        .replaceAll("«", "")
+        .replaceAll(";", "")} Amen.
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://github.com/petrkucerak/cestapustem/blob/main/_audio/01_cesta_pustem-intro.mp3?raw=true" />
   </voice>
 </speak>`;
 }
@@ -150,4 +153,4 @@ async function main(id) {
   console.log(`End syntetization ${json.slug}.mp3`);
 }
 
-main(0);
+main(id);

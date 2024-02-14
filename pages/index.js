@@ -21,6 +21,7 @@ export default function Home({ allPosts }) {
             title="Logo cesty půstem"
           />
           <h1 className="text-4xl font-bold text-center">Cesta půstem</h1>
+          <p>Tvůj průvodce na cestě Půstem.</p>
         </div>
         <NavButtons posts={allPosts} />
         <Calendar posts={allPosts} />
