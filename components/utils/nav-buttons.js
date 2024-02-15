@@ -29,9 +29,9 @@ export default function NavButtons({ posts }) {
   // console.log(tomorrowDate);
 
   posts.map((post) => {
-    if (nowDate === post.date) nowStatus = "";
-    if (yesterdayDate === post.date) yesterdayStatus = "";
-    if (tomorrowDate === post.date) tomorrowStatus = "";
+    if (nowDate === post.slug) nowStatus = "";
+    if (yesterdayDate === post.slug) yesterdayStatus = "";
+    if (tomorrowDate === post.slug) tomorrowStatus = "";
   });
   return (
     <div className="mx-6 flex flex-row justify-around mt-6">
