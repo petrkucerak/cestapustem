@@ -28,8 +28,7 @@ export default function Autori({ allPosts }) {
             Na přípravě se dále podíleli
           </h2>
           <p className="mb-8">
-            Anna Maclová, Prokop Brož, Zuzana Macečková, Anna Hrčková a Jiří
-            Bittner
+            Prokop Brož, Anna Hrčková, Petr Polehla, Jiří Bittner
           </p>
         </section>
       </Layout>
