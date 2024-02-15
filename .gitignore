@@ -48,3 +48,4 @@ dist.css
 **/public/fallback-*.js
 
 .tmp
+days-meta.json
