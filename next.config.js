@@ -1,8 +1,8 @@
 const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
   register: true,
-  cacheOnFrontendNav: true,
-  aggressiveFrontEndNavCaching: true,
+  // cacheOnFrontendNav: true,
+  // aggressiveFrontEndNavCaching: true,
   cacheStartUrl: true,
   swcMinify: true,
   publicExcludes: ["!favicon/*/**", "!audio/**"],
