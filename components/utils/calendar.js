@@ -7,7 +7,7 @@ export default function Calendar({ posts }) {
       <h3 className="text-xl font-bold ">Únor</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
-          const date_tmp = new Date(post.date);
+          const date_tmp = new Date(post.slug);
           if (date_tmp.getMonth() === 1)
             return <Day key={post.slug} post={post} />;
         })}
@@ -15,7 +15,7 @@ export default function Calendar({ posts }) {
       <h3 className="text-xl font-bold ">Březen</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
-          const date_tmp = new Date(post.date);
+          const date_tmp = new Date(post.slug);
           if (date_tmp.getMonth() === 2)
             return <Day key={post.slug} post={post} />;
         })}
@@ -24,12 +24,13 @@ export default function Calendar({ posts }) {
   );
 }
 function Day({ post }) {
-  const date = new Date(post.date);
+  const date = new Date(post.slug);
   return (
     <Link
       id={post.slug}
       href={`/den/${post.slug}`}
       className="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-primary-light"
+      title={`${post.dayName}`}
     >
       {`${date.getDate()}. `}
     </Link>

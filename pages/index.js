@@ -3,8 +3,8 @@ import Layout from "../components/layout";
 import Button from "../components/utils/button";
 import Calendar from "../components/utils/calendar";
 import NavButtons from "../components/utils/nav-buttons";
-import { getAllPosts } from "../lib/api";
 import Link from "next/link";
+import { getPostMetadata } from "../lib/get-post-metadata";
 
 export default function Home({ allPosts }) {
   return (
@@ -43,7 +43,7 @@ export default function Home({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts();
+  const allPosts = getPostMetadata();
   return {
     props: { allPosts },
   };
