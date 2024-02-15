@@ -3,7 +3,7 @@
   "short_name": "Cesta půstem",
   "theme_color": "#50A2A7",
   "background_color": "#ffffff",
-  "start_url": "/",
+  "start_url": "https://cestapustem.cz/",
   "display": "standalone",
   "orientation": "portrait",
   "description": "Tvůj průvodce na cestě Půstem",
@@ -15,18 +15,6 @@
     "education",
     "health",
     "utilities"
-  ],
-  "shortcuts": [
-    {
-      "name": "Cesta půstem",
-      "url": "https://cestapustem.cz/",
-      "icons": [
-        {
-          "src": "https://cestapustem.cz/icon.png"
-        }
-      ],
-      "description": "Tvůj průvodce na cestě Půstem"
-    }
   ],
   "icons": [
     {
