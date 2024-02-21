@@ -50,7 +50,7 @@ export default function SlovaBiskupaJana() {
             K&nbsp;tomu Vám žehnám od katedrály Svatého Ducha!
           </p>
           <p className="text-lg mb-8 italic">
-            V&nbsp;Kristy a&nbsp;Marii <br />
+            V&nbsp;Kristu a&nbsp;Marii <br />
             Váš biskup + Jan
           </p>
         </article>
