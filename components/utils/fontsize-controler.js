@@ -1,4 +1,5 @@
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 
 export default function FontSizeControler({ titleClass, textClass }) {
   //   const [textSize, setTextSize] = useState(1.125);
@@ -10,7 +11,9 @@ export default function FontSizeControler({ titleClass, textClass }) {
   let textLine = 1.75;
 
   return (
-    <div className="z-100 bg-white dark:bg-black sticky bottom-0 h-12 flex justify-center items-center">
+    <div
+      className={`z-100 bg-white dark:bg-black h-12 flex justify-center items-center`}
+    >
       <button
         className="mr-4 text-lg font-bold"
         title="Zmenšit text"
@@ -18,7 +21,6 @@ export default function FontSizeControler({ titleClass, textClass }) {
           titleSize -= 0.25;
           textSize -= 0.25;
           textLine -= 0.25;
-
           const titles = document.querySelectorAll(`.${titleClass}`);
           const texts = document.querySelectorAll(`.${textClass}`);
 
