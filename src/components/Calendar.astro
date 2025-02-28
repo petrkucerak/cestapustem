@@ -24,17 +24,19 @@ const months = days.reduce((acc, day) => {
       <div class="mb-4">
         <h3 class="text-xl font-bold capitalize">{month}</h3>
         <div class="grid grid-cols-5 auto-cols-max gap-y-2">
-          {months[month].map((day) => {
-            const date = new Date(day.data.date);
-            return (
-              <a
-                class="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-primary-light"
-                href={`den/${day.data.date}`}
-              >
-                {date.getDate()}.
-              </a>
-            );
-          })}
+          {months[month].map(
+            (day: { data: { date: string | number | Date } }) => {
+              const date = new Date(day.data.date);
+              return (
+                <a
+                  class="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-primary-light"
+                  href={`den/${day.data.date}`}
+                >
+                  {date.getDate()}.
+                </a>
+              );
+            }
+          )}
         </div>
       </div>
     ))
