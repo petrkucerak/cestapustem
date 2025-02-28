@@ -1,19 +1,12 @@
-# Adventní cesta
+# Cesta půstem
 
 ## O projektu
 
-Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hradci Králové, díky které bude možno překlopit adventní brožuru 2022 do online podoby.
-
-**[ZHODNOCENÍ BROŽURY PRO ADVENT 2022](https://github.com/petrkucerak/adventnicesta/tree/main/feedback/2022)**
+Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hradci Králové, díky které bude možno překlopit postní brožury do online podoby.
 
 ## Architektura projektu
 
 Aplikace byla postavená na Next.js, dnes běží na Astro.js a o to, aby vypadala dobře se stará Tailwind. Obsah stránek s textem býval kompilovaný z jsonu, generovaný speciálním formulářem, viz https://cestapustem.cz/form. Dnes je obash definovaný pomocí markdown souborů.
-
-Na pozadí běží service worker, který umožňuje:
-
-1. fungování offline a agresivní caching
-*2. využití push notifikací - ZATÍM NEAKTIVNÍ*
 
 ## Příkazy
 
@@ -28,7 +21,7 @@ Na pozadí běží service worker, který umožňuje:
 
 ## Jak přidat texty
 
-1. vytvoř mardown soubor ve složce `src\content\den`, který bude stejného formátu jako ostatní soubory.
+1. vytvoř mardown soubor ve složce `src/content/den`, který bude stejného formátu jako ostatní soubory.
 
 ### Next.js version (staré)
 
@@ -63,7 +56,7 @@ Více o této části si můžete přečíst zde: https://blog.petrkucerak.cz/po
 
 ### Provozovatel
 
-Provozovatelem webové aplikace je držitel domény [adventnicesta.cz](https://www.nic.cz/whois/domain/adventnicesta.cz/)
+Provozovatelem webové aplikace je držitel domény [cestapustem.cz](https://www.nic.cz/whois/domain/cestapustem.cz/)
 
 ### Cookies
 
