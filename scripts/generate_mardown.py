@@ -2,7 +2,7 @@ import os
 from datetime import date, timedelta
 
 # Directory to save the Markdown files
-output_directory = "../src/content/den"
+output_directory = "..\src\content\den"
 os.makedirs(output_directory, exist_ok=True)
 
 # Template content for the Markdown files
@@ -23,8 +23,8 @@ TODO
 """
 
 # Start and end dates
-start_date = date(2024, 12, 1)
-end_date = date(2024, 12, 24)
+start_date = date(2025, 3, 5)
+end_date = date(2025, 4, 20)
 
 # Loop through each day in the date range
 current_date = start_date
