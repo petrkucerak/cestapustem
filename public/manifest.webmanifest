@@ -1,12 +1,12 @@
 {
-   "name": "Adventní cesta - Tvůj průvodce na cestě Adventem",
-   "short_name": "Adventní cesta",
-   "theme_color": "#543fb6",
+   "name": "Cesta půstem - Tvůj průvodce na cestě Půstem",
+   "short_name": "Cesta půstem",
+   "theme_color": "#50A2A7",
    "background_color": "#ffffff",
-   "start_url": "/",
+   "start_url": "https://cestapustem.cz/",
    "display": "standalone",
    "orientation": "portrait",
-   "description": "Tvůj průvodce na cestě Adventem s evangeliem ze dne, zamyšlením a modlitbou na každý den. Vše můžeš navíc poslouchat i ve formě podcastu.",
+   "description": "Tvůj průvodce na cestě Půstem s evangeliem ze dne, zamyšlením a modlitbou na každý den. Vše můžeš navíc poslouchat i ve formě podcastu.",
    "dir": "auto",
    "scope": "/",
    "lang": "cs",
@@ -17,80 +17,19 @@
       "health",
       "utilities"
    ],
-   "screenshots": [
-      {
-         "src": "/screenshots/screenshot-dark.jpg",
-         "sizes": "331x686",
-         "type": "image/jpg",
-         "form_factor": "narrow",
-         "label": "Zamyšlení v tmavém režimu"
-      },
-      {
-         "src": "/screenshots/screenshot-light.jpg",
-         "sizes": "340x681",
-         "type": "image/jpg",
-         "form_factor": "narrow",
-         "label": "Zamyšlení ve světlém režimu"
-      }
-   ],
    "shortcuts": [
       {
-         "name": "Adventní cesta",
-         "url": "https://adventnicesta.cz/",
+         "name": "Cesta půstem",
+         "url": "https://cestapustem.cz/",
          "icons": [
             {
-               "src": "https://adventnicesta.cz/icon.png"
+               "src": "https://cestapustem.cz/icon.png"
             }
          ],
-         "description": "Tvůj průvodce na cestě Adventem"
+         "description": "Tvůj průvodce na cestě Půstem"
       }
    ],
    "icons": [
-      {
-         "src": "/favicon/android-chrome-36x36.png",
-         "sizes": "36x36",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-48x48.png",
-         "sizes": "48x48",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-72x72.png",
-         "sizes": "72x72",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-96x96.png",
-         "sizes": "96x96",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-144x144.png",
-         "sizes": "144x144",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-192x192.png",
-         "sizes": "192x192",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-256x256.png",
-         "sizes": "256x256",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-384x384.png",
-         "sizes": "384x384",
-         "type": "image/png"
-      },
-      {
-         "src": "/favicon/android-chrome-512x512.png",
-         "sizes": "512x512",
-         "type": "image/png"
-      },
       {
          "src": "/favicon/windows11/SmallTile.scale-100.png",
          "sizes": "71x71"

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://adventnicesta.cz/
+Host: https://cestapustem.cz/
 
 # Sitemaps
-Sitemap: https://adventnicesta.cz/sitemap-index.xml
+Sitemap: https://cestapustem.cz/sitemap-index.xml

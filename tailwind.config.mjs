@@ -7,6 +7,8 @@ export default {
       colors: {
         "violet-light": "#543fb6ff",
         "violet-dark": "#49379fff",
+        "primary-light": "#50A2A7",
+        "primary-dark": "#418285",
       },
     },
   },

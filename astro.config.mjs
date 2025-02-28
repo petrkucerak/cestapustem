@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://adventnicesta.cz/",
+  site: "https://cestapustem.cz/",
   integrations: [tailwind(), sitemap()],
 });
