@@ -18,13 +18,13 @@ const post = entry.data;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${post.dayName} - Adventní cesta`}>
+<Layout title={`${post.dayName} - Cesta půstem`}>
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
     <h1 class="text-4xl font-bold mb-4">{post.dayName}</h1>
     <RenderDate
       dateString={post.date}
-      className="font-bold text-xl text-violet-light"
+      className="font-bold text-xl text-primary-light"
     />
     <h2 class="text-2xl font-bold mb-2 mt-8">Podcast</h2>
     <p class="text-lg italic">

@@ -6,10 +6,10 @@ import Logo from "../components/Logo.astro";
 import NavButtons from "../components/NavButtons.astro";
 ---
 
-<Layout title="Adventní cesta - Tvůj průvodce na cestě Adventem">
+<Layout title="Cesta půstem - Tvůj průvodce na cestě Půstem">
   <div class="mx-6 flex flex-col">
     <Logo className="h-48" />
-    <h1 class="text-4xl font-bold text-center">Adventní cesta</h1>
+    <h1 class="text-4xl font-bold text-center">Cesta půstem</h1>
   </div>
 
   <NavButtons />
@@ -18,70 +18,33 @@ import NavButtons from "../components/NavButtons.astro";
 
   <h2 class="mx-6 text-2xl uppercase font-bold">O projektu</h2>
   <p class="mx-6 text-lg mb-8">
-    Adventní cesta je webová aplikace k&nbsp;tištěné verzi knihy Advent, která
-    se každoročně vydává v&nbsp;Královéhradecké diecézi. Letos do knihy
-    přispívali lékaři a lékařky naší diecéze. Každý den si můžeš přečíst
-    evangelium, zamyšlení a&nbsp;krátkou modlitbu.
+    Cesta půstem je webová aplikace k&nbsp;tištěné verzi knihy Půst, která se
+    každoročně vydává v&nbsp;Královéhradecké diecézi. Letos do knihy přispívali
+    lidé z naší diecéze. Každý den si můžeš přečíst evangelium, zamyšlení
+    a&nbsp;krátkou modlitbu.
   </p>
 
   <div class="mx-6 flex flex-row justify-around mb-8 flex-wrap">
     <Button
-      className="bg-violet-dark"
-      href={"https://forms.gle/XppVaHSMJ982txE88"}
-      content="Zpětná vazba"
-      rel="nofollow"
-      target="_blank"
-    />
-    <Button
-      className="bg-violet-light"
+      className="bg-primary-light"
       href={"/autori"}
       content="Autoři"
       rel=""
       target="_self"
     />
     <Button
-      className="bg-violet-light"
+      className="bg-primary-light"
       href={"/slova-biskupa-Jana"}
       content="Slova biskupa Jana"
       rel=""
       target="_self"
     />
     <Button
-      className="bg-violet-light"
-      href={"/slova-Prokopa-Broze"}
-      content="Slova Prokopa Brože"
+      className="bg-primary-light"
+      href={"/slova-biskupa-Prokopa"}
+      content="Slova biskupa Prokopa"
       rel=""
       target="_self"
     />
-  </div>
-
-  <div class="mb-8">
-    <h2 class="mx-6 text-2xl uppercase font-bold mb-2">Předchozí ročníky</h2>
-    <ul class="mx-6 list-disc pl-6">
-      <li>
-        <a
-          href={"https://2022.adventnicesta.cz/"}
-          title="Předchozí adventní brožura"
-          target={"_blank"}
-          rel={"external"}
-          class="underline"
-        >
-          2022
-        </a>{" "}
-        - autory zamyšlení jsou zaměstnanci charity
-      </li>
-      <li>
-        <a
-          href={"https://e7c66863.adventnicesta.pages.dev/"}
-          title="Předchozí adventní brožura"
-          target={"_blank"}
-          rel={"external"}
-          class="underline"
-        >
-          2023
-        </a>{" "}
-        - autory zamyšlení jsou zaměstnanci katechetky a katecheti
-      </li>
-    </ul>
   </div>
 </Layout>
