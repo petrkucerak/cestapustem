@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+
+const days = await getCollection("den");
+---
+
+<div class="mx-6 my-6">
+  <h2 class="text-2xl font-bold uppercase mb-1">Kalendář</h2>
+
+  <h3 class="text-xl font-bold">Prosinec</h3>
+  <div class="grid grid-cols-5 auto-cols-max gap-y-2">
+    {
+      days.map((day) => {
+        const date = new Date(day.data.date);
+        const out = `${date.getDate()}.`;
+        return (
+          <a
+            class="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light"
+            href={`den/${day.data.date}`}
+          >
+            {out}
+          </a>
+        );
+      })
+    }
+  </div>
+</div>
