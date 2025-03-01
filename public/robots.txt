@@ -6,4 +6,4 @@ Allow: /
 Host: https://cestapustem.cz/
 
 # Sitemaps
-Sitemap: https://cestapustem.cz/sitemap.xml
+Sitemap: https://cestapustem.cz/sitemap-index.xml
