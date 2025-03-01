@@ -1,8 +1,6 @@
 import os
 import re
-import markdown
 import yaml
-import time
 from dotenv import load_dotenv
 import azure.cognitiveservices.speech as speechsdk
 from pydub import AudioSegment
@@ -110,7 +108,7 @@ def unify_day_records(file_list, output_file):
             combined += audio
 
         # Export the final audio file
-        combined.export(output_file, format="mp3", bitrate="192k")
+        combined.export(output_file, format="mp3", bitrate="96k")
         print(f"Audio files merged successfully into {output_file}")
     except Exception as e:
         print(f"Error merging audio files: {e}")
@@ -123,6 +121,7 @@ def synthesize(text, target_path):
 
 
 def synthesize_text(data):
+    id = 0
     os.makedirs(TMP_PATH, exist_ok=True)
     for day in data:
         record_list = []
@@ -212,7 +211,8 @@ def synthesize_text(data):
 
         unify_day_records(record_list, f"{OUTPUT_PATH}/{day.get('date')}.mp3")
         
-        print("The record has been successful exported!\n\n")
+        id += 1
+        print(f"The record has been successful exported! ({id}/{len(data)})\n\n")
 
 
 if __name__ == "__main__":
