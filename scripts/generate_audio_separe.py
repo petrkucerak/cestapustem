@@ -174,7 +174,7 @@ def synthesize_text(data):
                 <break strength="medium" />
                 Zamyšlení
                 <break strength="medium" />
-                {day.get('markdownText', '').replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "").replace(";", ',').replace(" - ", ',').replace(" – ", ',').replace("…", '.').replace(" (", ', ').replace(")", ', ').replace("`", ', ').replace("**", '<break strength="weak" />')}
+                {day.get('markdownText', '').replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "").replace(";", ',').replace(" - ", ',').replace(" – ", ',').replace("…", '.').replace(" (", ', ').replace(")", ', ').replace("`", ', ').replace("**", '<break strength="weak" />').replace("*", '<break strength="weak" />').replace(">", "")}
                 <break strength="medium" />
             </prosody>
         </voice>
