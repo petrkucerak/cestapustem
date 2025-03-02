@@ -21,19 +21,6 @@ const { Content } = await entry.render();
 <Layout title={`${post.dayName} - Cesta půstem`}>
   <ArticleHeader />
 
-  <!-- Text size control -->
-  <div class="flex justify-end items-center gap-2 mx-6">
-    <label for="text-size" class="text-sm">Velikost textu:</label>
-    <input
-      type="range"
-      id="text-size"
-      min="14"
-      max="24"
-      step="1"
-      class="cursor-pointer"
-    />
-  </div>
-
   <article id="content" class="mx-6 max-w-[800px] text-[18px]">
     <h1 class="text-[1.8em] font-bold mb-4">{post.dayName}</h1>
     <RenderDate
@@ -67,6 +54,23 @@ const { Content } = await entry.render();
 
     <h2 class="text-[1.4em] font-bold mt-14 mb-2">Vstupní modlitba</h2>
     <p class="mb-6">{post.prayer}</p>
+
+    <!-- Text size control -->
+    <div
+      class="flex justify-center items-center py-4 w-full sticky bottom-0 dark:bg-black bg-white"
+    >
+      <label for="text-size" class="text-sm mr-4 font-mono"
+        >Velikost&nbsp;textu:</label
+      >
+      <input
+        type="range"
+        id="text-size"
+        min="14"
+        max="30"
+        step="1"
+        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-light"
+      />
+    </div>
   </article>
 
   <!-- Text Size Control Script -->
