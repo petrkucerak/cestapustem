@@ -1,24 +1,17 @@
 {
   "name": "cestapustem",
   "type": "module",
-  "version": "2.0.1",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/preact": "^3.5.3",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.2",
-    "astro": "^5.15.9",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15"
+    "@astrojs/sitemap": "^3.7.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.17.1",
+    "tailwindcss": "^4.1.18"
   }
 }

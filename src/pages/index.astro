@@ -1,50 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Calendar from "../components/Calendar.astro";
-import Button from "../components/Button.astro";
-import Logo from "../components/Logo.astro";
-import NavButtons from "../components/NavButtons.astro";
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Cesta půstem - Tvůj průvodce na cestě Půstem">
-  <div class="mx-6 flex flex-col">
-    <Logo className="h-48" />
-    <h1 class="text-4xl font-bold text-center">Cesta půstem</h1>
-    <p class="text-center text-xl md:text-2xl">Tvůj průvodce na cestě Půstem</p>
-  </div>
-
-  <NavButtons />
-
-  <Calendar />
-
-  <h2 class="mx-6 text-2xl uppercase font-bold">O projektu</h2>
-  <p class="mx-6 text-lg mb-8">
-    Cesta půstem je webová aplikace k&nbsp;tištěné verzi knihy Půst, která se
-    každoročně vydává v&nbsp;Královéhradecké diecézi. Každý den si můžeš přečíst
-    evangelium, zamyšlení a&nbsp;krátkou modlitbu.
-  </p>
-
-  <div class="mx-6 flex flex-row justify-around mb-8 flex-wrap">
-    <Button
-      className="bg-primary-light"
-      href={"/autori"}
-      content="Autoři"
-      rel=""
-      target="_self"
-    />
-    <Button
-      className="bg-primary-light"
-      href={"/slova-biskupa-Jana"}
-      content="Slova biskupa Jana"
-      rel=""
-      target="_self"
-    />
-    <Button
-      className="bg-primary-light"
-      href={"/slova-biskupa-Prokopa"}
-      content="Slova biskupa Prokopa"
-      rel=""
-      target="_self"
-    />
-  </div>
+<Layout>
+	<Welcome />
 </Layout>
