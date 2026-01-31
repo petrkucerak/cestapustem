@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+import RenderDate from "../../components/RenderDate.astro";
+import AudioPlayer from "../../components/AudioPlayer.astro";
+
+export async function getStaticPaths() {
+  const dayEnteries = await getCollection("den");
+  return dayEnteries.map((entry) => ({
+    params: { date: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const post = entry.data;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${post.dayName} - Cesta půstem`}>
+  <ArticleHeader />
+
+  <article id="content" class="mx-6 max-w-[800px] text-[18px]">
+    <h1 class="text-[1.8em] font-bold mb-4">{post.dayName}</h1>
+    <RenderDate
+      dateString={post.date}
+      className="font-bold text-[1.2em] text-primary-light"
+    />
+
+    <h2 class="text-[1.4em] font-bold mb-2 mt-8">Podcast</h2>
+    <p class="italic">
+      Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného AI.
+    </p>
+    <AudioPlayer audioSrc={`/audio/${post.date}.mp3`} />
+
+    <h2 class="text-[1.4em] font-bold mb-2 mt-8">Úryvek z Bible</h2>
+    <span class="font-mono text-[1em]">({post.source})</span>
+    <p class="mt-4 tracking-wide">{post.bibleQuote}</p>
+
+    <h2 class="text-[1.4em] font-bold mt-14 mb-2">Zamyšlení</h2>
+    <div
+      class="prose prose-stone prose-p:my-4 dark:prose-invert"
+      id="contemplation"
+    >
+      <Content />
+    </div>
+
+    <p class="mt-4 text-stone-600 dark:text-stone-50">
+      (Autor zamyšlení: <a href={`/autori#${post.date}`} class="underline"
+        >{post.author}</a
+      >)
+    </p>
+
+    <h2 class="text-[1.4em] font-bold mt-14 mb-2">Závěrečná modlitba</h2>
+    <p class="mb-6">{post.prayer}</p>
+
+    <!-- Text size control -->
+    <div
+      class="flex justify-center items-center py-4 w-full sticky bottom-0 dark:bg-black bg-white"
+    >
+      <label for="text-size" class="text-sm mr-4 font-mono"
+        >Velikost&nbsp;textu:</label
+      >
+      <input
+        type="range"
+        id="text-size"
+        min="14"
+        max="30"
+        step="1"
+        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-primary-light"
+      />
+    </div>
+  </article>
+
+  <!-- Text Size Control Script -->
+  <script>
+    // @ts-nocheck
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.getElementById("text-size");
+      const content = document.getElementById("content");
+      const contemplation = document.getElementById("contemplation");
+
+      // Load saved text size or default to 18px
+      const savedSize = localStorage.getItem("textSize") || "18";
+      content.style.fontSize = savedSize + "px";
+      contemplation.style.fontSize = savedSize + "px";
+      slider.value = savedSize;
+
+      // Update text size dynamically
+      slider.addEventListener("input", (event) => {
+        const size = event.target.value;
+        content.style.fontSize = size + "px";
+        contemplation.style.fontSize = size + "px";
+        localStorage.setItem("textSize", size);
+      });
+    });
+  </script>
+</Layout>

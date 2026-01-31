@@ -1,0 +1,13 @@
+---
+interface Props {
+  className: string;
+  dateString: string;
+}
+
+const { className, dateString } = Astro.props;
+
+const date = new Date(dateString);
+const out = `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+---
+
+<span class={className}>{out}</span>

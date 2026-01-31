@@ -1,0 +1,69 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const appName = `Cesta půstem - Tvůj průvodce na cestě Půstem`;
+const appDescription = `Tvůj průvodce na cestě Půstem s evangeliem ze dne, zamyšlením a modlitbou na každý den. Vše můžeš navíc poslouchat i ve formě podcastu.`;
+const mainColor = `#50A2A7`;
+const appUrl = `https://cestapustem.cz/`;
+const coverImage = `https://cestapustem.cz/social-image.png`;
+const appAuthor = `Petr Kučera`;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <title>{title}</title>
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <!-- <link rel="stylesheet" type="text/css" href="styles/global.css" /> -->
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/favicon/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicon/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicon/favicon-16x16.png"
+  />
+
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#ffc40d" />
+  <meta name="theme-color" content={mainColor} />
+  <meta
+    name="viewport"
+    content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+  />
+  <meta name="application-name" content={appName} />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content={appName} />
+  <meta name="description" content={appDescription} />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <meta name="twitter:card" content={appDescription} />
+  <meta name="twitter:url" content={appUrl} />
+  <meta name="twitter:title" content={appName} />
+  <meta name="twitter:description" content={appDescription} />
+  <meta name="twitter:image" content={coverImage} />
+  <meta name="twitter:creator" content={appAuthor} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={appName} />
+  <meta property="og:description" content={appDescription} />
+  <meta property="og:site_name" content={appName} />
+  <meta property="og:url" content={appUrl} />
+  <meta property="og:image" content={coverImage} />
+</head>
