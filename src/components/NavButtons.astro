@@ -59,7 +59,7 @@ const availablePages = pagesData.map((page) => page.slug);
 
   // Get available pages from the data attribute
   const availablePages = new Set(
-    JSON.parse(document.getElementById("navigation-buttons").dataset.pages)
+    JSON.parse(document.getElementById("navigation-buttons").dataset.pages),
   );
 
   // Check if a page is available
