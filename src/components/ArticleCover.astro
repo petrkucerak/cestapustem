@@ -1,0 +1,37 @@
+---
+interface Props {
+  imgPath: string;
+  imgAlt: string;
+}
+
+const { imgPath, imgAlt } = Astro.props;
+---
+
+<div class="relative w-full h-[50vh] overflow-hidden">
+  <img
+    src={imgPath}
+    alt={imgAlt}
+    class="absolute inset-0 w-full h-[140%] object-cover will-change-transform"
+    style="transform: translateY(-10%);"
+    data-parallax
+  />
+</div>
+
+<script>
+  const img = document.querySelector("[data-parallax]");
+
+  let ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        img.style.transform = `translateY(calc(-10% + ${y * 0.25}px))`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+</script>

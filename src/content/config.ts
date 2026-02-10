@@ -4,6 +4,8 @@ const denCollection = defineCollection({
   type: "content",
   schema: z.object({
     dayName: z.string(),
+    imgPath: z.string(),
+    imgAlt: z.string(),
     date: z.string().date(),
     author: z.string(),
     authorDetails: z.string(),

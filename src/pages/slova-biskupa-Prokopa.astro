@@ -1,9 +1,14 @@
 ---
+import ArticleCover from "../components/ArticleCover.astro";
 import ArticleHeader from "../components/ArticleHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Slova biskupa Prokopa - Cesta půstem">
+  <ArticleCover
+    imgPath="/covers/webp/prokop.webp"
+    imgAlt="Biskup Prokop v motivech postní cesty"
+  />
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
     <h1 class="text-4xl font-bold mb-8">Slova biskupa Prokopa</h1>
