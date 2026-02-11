@@ -38,11 +38,11 @@ const { Content } = await entry.render();
 
     <h2 class="text-[1.4em] font-bold mb-2 mt-8 font-serif">Úryvek z Bible</h2>
     <span class="font-mono text-[1em]">({post.source})</span>
-    <p class="mt-4 tracking-wider leading-9 font-serif italic">{post.bibleQuote}</p>
+    <p class="mt-4 tracking-wider leading-7 font-serif italic">{post.bibleQuote}</p>
 
     <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Zamyšlení</h2>
     <div
-      class="prose prose-stone prose-p:my-4 dark:prose-invert tracking-wider leading-9 font-serif"
+      class="prose prose-stone prose-p:my-4 dark:prose-invert tracking-wider leading-7 font-serif"
       id="contemplation"
     >
       <Content />
@@ -55,6 +55,6 @@ const { Content } = await entry.render();
     </p>
 
     <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Závěrečná modlitba</h2>
-    <p class="mb-6 tracking-wider leading-9 font-serif">{post.prayer}</p>
+    <p class="mb-6 tracking-wider leading-7 font-serif">{post.prayer}</p>
   </article>
 </Layout>
