@@ -1,122 +1,165 @@
 ---
 import { getCollection } from "astro:content";
 
-// === KONFIGURACE – stačí změnit rok ===
-const rok = 2026;
+// === CONFIGURATION - just change the year ===
+const year = 2026;
 
-// === Výpočet Velikonoc (zjednodušený Gaussův algoritmus pro západní křesťanství) ===
-function vypocitejVelikonoce(y) {
+// === Calculate Easter (simplified Gauss algorithm for Western Christianity) ===
+function calculateEaster(y) {
   const a = y % 19;
   const b = Math.floor(y / 100);
   const c = y % 100;
-  const d = Math.floor((19 * a + b - Math.floor(b / 4) - Math.floor((b - Math.floor((b + 8) / 25) + 1) / 3) + 15) % 30);
-  const e = Math.floor((32 + 2 * (b % 4) + 2 * Math.floor(c / 4) - d - (c % 4)) % 7);
+  const d = Math.floor(
+    (19 * a +
+      b -
+      Math.floor(b / 4) -
+      Math.floor((b - Math.floor((b + 8) / 25) + 1) / 3) +
+      15) %
+      30,
+  );
+  const e = Math.floor(
+    (32 + 2 * (b % 4) + 2 * Math.floor(c / 4) - d - (c % 4)) % 7,
+  );
   const f = d + e - 7 * Math.floor((a + 11 * d + 22 * e) / 451) + 114;
-  const mesic = Math.floor(f / 31);
-  const den = (f % 31) + 1;
-  return new Date(y, mesic - 1, den);
+  const month = Math.floor(f / 31);
+  const day = (f % 31) + 1;
+  return new Date(y, month - 1, day);
 }
 
-const velikonoce = vypocitejVelikonoce(rok);
-const popelecniStreda = new Date(velikonoce);
-popelecniStreda.setDate(velikonoce.getDate() - 46);
+const easter = calculateEaster(year);
+const ashWednesday = new Date(easter);
+ashWednesday.setDate(easter.getDate() - 46);
 
-// === Vytvoření sekcí ===
-const sekceDefinice = [];
+// Function to set end of day for inclusive filtering
+function setEndOfDay(dt) {
+  dt.setHours(23, 59, 59, 999);
+  return dt;
+}
 
-let aktualni = new Date(popelecniStreda);
+// Calculate the first Sunday after Ash Wednesday
+const daysToNextSun = (0 - ashWednesday.getDay() + 7) % 7;
+const firstLentSunday = new Date(ashWednesday);
+firstLentSunday.setDate(ashWednesday.getDate() + daysToNextSun);
 
-// 1. Popeleční středa → sobota (samostatná sekce, často jen 1–4 dny)
-let sobotaPoPopleci = new Date(popelecniStreda);
-sobotaPoPopleci.setDate(popelecniStreda.getDate() + (6 - popelecniStreda.getDay() + 7) % 7);
-sekceDefinice.push({
-  nazev: "Týden popeleční středy",
-  start: popelecniStreda,
-  end: sobotaPoPopleci,
-});
-
-// Pak 1.–5. postní neděle + týden po nich (neděle → sobota)
+// Generate Lent Sundays up to Palm Sunday
+const lentSundays = [firstLentSunday];
 for (let i = 1; i <= 5; i++) {
-  let nedela = new Date(sobotaPoPopleci);
-  nedela.setDate(nedela.getDate() + 1); // neděle po předchozí sobotě
-  let dalsiSobota = new Date(nedela);
-  dalsiSobota.setDate(nedela.getDate() + 6);
-  sekceDefinice.push({
-    nazev: `${i}. postní týden`,
-    start: nedela,
-    end: dalsiSobota,
-  });
-  sobotaPoPopleci = dalsiSobota;
+  const nextSunday = new Date(lentSundays[i - 1]);
+  nextSunday.setDate(nextSunday.getDate() + 7);
+  lentSundays.push(nextSunday);
 }
 
-// Svatý týden = Květná neděle → Velikonoční sobota
-const kvetnaNedela = new Date(velikonoce);
-kvetnaNedela.setDate(velikonoce.getDate() - 7);
-const velikononiSobota = new Date(velikonoce);
-velikononiSobota.setDate(velikonoce.getDate() - 1);
+const palmSunday = lentSundays[5];
+const easterSunday = new Date(palmSunday);
+easterSunday.setDate(palmSunday.getDate() + 7);
 
-sekceDefinice.push({
-  nazev: "Svatý týden",
-  start: kvetnaNedela,
-  end: velikononiSobota,
+// === Create sections ===
+const sectionDefinitions = [];
+
+// Ash Wednesday week: Preparation for 1st Lent Sunday
+sectionDefinitions.push({
+  name: "Příprava na 1. neděli postní",
+  start: new Date(ashWednesday),
+  end: setEndOfDay(new Date(firstLentSunday)),
 });
 
-// === Načtení a seskupení dnů ===
+// 1st to 5th Lent weeks: Preparation for next Sundays
+for (let i = 0; i < 4; i++) {
+  const weekStart = new Date(lentSundays[i]);
+  weekStart.setDate(weekStart.getDate() + 1);
+  const weekEnd = lentSundays[i + 1];
+  sectionDefinitions.push({
+    name: `Příprava na ${i + 2}. neděli postní`,
+    start: new Date(weekStart),
+    end: setEndOfDay(new Date(weekEnd)),
+  });
+}
+
+// Preparation for Palm Sunday (5th Lent week)
+const prepPalmStart = new Date(lentSundays[4]);
+prepPalmStart.setDate(prepPalmStart.getDate() + 1);
+sectionDefinitions.push({
+  name: "Příprava na Květnou neděli",
+  start: new Date(prepPalmStart),
+  end: setEndOfDay(new Date(palmSunday)),
+});
+
+// Holy Week: Monday after Palm Sunday to Easter Sunday
+const holyStart = new Date(palmSunday);
+holyStart.setDate(palmSunday.getDate() + 1);
+const holyEnd = easterSunday;
+sectionDefinitions.push({
+  name: "Svatý týden",
+  start: new Date(holyStart),
+  end: setEndOfDay(new Date(holyEnd)),
+});
+
+// === Load and group days ===
 const days = await getCollection("den");
 
-const postniSekce = sekceDefinice.map((sek) => {
-  const dnyVSekci = days
-    .filter((day) => {
-      const d = new Date(day.data.date);
-      return d >= sek.start && d <= sek.end;
-    })
-    .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
+const lentSections = sectionDefinitions
+  .map((sek) => {
+    const daysInSection = days
+      .filter((day) => {
+        const d = new Date(day.data.date);
+        return d >= sek.start && d <= sek.end;
+      })
+      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
 
-  return {
-    nazev: sek.nazev,
-    dny: dnyVSekci.map((day) => {
-      const date = new Date(day.data.date);
-      const denVTydnu = date.toLocaleDateString("cs-CZ", { weekday: "short" }).toUpperCase();
-      return {
-        id: day.data.date,
-        display: date.getDate(),
-        den: denVTydnu,
-        getDay: date.getDay(),
-      };
-    }),
-  };
-}).filter((s) => s.dny.length > 0);
+    return {
+      name: sek.name,
+      days: daysInSection.map((day) => {
+        const date = new Date(day.data.date);
+        const weekday = date
+          .toLocaleDateString("cs-CZ", { weekday: "short" })
+          .toUpperCase();
+        return {
+          id: day.data.date,
+          display: date.getDate(),
+          den: weekday,
+          getDay: date.getDay(),
+        };
+      }),
+    };
+  })
+  .filter((s) => s.days.length > 0);
 
-// Vypočítat offset pro první den celého kalendáře (hlavička PO=1 .. NE=0)
-const prvniDen = postniSekce[0]?.dny[0];
-const offset = prvniDen ? ((prvniDen.getDay - 1 + 7) % 7) : 0;
+// Calculate global offset for the first day
+const firstSection = lentSections[0];
+const globalOffset = firstSection && firstSection.days[0] ? (firstSection.days[0].getDay - 1 + 7) % 7 : 0;
 ---
 
 <div class="mx-6 my-8">
-  <h2 class="text-2xl font-bold uppercase mb-4">Postní kalendář {rok}</h2>
+  <h2 class="text-2xl font-bold uppercase mb-4">Postní kalendář {year}</h2>
 
   <div class="space-y-4">
-    <!-- Dny v týdnu jako hlavička gridu -->
+    <!-- Single header for days of the week -->
     <div class="grid grid-cols-7 gap-2 mb-3 text-xs font-semibold text-gray-500 text-center">
-      <div>PO</div><div>ÚT</div><div>ST</div><div>ČT</div><div>PÁ</div><div>SO</div><div>NE</div>
+      <div>PO</div>
+      <div>ÚT</div>
+      <div>ST</div>
+      <div>ČT</div>
+      <div>PÁ</div>
+      <div>SO</div>
+      <div>NE</div>
     </div>
 
-    <!-- Jediná mřížka pro všechny sekce -->
+    <!-- Single grid for all sections -->
     <div class="grid grid-cols-7 gap-2">
-      <!-- Offset prázdných buněk na začátku -->
-      {Array.from({ length: offset }).map(() => (
-        <div class="aspect-square"></div>
-      ))}
-
-      {postniSekce.map((sekce) => (
+      {lentSections.map((section, index) => (
         <>
-          <!-- Nadpis sekce jako full-span řádek -->
-          <div class="col-span-7 font-bold text-lg text-center py-2  border-gray-200 mt-2">
-            {sekce.nazev}
+          <!-- Section header as full-span row -->
+          <div class="col-span-7 font-bold text-lg text-center py-2 mt-2">
+            {section.name}
           </div>
 
-          <!-- Dny sekce -->
-          {sekce.dny.map((den) => (
+          <!-- Offset only for the first section -->
+          {index === 0 && Array.from({ length: globalOffset }).map(() => (
+            <div class="aspect-square"></div>
+          ))}
+
+          <!-- Days of the section -->
+          {section.days.map((den) => (
             <a
               href={`/den/${den.id}`}
               class="aspect-square flex flex-col items-center justify-center rounded-lg
@@ -137,32 +180,32 @@ const offset = prvniDen ? ((prvniDen.getDay - 1 + 7) % 7) : 0;
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const today = new Date().toISOString().split("T")[0];
-    let precitane = JSON.parse(localStorage.getItem("precitaneDny") || "[]");
+    let readDays = JSON.parse(localStorage.getItem("precitaneDny") || "[]");
 
     document.querySelectorAll("a[data-den]").forEach((link) => {
-      const denId = link.dataset.den;
+      const dayId = link.dataset.den;
 
-      // Aktuální den
-      if (denId === today) {
+      // Highlight current day
+      if (dayId === today) {
         link.classList.add(
           "bg-blue-100",
           "border-blue-400",
           "text-blue-800",
           "font-bold",
-          "shadow-sm"
+          "shadow-sm",
         );
       }
 
-      // Přečtené
-      if (precitane.includes(denId)) {
+      // Gray out read days
+      if (readDays.includes(dayId)) {
         link.classList.add("opacity-60", "grayscale");
       }
 
-      // Označení po kliku
+      // Mark as read on click
       link.addEventListener("click", () => {
-        if (!precitane.includes(denId)) {
-          precitane.push(denId);
-          localStorage.setItem("precitaneDny", JSON.stringify(precitane));
+        if (!readDays.includes(dayId)) {
+          readDays.push(dayId);
+          localStorage.setItem("precitaneDny", JSON.stringify(readDays));
           link.classList.add("opacity-60", "grayscale");
         }
       });
