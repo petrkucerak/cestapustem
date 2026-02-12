@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Button from "./Button.astro";
+import Card from "./Card.astro";
 
 // Fetch the collection of pages
 const pagesData = await getCollection("den");
@@ -11,30 +12,40 @@ const availablePages = pagesData.map((page) => page.slug);
 
 <div
   id="navigation-buttons"
-  class="mx-6 flex flex-row justify-around mt-6"
+  class="mx-6 flex flex-row justify-between mt-6"
   data-pages={JSON.stringify(availablePages)}
 >
   <!-- Navigation buttons hidden by default -->
   <Button
     id="yesterday-button"
     href="#"
-    className="hidden bg-primary-light"
+    className="hidden bg-primary-light shadow"
     target="_self"
     content="VČERA"
   />
   <Button
     id="today-button"
     href="#"
-    className="hidden bg-primary-dark"
+    className="hidden bg-primary-dark shadow"
     target="_self"
     content="DNES"
   />
   <Button
     id="tomorrow-button"
     href="#"
-    className="hidden bg-primary-light"
+    className="hidden bg-primary-light shadow"
     target="_self"
     content="ZÍTRA"
+  />
+</div>
+
+<div class="mx-6 flex flex-row justify-center">
+  <Card
+    href="/setkani/1-nedele-postni"
+    content="Materiály pro setkání k 1. neděli postní"
+    imagePath="/covers/webp/1_nedele_postni.webp"
+    imageAlt="Ježíš sedíci na popušti"
+    imagePositionY={53}
   />
 </div>
 
@@ -44,7 +55,7 @@ const availablePages = pagesData.map((page) => page.slug);
   const formatDate = (date) => date.toISOString().split("T")[0];
 
   // Get today, yesterday, and tomorrow
-  const today = new Date();
+  const today = new Date("2026-02-22");
   const yesterday = new Date(today);
   const tomorrow = new Date(today);
 

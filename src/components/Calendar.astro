@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const year = 2026;
 
 // === Calculate Easter (simplified Gauss algorithm for Western Christianity) ===
-function calculateEaster(y) {
+function calculateEaster(y: number) {
   const a = y % 19;
   const b = Math.floor(y / 100);
   const c = y % 100;
@@ -31,7 +31,7 @@ const ashWednesday = new Date(easter);
 ashWednesday.setDate(easter.getDate() - 46);
 
 // Function to set end of day for inclusive filtering
-function setEndOfDay(dt) {
+function setEndOfDay(dt: Date) {
   dt.setHours(23, 59, 59, 999);
   return dt;
 }
@@ -58,9 +58,10 @@ const sectionDefinitions = [];
 
 // Ash Wednesday week: Preparation for 1st Lent Sunday
 sectionDefinitions.push({
-  name: "Příprava na 1. neděli postní",
+  name: "Týden před 1. neděli postní",
   start: new Date(ashWednesday),
   end: setEndOfDay(new Date(firstLentSunday)),
+  slug: "1-nedele-postni",
 });
 
 // 1st to 5th Lent weeks: Preparation for next Sundays
@@ -69,9 +70,10 @@ for (let i = 0; i < 4; i++) {
   weekStart.setDate(weekStart.getDate() + 1);
   const weekEnd = lentSundays[i + 1];
   sectionDefinitions.push({
-    name: `Příprava na ${i + 2}. neděli postní`,
+    name: `Týden před ${i + 2}. neděli postní`,
     start: new Date(weekStart),
     end: setEndOfDay(new Date(weekEnd)),
+    slug: `${i + 2}-nedele-postni`,
   });
 }
 
@@ -79,9 +81,10 @@ for (let i = 0; i < 4; i++) {
 const prepPalmStart = new Date(lentSundays[4]);
 prepPalmStart.setDate(prepPalmStart.getDate() + 1);
 sectionDefinitions.push({
-  name: "Příprava na Květnou neděli",
+  name: "Týden před Květnou neděli",
   start: new Date(prepPalmStart),
   end: setEndOfDay(new Date(palmSunday)),
+  slug: `6-kvetna-nedele`,
 });
 
 // Holy Week: Monday after Palm Sunday to Easter Sunday
@@ -92,6 +95,7 @@ sectionDefinitions.push({
   name: "Svatý týden",
   start: new Date(holyStart),
   end: setEndOfDay(new Date(holyEnd)),
+  slug: `7-zmrtvychvstani`,
 });
 
 // === Load and group days ===
@@ -104,10 +108,14 @@ const lentSections = sectionDefinitions
         const d = new Date(day.data.date);
         return d >= sek.start && d <= sek.end;
       })
-      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
+      .sort(
+        (a, b) =>
+          new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
+      );
 
     return {
       name: sek.name,
+      slug: sek.slug,
       days: daysInSection.map((day) => {
         const date = new Date(day.data.date);
         const weekday = date
@@ -140,8 +148,21 @@ const globalOffset =
       {
         lentSections.map((section, index) => (
           <>
-            <div class="col-span-7 py-2 mt-2">
+            <div class="col-span-7 mt-4 flex w-full justify-between">
               <h3 class="font-bold text-lg">{section.name}</h3>
+              <div>
+                <a href={`/setkani/${section.slug}`}>
+                  <img
+                    src="/icons/pdf.svg"
+                    class="inline w-6 dark:text-white"
+                    alt="Ikona otevřené knihy"
+                    title={`Manuál k společné přípravě na ${section.name}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="underline text-primary-light">setkání</span>
+                </a>
+              </div>
             </div>
 
             {index === 0 &&
@@ -174,7 +195,7 @@ const globalOffset =
     let readDays = JSON.parse(localStorage.getItem("precitaneDny") || "[]");
 
     document.querySelectorAll("a[data-den]").forEach((link) => {
-      const dayId = link.dataset.den;
+      const dayId = (link as HTMLAnchorElement).dataset.den;
 
       // Highlight current day
       if (dayId === today) {

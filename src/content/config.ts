@@ -15,6 +15,16 @@ const denCollection = defineCollection({
   }),
 });
 
+const sundayCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    dayName: z.string(),
+    imgPath: z.string(),
+    imgAlt: z.string(),
+  }),
+});
+
 export const collections = {
   den: denCollection,
+  setkani: sundayCollection,
 };

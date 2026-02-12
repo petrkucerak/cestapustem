@@ -4,6 +4,7 @@ import Calendar from "../components/Calendar.astro";
 import Button from "../components/Button.astro";
 import Logo from "../components/Logo.astro";
 import NavButtons from "../components/NavButtons.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Cesta půstem - Tvůj průvodce na cestě Půstem">
@@ -14,6 +15,16 @@ import NavButtons from "../components/NavButtons.astro";
   </div>
 
   <NavButtons />
+
+  <div class="mx-6 flex flex-row justify-center mt-4">
+    <Card
+      href="/slova-biskupa-Prokopa"
+      content="Úvodní slovo biskupa Prokopa"
+      imagePath="/covers/webp/prokop.webp"
+      imageAlt="Biskup Prokop s mikrofonem v ruce"
+      imagePositionY={31}
+    />
+  </div>
 
   <Calendar />
 

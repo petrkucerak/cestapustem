@@ -1,7 +1,7 @@
 ---
 interface Props {
   content: string;
-  target: string;
+  target?: string;
   href?: string;
   rel?: string;
   className?: string;
@@ -21,9 +21,9 @@ const {
 <a
   href={href}
   id={id}
-  class={`${className} rounded text-white px-4 py-2 font-semibold hover:scale-110 duration-200 my-4`}
+  class={`${className} rounded text-white px-4 py-2 font-semibold hover:scale-110 duration-200 my-4 cursor-pointer`}
   rel={rel}
   target={target}
 >
-  <button title={content}>{content}</button>
+  <button title={content} class="cursor-pointer">{content}</button>
 </a>

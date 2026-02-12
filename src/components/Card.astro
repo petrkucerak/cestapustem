@@ -1,0 +1,51 @@
+---
+interface Props {
+  content: string;
+  target?: string;
+  href?: string;
+  rel?: string;
+  className?: string;
+  id?: string;
+  imagePath: string;
+  imageAlt?: string;
+  imagePositionY?: number;
+}
+
+const {
+  href,
+  content,
+  target = "_self",
+  rel = "",
+  className = "",
+  id = "",
+  imagePath,
+  imageAlt = "Náhledový obrázek",
+  imagePositionY = 50,
+} = Astro.props;
+
+// Clamp imagePositionY between 0 and 100
+const clampedPositionY = Math.max(0, Math.min(100, imagePositionY));
+const objectPositionStyle = `center ${clampedPositionY}%`;
+---
+
+<a
+  href={href}
+  id={id}
+  class={`${className} w-full relative hover:scale-105 duration-200`}
+  rel={rel}
+  target={target}
+>
+  <img
+    src={imagePath}
+    alt={imageAlt}
+    style={`object-position: ${objectPositionStyle}`}
+    class={`h-32 w-full object-cover rounded shadow`}
+  />
+  <div class="absolute inset-0 flex items-center justify-center rounded">
+    <p
+      class="bg-white text-[#f1cc41] font-bold uppercase text-center px-4 py-2 rounded"
+    >
+      {content}
+    </p>
+  </div>
+</a>
