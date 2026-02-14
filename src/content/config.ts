@@ -21,6 +21,8 @@ const sundayCollection = defineCollection({
     dayName: z.string(),
     imgPath: z.string(),
     imgAlt: z.string(),
+    startDate: z.string(),
+    imagePositionY: z.number(),
   }),
 });
 
