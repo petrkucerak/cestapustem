@@ -19,9 +19,10 @@ const availableSetkani = setkaniData.map((page) => ({
 }));
 ---
 
+<h2 class="mx-6 mt-4 font-semibold">Čtení se zamyšlením</h2>
 <div
   id="navigation-buttons"
-  class="mx-6 flex flex-row justify-between mt-6"
+  class="mx-6 flex flex-row justify-between mt-2 mb-4"
   data-pages={JSON.stringify(availablePages)}
   data-setkani={JSON.stringify(availableSetkani)}
 >
@@ -49,7 +50,12 @@ const availableSetkani = setkaniData.map((page) => ({
   />
 </div>
 
-<div class="mx-6 flex flex-row justify-center flex-wrap">
+<h2 class="mx-6 font-semibold mb-2">Metodika pro setkání společenství</h2>
+<div class="mx-6
+  flex
+  flex-row
+  justify-center
+  flex-wrap">
   <Card
     id="setkani-card"
     href="#"
