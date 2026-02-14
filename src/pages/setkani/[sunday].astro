@@ -26,9 +26,12 @@ const { Content } = await entry.render();
     <h1 class="text-[1.8em] font-bold mb-4">{post.dayName}</h1>
 
     <div class="grid md:grid-cols-2 gap-2">
-      <Button content="Úvod k metodice" target="" />
-      <Button content="Průběh setkání" target="" />
-      <Button content="Rady a tipy pro vedoucí skupinek" target="" />
+      <Button content="Úvod k metodice" href="/setkani/uvod-k-metodice" />
+      <Button content="Průběh setkání" href="/setkani/prubeh-setkani" />
+      <Button
+        content="Rady a tipy pro vedoucí skupinek"
+        href="/setkani/rady-a-tipy-pro-vedouci-skupinek"
+      />
     </div>
 
     <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Zamyšlení</h2>

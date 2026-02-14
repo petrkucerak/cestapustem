@@ -1,0 +1,33 @@
+---
+import ArticleCover from "../../components/ArticleCover.astro";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+---
+
+<Layout title="Rady a tipy pro vedení skupinek - Cesta půstem">
+  <ArticleCover
+    imgPath="/covers/webp/prokop.webp"
+    imgAlt="Biskup Prokop v motivech postní cesty"
+  />
+  <ArticleHeader />
+  <article class="mx-6 max-w-[800px]">
+    <h1 class="text-4xl font-bold mb-8">Rady a tipy pro vedení skupinek</h1>
+    <h2 class="text-xl font-bold font-serif tracking-wide leading-9">
+      Smysl metodiky
+    </h2>
+    <p class="text-lg mb-4 font-serif tracking-wide leading-9">
+      Tato metodika vznikla jako pomoc pro společenství mládeže na cestě postní
+      dobou. Nejde nám o vytvoření dokonalého programu ani o předávání co
+      nejvíce informací. Naším cílem je něco jednoduššího a zároveň hlubšího –
+      chceme mladým pomoci setkat se s Bohem, sdílet víru mezi sebou a učit se
+      kráčet společně jako společenství.
+    </p>
+
+    <h2 class="text-xl uppercase font-bold mt-2 mb-1">Číst více</h2>
+    <div class="grid md:grid-cols-2 gap-2 mb-4">
+      <Button content="Úvod k metodice" href="/setkani/uvod-k-metodice" />
+      <Button content="Průběh setkání" href="/setkani/prubeh-setkani" />
+    </div>
+  </article>
+</Layout>
