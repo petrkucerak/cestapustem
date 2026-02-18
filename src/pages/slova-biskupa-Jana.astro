@@ -1,9 +1,14 @@
 ---
+import ArticleCover from "../components/ArticleCover.astro";
 import ArticleHeader from "../components/ArticleHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Slova biskupa Jana - Cesta půstem">
+  <ArticleCover
+    imgPath="/covers/webp/Jan.webp"
+    imgAlt="Biskup Jan v motivech postní cesty"
+  />
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
     <h1 class="text-4xl font-bold mb-8">Slova biskupa Jana</h1>

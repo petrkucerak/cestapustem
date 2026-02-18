@@ -15,22 +15,31 @@ import NavButtons from "../components/NavButtons.astro";
 
   <NavButtons />
 
-  <div class="h-10"></div>
-
   <Calendar />
 
   <h2 class="mx-6 text-2xl uppercase font-bold">O projektu</h2>
-  <p class="mx-6 text-lg mb-8">
+  <p class="mx-6 text-lg mb-4">
     Cesta půstem je webová aplikace k&nbsp;tištěné verzi knihy Půst, která se
     každoročně vydává v&nbsp;Královéhradecké diecézi. Každý den si můžeš přečíst
-    evangelium, zamyšlení a&nbsp;krátkou modlitbu.
+    evangelium, zamyšlení a&nbsp;krátkou modlitbu nebo si vše poslechnout formou
+    podcastu.
+  </p>
+  <p class="mx-6 text-lg mb-8">
+    Letos na navíc na brožuru navazuje
+    <a
+      href="/dokumenty/metodika_cesta_pustem.pdf"
+      target="_blank"
+      class="underline text-primary-dark font-semibold"
+    >
+      metodika pro setkání mládeže</a
+    >, která slouží jako příprava na každou neděli postní.
   </p>
 
   <div class="mx-6 gap-2 flex flex-row justify-around mb-8 flex-wrap">
     <Button
       className="bg-primary-light"
-      href={"/autori"}
-      content="Autoři"
+      href={"/zdroje-a-autori"}
+      content="Zdroje a autoři"
       rel=""
       target="_self"
     />
@@ -47,6 +56,20 @@ import NavButtons from "../components/NavButtons.astro";
       content="Slova biskupa Prokopa"
       rel=""
       target="_self"
+    />
+    <Button
+      className="bg-primary-light"
+      href={"/dokumenty/metodika_cesta_pustem.pdf"}
+      content="Metodika pro setkání mládeže"
+      rel=""
+      target="_blank"
+    />
+    <Button
+      className="bg-primary-light"
+      href={"https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=JbG6W8ZnTmWsSCRCA9ilrQ"}
+      content="Audio na spotify"
+      rel=""
+      target="_blank"
     />
   </div>
 </Layout>

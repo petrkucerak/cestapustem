@@ -1,0 +1,118 @@
+---
+import { getCollection } from "astro:content";
+import ArticleHeader from "../components/ArticleHeader.astro";
+import Layout from "../layouts/Layout.astro";
+
+const days = await getCollection("den");
+---
+
+<Layout title="Autoři - Cesta půstem">
+  <ArticleHeader />
+  <section class="mx-6 max-w-[800px]">
+    <h1 class="text-4xl font-bold mb-8">Zdroje a autoři</h1>
+    <h2 class="text-xl font-semibold mt-4">Papež František</h2>
+    <ul class="list-disc ml-4 mt-2">
+      <li>
+        Dar radosti a naděje, Výběr z promluv papeže Františka, Praha 2023.
+      </li>
+      <li>
+        Dilexit nos, Encyklika o lidské a božské lásce srdce Ježíše Krista,
+        Praha 2025.
+      </li>
+      <li>
+        Evangelii gaudium (Radost evangelia), Apoštolská exhortace o hlásání
+        evangelia v současném světě, Praha 2014.
+      </li>
+      <li>
+        Fratelli tutti, Encyklika o bratrství a sociálním přátelství, Praha
+        2021.
+      </li>
+      <li>
+        Gaudete et exsultate (Radujte se a jásejte), Apoštolská exhortace o
+        povolání ke svatosti v současném světě, Praha 2018.
+      </li>
+      <li>
+        Christus vivit (Kristus žije), Posynodní apoštolská exhortace k mladým
+        lidem i k celému Božímu lidu, Praha 2019.
+      </li>
+      <li>
+        Laudato si´ (Buď pochválen), Encyklika o péči o společný domov, Praha
+        2018.
+      </li>
+      <li>
+        <a
+          href="https://www.vatican.va/content/vatican/it/holy-father/francesco.html"
+          target="_blank"
+          rel="external"
+          class="underline text-primary-dark"
+          >www.vatican.va/content/vatican/it/holy-father/francesco.html</a
+        >
+      </li>
+    </ul>
+    <h2 class="text-xl font-semibold mt-4">Papež Lev XIV.</h2>
+    <ul class="list-disc ml-4 mt-2">
+      <li>(katecheze, poselství, exhortace Dilexi Te)</li>
+      <li>
+        <a
+          href="https://www.vatican.va/content/leo-xiv/it/audiences.index.html#audiences"
+          target="_blank"
+          rel="external"
+          class="underline text-primary-dark"
+          >www.vatican.va/content/leo-xiv/it/audiences.index.html#audiences</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.vatican.va/content/leo-xiv/it/audiences/2025.index.html"
+          target="_blank"
+          rel="external"
+          class="underline text-primary-dark"
+          >www.vatican.va/content/leo-xiv/it/audiences/2025.index.html</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.vatican.va/content/leo-xiv/it/messages/youth.index.html#messages"
+          target="_blank"
+          rel="external"
+          class="underline text-primary-dark"
+          >www.vatican.va/content/leo-xiv/it/messages/youth.index.html#messages</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.vatican.va/content/leo-xiv/it/apost_exhortations.index.html"
+          target="_blank"
+          rel="external"
+          class="underline text-primary-dark"
+          >www.vatican.va/content/leo-xiv/it/apost_exhortations.index.html</a
+        >
+      </li>
+    </ul>
+    <h2 class="text-xl font-semibold mt-4 mb-2">Podle dnů</h2>
+    <ul>
+      {
+        days.map((post) => {
+          return (
+            <li class="mb-4 list-disc ml-5" id={post.data.date}>
+              <strong>{post.data.author}</strong>
+              {/* <br />
+              {post.data.authorDetails} */}
+            </li>
+          );
+        })
+      }
+    </ul>
+    <h2 class="text-2xl font-bold mt-8 mb-2">Obsah brožury připravili</h2>
+    <p class="mb-8">Prokop Brož, Petr Polehla, Anna Hrčková a Jiří Bittner</p>
+    <h2 class="text-2xl font-bold mt-8 mb-2">Namluvili</h2>
+    <p class="mb-8">Jitka Uhnavá Vlachová a Daniel Rumpík</p>
+    <h2 class="text-2xl font-bold mt-8 mb-2">Metodika a webová aplikace</h2>
+    <p class="mb-8">
+      Klára Petrová,
+      <a href="https://petrkucerak.cz/" target="_blank" rel="external"
+        >Petr Kučera</a
+      >
+    </p>
+  </section>
+</Layout>

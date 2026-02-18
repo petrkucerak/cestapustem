@@ -19,10 +19,10 @@ const availableSetkani = setkaniData.map((page) => ({
 }));
 ---
 
-<h2 class="mx-6 mt-4 font-semibold">Čtení se zamyšlením</h2>
+<!-- <h2 class="mx-6 mt-4 font-semibold">Čtení se zamyšlením</h2> -->
 <div
   id="navigation-buttons"
-  class="mx-6 flex flex-row justify-between mt-2 mb-4"
+  class="mx-6 flex flex-row justify-around mt-8 mb-4"
   data-pages={JSON.stringify(availablePages)}
   data-setkani={JSON.stringify(availableSetkani)}
 >
@@ -50,7 +50,7 @@ const availableSetkani = setkaniData.map((page) => ({
   />
 </div>
 
-<h2 class="mx-6 font-semibold mb-2">Metodika pro setkání společenství</h2>
+<!-- <h2 class="mx-6 font-semibold mb-2">Metodika pro setkání společenství</h2>
 <div class="mx-6
   flex
   flex-row
@@ -65,7 +65,7 @@ const availableSetkani = setkaniData.map((page) => ({
     imagePositionY={53}
     className="hidden"
   />
-</div>
+</div> -->
 
 <script>
   // @ts-nocheck
@@ -73,7 +73,7 @@ const availableSetkani = setkaniData.map((page) => ({
   const formatDate = (date) => date.toISOString().split("T")[0];
 
   // Get today, yesterday, and tomorrow
-  const today = new Date("2026-02-22");
+  const today = new Date();
   const yesterday = new Date(today);
   const tomorrow = new Date(today);
 
