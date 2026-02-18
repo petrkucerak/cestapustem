@@ -1,67 +1,52 @@
 ---
+import ArticleCover from "../components/ArticleCover.astro";
 import ArticleHeader from "../components/ArticleHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Slova biskupa Prokopa - Cesta půstem">
+  <ArticleCover
+    imgPath="/covers/webp/prokop.webp"
+    imgAlt="Biskup Prokop v motivech postní cesty"
+  />
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
     <h1 class="text-4xl font-bold mb-8">Slova biskupa Prokopa</h1>
-    <p class="font-semibold text-lg mb-1">Vážení přátelé,</p>
-    <p class="text-lg mb-4">
-      papež František vyhlásil pro univerzální církev Jubilejní rok 2025. A tak
-      bude mnoho poutníků putovat k bránám Milosrdenství, jež patří k
-      jubilejnímu roku, k tomuto vzácnému času spásy, odpuštění, usmíření,
-      obrácení – konverze. Poutník se učí kráčet ve světle, které do našich dní
-      září jako světlo vycházejí od Krista ukřižovaného a vzkříšeného. A to vše
-      v konkrétních příhodách a událostech, v kontextu osobního životního
-      příběhu. Nahlíží svůj život jako pouť, v níž se mu otevírá hloubka, výška,
-      šířka i délka života (Ef 3,18) ve světle Kristovy lásky, kam ho uvádí Duch
-      Boží (Ef 3,16).
+    <p class="font-semibold text-lg mb-1 font-serif tracking-wider leading-9">
+      Vážení přátelé, bratři a sestry,
     </p>
-    <p class="text-lg mb-4">
-      Myšlenka této postní brožury začíná u Božího obdarování, v němž Bůh svým
-      Duchem tvoří životy lidí, formuje jejich srdce. Mám na mysli svátosti,
-      sedm událostí, kterými Bůh vstupuje jako branami do našeho života, abychom
-      v těchto branách mohli stále čerpat dostatek vody i života pro vše, co
-      jsme a co děláme. A vedle toho jubilejní rok míří na existenciální
-      putování, jež mívá často křivolaký, dramatický průběh, v němž se tvoří,
-      dlouhodobě kovají jemné postoje vytrvalosti, osvědčenosti, spolehlivosti a
-      kde raší a jde do květu pravá naděje.
+    <p class="text-lg mb-4 font-serif tracking-wider leading-9">
+      minulý rok nás o Velikonocích do Otcova domu předešel papež František den
+      poté, co lidem shromážděným na Svatopetrském náměstí u příležitosti Urbi
+      et Orbi osobně požehnal. Předtím nechal přečíst text o radosti a naději,
+      jež přicházejí od vzkříšeného Krista. Papež Lev XIV. ve mši svaté po svém
+      zvolení směřoval svoji pozornost na Ježíše Krista. Sám Ježíš položil
+      apoštolům otázku: „Za koho pokládají lidé syna člověka?“ A papež zkoumal,
+      jak na tuto otázku odpovídali učedníci, apoštol Petr, a jak na ni
+      odpovídají lidé dneška.
     </p>
-    <p class="text-lg mb-4">
-      Do postní brožury jsme se letos pokusili zachytit zkušenosti a inspirace,
-      které ve svátostech přijali mnozí z nás, anebo je vnímali a prožívali
-      spolu se svými dětmi, blízkými a nemocnými. Možná při četbě zjistíte, že z
-      existenciální perspektivy začínají svátosti působit jinak, živě,
-      občerstvují, svítí, opravdu dodávají síly a chuti.
+    <p class="text-lg mb-4 font-serif tracking-wider leading-9">
+      Máme dosud živě v paměti slova, výroky a gesta papeže Františka a současně
+      si zvykáme na hlas a postoje papeže Lva. Zcela přirozeně se nabízí,
+      abychom během letošního postního putování k Velikonocům naslouchali oběma
+      nástupců svatého Petra. Chceme v jejich textech sledovat především radost
+      a naději, o které nám oba papežové neúnavně svědčí. Přitom se neuzavírají
+      do svých neochvějných jistot, ale stále se vracejí ke Kristu, v jeho Duchu
+      každou nejistotu, skepsi, troufalost a lidskou sebespokojenost odhalují a
+      léčí. V procesu konverze nakonec objevují lidskou existenci vždy nově.
+      Tyto složité děje se odehrávají v prostředí církve, jež je coby Kristovo
+      dílo nerozlučně spojena s dramatem obrácení, nápravy a objevování nových
+      začátků.
     </p>
-    <p class="text-lg mb-4">
-      A ve stejné perspektivě se i lidské starosti, problémy, radosti, úspěchy i
-      neúspěchy, nemoci i uzdravení začnou postupně spojovat, budou společně v
-      nepřehledné houštině mnoha událostí vytvářet jednu společnou pouť, budou
-      se vinout jako cesta, která spojuje začátek i konec.
+    <p class="text-lg mb-4 font-serif tracking-wider leading-9">
+      Otevřeme tedy svá srdce Duchu svatému a naslouchejme hlasu papežů –
+      podobně, jako Matka Boží Panna Maria byla otevřena Duchu a Slovu –,
+      abychom se během postní doby připravili na velikonoční radost. Ať se pak o
+      Velikonocích znovu naladíme na Radost evangelia, sílu společně sdílené
+      víry v našich slovech i činech.
     </p>
-    <p class="text-lg mb-4">
-      K tematice svátostí a poutnictví jsme připojili ještě jedno související
-      téma – trpělivost a naděje. Papež ve své bule Spes non confundit (Naděje
-      neklame, [Řím 5,5]) zve věřící k tomu, aby svou naději čerpali, obnovovali
-      a rozvíjeli v jejím samém zdroji: „Je to totiž Duch Svatý a jeho trvalá
-      přítomnost na stezkách, jimiž jde církev, kdo ve věřících září světlem
-      naděje. On toto světlo udržuje zažehnuté jako pochodeň, která nikdy
-      neuhasne, aby nám byl v našem životě oporou a posilou“ (čl. 3).
+    <p class="text-lg mb-8 italic font-serif tracking-wider leading-9">
+      Prokop Brož
     </p>
-    <p class="text-lg mb-4">
-      Děkuji všem, kteří se vydali na putování Jubilejního roku ještě před jeho
-      vypuknutím, když sestavovali texty pro naši letošní postní brožuru. S nimi
-      se do díla vložili i ti, kdy texty přečetli a upravili pro tisk, a také
-      ostatní, kteří nakonec postní brožuru připravili ke každodennímu postnímu
-      čtení. Všem ještě jednou srdečné díky.
-    </p>
-    <p class="text-lg mb-4">
-      Přeji vám všem, ať skrze otevřené Svaté brány roku 2025 se i váš životní
-      prostor naplní světlem naděje, která neklame.
-    </p>
-    <p class="text-lg mb-8 italic">Prokop Brož</p>
   </article>
 </Layout>

@@ -1,44 +1,226 @@
 ---
 import { getCollection } from "astro:content";
 
+// === CONFIGURATION - just change the year ===
+const year = 2026;
+
+// === Calculate Easter (simplified Gauss algorithm for Western Christianity) ===
+function calculateEaster(y: number) {
+  const a = y % 19;
+  const b = Math.floor(y / 100);
+  const c = y % 100;
+  const d = Math.floor(
+    (19 * a +
+      b -
+      Math.floor(b / 4) -
+      Math.floor((b - Math.floor((b + 8) / 25) + 1) / 3) +
+      15) %
+      30,
+  );
+  const e = Math.floor(
+    (32 + 2 * (b % 4) + 2 * Math.floor(c / 4) - d - (c % 4)) % 7,
+  );
+  const f = d + e - 7 * Math.floor((a + 11 * d + 22 * e) / 451) + 114;
+  const month = Math.floor(f / 31);
+  const day = (f % 31) + 1;
+  return new Date(y, month - 1, day);
+}
+
+const easter = calculateEaster(year);
+const ashWednesday = new Date(easter);
+ashWednesday.setDate(easter.getDate() - 46);
+
+// Function to set end of day for inclusive filtering
+function setEndOfDay(dt: Date) {
+  dt.setHours(23, 59, 59, 999);
+  return dt;
+}
+
+// Calculate the first Sunday after Ash Wednesday
+const daysToNextSun = (0 - ashWednesday.getDay() + 7) % 7;
+const firstLentSunday = new Date(ashWednesday);
+firstLentSunday.setDate(ashWednesday.getDate() + daysToNextSun);
+
+// Generate Lent Sundays up to Palm Sunday
+const lentSundays = [firstLentSunday];
+for (let i = 1; i <= 5; i++) {
+  const nextSunday = new Date(lentSundays[i - 1]);
+  nextSunday.setDate(nextSunday.getDate() + 7);
+  lentSundays.push(nextSunday);
+}
+
+const palmSunday = lentSundays[5];
+const easterSunday = new Date(palmSunday);
+easterSunday.setDate(palmSunday.getDate() + 7);
+
+// === Create sections ===
+const sectionDefinitions = [];
+
+// Ash Wednesday week: Preparation for 1st Lent Sunday
+sectionDefinitions.push({
+  name: "Týden před 1. neděli postní",
+  start: new Date(ashWednesday),
+  end: setEndOfDay(new Date(firstLentSunday)),
+  slug: "1-nedele-postni",
+});
+
+// 1st to 5th Lent weeks: Preparation for next Sundays
+for (let i = 0; i < 4; i++) {
+  const weekStart = new Date(lentSundays[i]);
+  weekStart.setDate(weekStart.getDate() + 1);
+  const weekEnd = lentSundays[i + 1];
+  sectionDefinitions.push({
+    name: `Týden před ${i + 2}. neděli postní`,
+    start: new Date(weekStart),
+    end: setEndOfDay(new Date(weekEnd)),
+    slug: `${i + 2}-nedele-postni`,
+  });
+}
+
+// Preparation for Palm Sunday (5th Lent week)
+const prepPalmStart = new Date(lentSundays[4]);
+prepPalmStart.setDate(prepPalmStart.getDate() + 1);
+sectionDefinitions.push({
+  name: "Týden před Květnou neděli",
+  start: new Date(prepPalmStart),
+  end: setEndOfDay(new Date(palmSunday)),
+  slug: `6-kvetna-nedele`,
+});
+
+// Holy Week: Monday after Palm Sunday to Easter Sunday
+const holyStart = new Date(palmSunday);
+holyStart.setDate(palmSunday.getDate() + 1);
+const holyEnd = easterSunday;
+sectionDefinitions.push({
+  name: "Svatý týden",
+  start: new Date(holyStart),
+  end: setEndOfDay(new Date(holyEnd)),
+  slug: `7-zmrtvychvstani`,
+});
+
+// === Load and group days ===
 const days = await getCollection("den");
 
-// Group days by month
-const months = days.reduce((acc, day) => {
-  const date = new Date(day.data.date);
-  const monthKey = date.toLocaleString("cs-CZ", {
-    month: "long",
-    // year: "numeric",
-  });
-  if (!acc[monthKey]) acc[monthKey] = [];
-  acc[monthKey].push(day);
-  return acc;
-}, {});
+const lentSections = sectionDefinitions
+  .map((sek) => {
+    const daysInSection = days
+      .filter((day) => {
+        const d = new Date(day.data.date);
+        return d >= sek.start && d <= sek.end;
+      })
+      .sort(
+        (a, b) =>
+          new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
+      );
+
+    return {
+      name: sek.name,
+      slug: sek.slug,
+      days: daysInSection.map((day) => {
+        const date = new Date(day.data.date);
+        const weekday = date
+          .toLocaleDateString("cs-CZ", { weekday: "short" })
+          .toUpperCase();
+        return {
+          id: day.data.date,
+          display: date.getDate(),
+          den: weekday,
+          getDay: date.getDay(),
+        };
+      }),
+    };
+  })
+  .filter((s) => s.days.length > 0);
+
+// Calculate global offset for the first day
+const firstSection = lentSections[0];
+const globalOffset =
+  firstSection && firstSection.days[0]
+    ? (firstSection.days[0].getDay - 1 + 7) % 7
+    : 0;
 ---
 
-<div class="mx-6 my-6">
-  <h2 class="text-2xl font-bold uppercase mb-1">Kalendář</h2>
+<div class="mx-6 my-8">
+  <h2 class="text-2xl font-bold uppercase mb-4">Kalendář</h2>
 
-  {
-    Object.keys(months).map((month) => (
-      <div class="mb-4">
-        <h3 class="text-xl font-bold capitalize">{month}</h3>
-        <div class="grid grid-cols-5 auto-cols-max gap-y-2">
-          {months[month].map(
-            (day: { data: { date: string | number | Date } }) => {
-              const date = new Date(day.data.date);
-              return (
-                <a
-                  class="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-primary-light"
-                  href={`den/${day.data.date}`}
-                >
-                  {date.getDate()}.
+  <div class="space-y-4">
+    <div class="grid grid-cols-7 gap-2">
+      {
+        lentSections.map((section, index) => (
+          <>
+            <div class="col-span-7 mt-4 flex w-full justify-between">
+              <h3 class="font-bold text-lg">{section.name}</h3>
+              <div>
+                <a href={`/setkani/${section.slug}`}>
+                  <img
+                    src="/icons/book.svg"
+                    class="inline w-6 dark:text-white"
+                    alt="Ikona otevřené knihy"
+                    title={`Manuál k společné přípravě na ${section.name}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="underline text-primary-light">setkání</span>
                 </a>
-              );
-            }
-          )}
-        </div>
-      </div>
-    ))
-  }
+              </div>
+            </div>
+
+            {index === 0 &&
+              Array.from({ length: globalOffset }).map(() => (
+                <div class="aspect-square" />
+              ))}
+
+            {section.days.map((den) => (
+              <a
+                href={`/den/${den.id}`}
+                class="aspect-square flex flex-col items-center justify-center rounded-lg
+                     text-center font-medium text-base transition duration-150
+                     border border-gray-200"
+                data-den={den.id}
+              >
+                <span class="text-xs text-gray-500">{den.den}</span>
+                <span class="text-lg">{den.display}</span>
+              </a>
+            ))}
+          </>
+        ))
+      }
+    </div>
+  </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const today = new Date().toISOString().split("T")[0];
+    let readDays = JSON.parse(localStorage.getItem("precitaneDny") || "[]");
+
+    document.querySelectorAll("a[data-den]").forEach((link) => {
+      const dayId = (link as HTMLAnchorElement).dataset.den;
+
+      // Highlight current day
+      if (dayId === today) {
+        link.classList.add(
+          "bg-blue-100",
+          "border-blue-400",
+          "text-blue-800",
+          "font-bold",
+          "shadow-sm",
+        );
+      }
+
+      // Gray out read days
+      if (readDays.includes(dayId)) {
+        link.classList.add("opacity-60", "grayscale");
+      }
+
+      // Mark as read on click
+      link.addEventListener("click", () => {
+        if (!readDays.includes(dayId)) {
+          readDays.push(dayId);
+          localStorage.setItem("precitaneDny", JSON.stringify(readDays));
+          link.classList.add("opacity-60", "grayscale");
+        }
+      });
+    });
+  });
+</script>

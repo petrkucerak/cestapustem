@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+import ArticleCover from "../../components/ArticleCover.astro";
+import Button from "../../components/Button.astro";
+
+export async function getStaticPaths() {
+  const dayEnteries = await getCollection("setkani");
+  return dayEnteries.map((entry) => ({
+    params: { sunday: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const post = entry.data;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${post.dayName} - Cesta půstem`}>
+  <ArticleCover imgPath={post.imgPath} imgAlt={post.imgAlt} />
+  <ArticleHeader />
+
+  <article id="content" class="mx-6 max-w-[800px] text-[18px]">
+    <h1 class="text-[1.8em] font-bold mb-4">{post.dayName}</h1>
+
+    <div class="grid md:grid-cols-2 gap-2">
+      <Button content="Úvod k metodice" href="/setkani/uvod-k-metodice" />
+      <Button content="Průběh setkání" href="/setkani/prubeh-setkani" />
+      <Button
+        content="Rady a tipy pro vedoucí skupinek"
+        href="/setkani/rady-a-tipy-pro-vedouci-skupinek"
+      />
+    </div>
+
+    <h2 class="text-[1.4em] font-bold mt-14 mb-2">Zamyšlení</h2>
+    <div
+      class="prose prose-stone prose-p:my-4 dark:prose-invert leading-8"
+      id="contemplation"
+    >
+      <Content />
+    </div>
+  </article>
+</Layout>

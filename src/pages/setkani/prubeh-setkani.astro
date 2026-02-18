@@ -1,0 +1,71 @@
+---
+import ArticleCover from "../../components/ArticleCover.astro";
+import ArticleHeader from "../../components/ArticleHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+---
+
+<Layout title="Průběh setkání společenství mládeže - Cesta půstem">
+  <ArticleCover
+    imgPath="/covers/webp/prokop.webp"
+    imgAlt="Biskup Prokop v motivech postní cesty"
+  />
+  <ArticleHeader />
+  <article class="mx-6 max-w-[800px]">
+    <h1 class="text-4xl font-bold mb-4">Průběh setkání</h1>
+    <p class="font-semibold leading-8 italic">
+      Setkání tvoří jednu společnou postní cestu. Je dobré ji projít celou,
+      protože jednotlivá témata na sebe navazují a pomáhají postupně dojít k
+      hlubšímu prožité Velikonoc. Každé setkání může být použito i samostatně
+      podle potřeb skupiny – každé z nich slouží jako příprava na evangelium a
+      slavení následující neděle.
+    </p>
+    <h2 class="text-xl font-bold leading-8 mt-4 text-pust-grey uppercase">
+      Před setkáním
+    </h2>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Příprava vhodné prostředí a atmosféry
+    </h3>
+
+    <h2 class="text-xl font-bold leading-8 mt-4 text-pust-grey uppercase">
+      Během setkání
+    </h2>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Přijetí a seznámení se
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Úvod setkání
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-pust-yellow">
+      Společné čtení a naslouchání písmu
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-pust-yellow">
+      Sdílení a naslouchání sobě navzájem
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Kreativní aktivita
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Zamyšlení
+    </h3>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Závěrečná modlitba
+    </h3>
+
+    <h2 class="text-xl font-bold leading-8 mt-4 text-pust-grey uppercase">
+      Po setkáním
+    </h2>
+    <h3 class="text-xl font-bold leading-8 mt-4 text-primary-light">
+      Výzva na týden
+    </h3>
+
+    <h2 class="text-xl uppercase font-bold mt-2 mb-1">Číst více</h2>
+    <div class="grid md:grid-cols-2 gap-2 mb-4">
+      <Button content="Úvod k metodice" href="/setkani/uvod-k-metodice" />
+      <Button
+        content="Rady a tipy pro vedoucí skupinek"
+        href="/setkani/rady-a-tipy-pro-vedouci-skupinek"
+      />
+    </div>
+  </article>
+</Layout>
