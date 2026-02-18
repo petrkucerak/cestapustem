@@ -161,37 +161,28 @@ const { Content } = await entry.render();
 
     // swipe-only: handle touch + mouse drag; no click toggling
     let startX = 0;
-    let startY = 0;
     let currentX = 0;
     let dragging = false;
     let startBase = currentChecked ? maxX : 0;
-    const threshold = 5; // px to start considering as horizontal drag
 
-    function startDrag(clientX, clientY) {
+    function startDrag(clientX) {
       startX = clientX;
-      startY = clientY;
       startBase = swiper.getAttribute("aria-checked") === "true" ? maxX : 0;
       dragging = true;
       knob.style.transition = "none";
       swipeTrack.style.transition = "none";
     }
 
-    function moveDrag(e, clientX, clientY) {
+    function moveDrag(e, clientX) {
       if (!dragging) return;
-      const dx = clientX - startX;
-      const dy = clientY - startY;
-      const absDx = Math.abs(dx);
-      const absDy = Math.abs(dy);
-
-      if (absDx > threshold && absDx > absDy) {
-        if (e.type.startsWith("touch")) {
-          e.preventDefault();
-        }
-        currentX = Math.max(0, Math.min(maxX, startBase + dx));
-        knob.style.transform = `translateX(${currentX}px)`;
-        const pct = Math.round((currentX / maxX) * 100);
-        swipeTrack.style.setProperty("--pct", pct + "%");
+      if (e.type.startsWith("touch")) {
+        e.preventDefault();
       }
+      const dx = clientX - startX;
+      currentX = Math.max(0, Math.min(maxX, startBase + dx));
+      knob.style.transform = `translateX(${currentX}px)`;
+      const pct = Math.round((currentX / maxX) * 100);
+      swipeTrack.style.setProperty("--pct", pct + "%");
     }
 
     function endDrag() {
@@ -208,22 +199,28 @@ const { Content } = await entry.render();
 
     knob.addEventListener(
       "touchstart",
-      (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY),
-      { passive: true },
-    );
-    knob.addEventListener(
-      "touchmove",
-      (e) => moveDrag(e, e.touches[0].clientX, e.touches[0].clientY),
+      (e) => {
+        e.preventDefault();
+        startDrag(e.touches[0].clientX);
+        const onMove = (ev) => moveDrag(ev, ev.touches[0].clientX);
+        const onEnd = () => {
+          endDrag();
+          document.removeEventListener("touchmove", onMove);
+          document.removeEventListener("touchend", onEnd);
+          document.removeEventListener("touchcancel", onEnd);
+        };
+        document.addEventListener("touchmove", onMove, { passive: false });
+        document.addEventListener("touchend", onEnd);
+        document.addEventListener("touchcancel", onEnd);
+      },
       { passive: false },
     );
-    knob.addEventListener("touchend", endDrag);
-    knob.addEventListener("touchcancel", endDrag);
 
     // mouse support for desktop (drag only)
     knob.addEventListener("mousedown", (e) => {
       e.preventDefault();
-      startDrag(e.clientX, e.clientY);
-      const onMove = (ev) => moveDrag(ev, ev.clientX, ev.clientY);
+      startDrag(e.clientX);
+      const onMove = (ev) => moveDrag(ev, ev.clientX);
       const onUp = () => {
         endDrag();
         window.removeEventListener("mousemove", onMove);
