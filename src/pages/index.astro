@@ -35,14 +35,7 @@ import NavButtons from "../components/NavButtons.astro";
     >, která slouží jako příprava na každou neděli postní.
   </p>
 
-  <div class="mx-6 gap-2 flex flex-row justify-around mb-8 flex-wrap">
-    <Button
-      className="bg-primary-light"
-      href={"/zdroje-a-autori"}
-      content="Zdroje a autoři"
-      rel=""
-      target="_self"
-    />
+  <div class="mx-6 gap-2 grid md:grid-cols-2 mb-8">
     <Button
       className="bg-primary-light"
       href={"/slova-biskupa-Jana"}
@@ -70,6 +63,13 @@ import NavButtons from "../components/NavButtons.astro";
       content="Audio na spotify"
       rel=""
       target="_blank"
+    />
+    <Button
+      className="bg-primary-light"
+      href={"/zdroje-a-autori"}
+      content="Zdroje a autoři"
+      rel=""
+      target="_self"
     />
   </div>
 </Layout>
