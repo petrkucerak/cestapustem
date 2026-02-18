@@ -12,6 +12,7 @@ const denCollection = defineCollection({
     bibleQuote: z.string(),
     source: z.string(),
     prayer: z.string(),
+    challenge: z.string(),
   }),
 });
 
