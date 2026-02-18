@@ -38,7 +38,9 @@ const { Content } = await entry.render();
 
     <h2 class="text-[1.4em] font-bold mb-2 mt-8 font-serif">Úryvek z Bible</h2>
     <span class="font-mono text-[1em]">({post.source})</span>
-    <p class="mt-4 tracking-wider leading-7 font-serif italic">{post.bibleQuote}</p>
+    <p class="mt-4 tracking-wider leading-7 font-serif italic">
+      {post.bibleQuote}
+    </p>
 
     <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Zamyšlení</h2>
     <div
@@ -49,12 +51,168 @@ const { Content } = await entry.render();
     </div>
 
     <p class="mt-4 text-stone-600 dark:text-stone-50 font-serif">
-      (Autor zamyšlení: <a href={`/autori#${post.date}`} class="underline"
-        >{post.author}</a
+      (Autor zamyšlení: <a
+        href={`/zdroje-a-autori#${post.date}`}
+        class="underline">{post.author}</a
       >)
     </p>
 
-    <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Závěrečná modlitba</h2>
+    <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">
+      Závěrečná modlitba
+    </h2>
     <p class="mb-6 tracking-wider leading-7 font-serif">{post.prayer}</p>
+
+    <h2 class="text-[1.4em] font-bold mt-14 mb-2 font-serif">Výzva na týden</h2>
+    <p class="mb-4 tracking-wider leading-7 font-serif">{post.challenge}</p>
+
+    <div class="flex items-center gap-3 mb-8">
+      <div
+        id="challengeSwiper"
+        role="switch"
+        aria-checked="false"
+        class="relative w-full h-12 bg-gray-200 dark:bg-stone-700 rounded-full p-1 touch-manipulation flex items-center overflow-hidden"
+        style="-webkit-tap-highlight-color: transparent;"
+      >
+        <div
+          id="swipeTrack"
+          class="absolute inset-0 rounded-full flex items-center justify-center text-sm font-semibold text-white"
+          style="background: linear-gradient(90deg, #FBBF24 var(--pct, 0%), #E5E7EB var(--pct, 0%)); transition: background 250ms ease"
+        >
+          <span id="swipeText" class="transition-opacity">DNESKA SPLNĚNO</span>
+        </div>
+        <div
+          id="swipeKnob"
+          class="absolute left-1 top-1 w-10 h-10 bg-white dark:bg-stone-100 rounded-full shadow transition-transform"
+          style="will-change: transform;"
+        >
+        </div>
+      </div>
+    </div>
   </article>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dayId = "{post.date}";
+    const key = "precitaneDny";
+    let readDays = JSON.parse(localStorage.getItem(key) || "[]");
+
+    const swiper = document.getElementById("challengeSwiper");
+    const knob = document.getElementById("swipeKnob");
+    const swipeText = document.getElementById("swipeText");
+    const swipeTrack = document.getElementById("swipeTrack");
+    if (!swiper || !knob || !swipeText || !swipeTrack) return;
+
+    const padding = 4; // px padding used in style
+    let maxX = 0;
+    function updateSizes() {
+      const trackWidth = swiper.clientWidth;
+      const knobWidth = knob.clientWidth;
+      maxX = trackWidth - knobWidth - padding - 1;
+    }
+    updateSizes();
+    window.addEventListener("resize", updateSizes);
+
+    function setVisual(checked) {
+      if (checked) {
+        knob.style.transform = `translateX(${maxX}px)`;
+        swipeTrack.style.setProperty("--pct", "100%");
+        swiper.setAttribute("aria-checked", "true");
+      } else {
+        knob.style.transform = `translateX(0px)`;
+        swipeTrack.style.setProperty("--pct", "0%");
+        swiper.setAttribute("aria-checked", "false");
+      }
+    }
+
+    function persist(checked) {
+      readDays = JSON.parse(localStorage.getItem(key) || "[]");
+      if (checked) {
+        if (!readDays.includes(dayId)) {
+          readDays.push(dayId);
+          localStorage.setItem(key, JSON.stringify(readDays));
+        }
+      } else {
+        const idx = readDays.indexOf(dayId);
+        if (idx !== -1) {
+          readDays.splice(idx, 1);
+          localStorage.setItem(key, JSON.stringify(readDays));
+        }
+      }
+
+      // Update calendar link on the page (if present)
+      const anchor = document.querySelector(`a[data-den="${dayId}"]`);
+      if (anchor) {
+        if (checked) {
+          anchor.classList.add("opacity-60", "grayscale");
+        } else {
+          anchor.classList.remove("opacity-60", "grayscale");
+        }
+      }
+    }
+
+    // initialize from storage
+    let currentChecked = readDays.includes(dayId);
+    setVisual(currentChecked);
+
+    // swipe-only: handle touch + mouse drag; no click toggling
+    let startX = 0;
+    let currentX = 0;
+    let dragging = false;
+    let startBase = currentChecked ? maxX : 0;
+
+    function startDrag(clientX) {
+      startX = clientX;
+      startBase = swiper.getAttribute("aria-checked") === "true" ? maxX : 0;
+      dragging = true;
+      knob.style.transition = "none";
+      swipeTrack.style.transition = "none";
+    }
+
+    function moveDrag(clientX) {
+      if (!dragging) return;
+      const dx = clientX - startX;
+      currentX = Math.max(0, Math.min(maxX, startBase + dx));
+      knob.style.transform = `translateX(${currentX}px)`;
+      const pct = Math.round((currentX / maxX) * 100);
+      swipeTrack.style.setProperty("--pct", pct + "%");
+    }
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      knob.style.transition = "";
+      swipeTrack.style.transition = "background 250ms ease";
+      const checked = currentX > maxX / 2;
+      currentChecked = checked;
+      setVisual(checked);
+      persist(checked);
+      currentX = 0;
+    }
+
+    knob.addEventListener(
+      "touchstart",
+      (e) => startDrag(e.touches[0].clientX),
+      { passive: true },
+    );
+    knob.addEventListener("touchmove", (e) => moveDrag(e.touches[0].clientX), {
+      passive: true,
+    });
+    knob.addEventListener("touchend", endDrag);
+    knob.addEventListener("touchcancel", endDrag);
+
+    // mouse support for desktop (drag only)
+    knob.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      startDrag(e.clientX);
+      const onMove = (ev) => moveDrag(ev.clientX);
+      const onUp = () => {
+        endDrag();
+        window.removeEventListener("mousemove", onMove);
+        window.removeEventListener("mouseup", onUp);
+      };
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", onUp);
+    });
+  });
+</script>
